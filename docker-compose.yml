@@ -1,0 +1,21 @@
+version: "3.8"
+
+services:
+  db:
+    image: postgres:16
+    container_name: db
+    restart: always
+    env_file:
+      - .env/.env.${ENV}
+    secrets:
+      - postgres_password
+    networks:
+      - app-network
+
+secrets:
+  postgres_password:
+    file: ./db-password.txt
+
+networks:
+  app-network:
+    driver: bridge

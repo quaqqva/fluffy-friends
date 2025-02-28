@@ -1,0 +1,6 @@
+**/.idea/
+**/node_modules/
+**/bin/
+**/obj/
+*~
+db-password.txt

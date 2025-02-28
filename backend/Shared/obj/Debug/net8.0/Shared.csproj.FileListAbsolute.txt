@@ -1,0 +1,23 @@
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\bin\Debug\net8.0\Shared.dll
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\obj\Debug\net8.0\Shared.sourcelink.json
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\obj\Debug\net8.0\Shared.dll
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Для навигации\сайты\project-template\dotnet-web-api\WebApplication\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\bin\Debug\net8.0\Shared.deps.json
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\bin\Debug\net8.0\Shared.dll
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\bin\Debug\net8.0\Shared.pdb
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\Shared.AssemblyInfoInputs.cache
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\Shared.AssemblyInfo.cs
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\Shared.csproj.CoreCompileInputs.cache
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\Shared.dll
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\refint\Shared.dll
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\Shared.pdb
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\ref\Shared.dll
