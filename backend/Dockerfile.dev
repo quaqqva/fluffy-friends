@@ -1,4 +1,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:8.0
 WORKDIR /app
 COPY . .
+RUN dotnet tool install --global dotnet-ef
+RUN export PATH="$PATH:/root/.dotnet/tools"
 CMD ["dotnet", "watch", "run", "--urls", "http://0.0.0.0:8080", "--environment", "Development", "--project", "Application/Application.csproj"]

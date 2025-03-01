@@ -8,10 +8,12 @@ namespace Infrastructure.Database.Extensions;
 
 public static class DbSetup
 {
-    public static void SetupDatabaseConnection(this IServiceCollection services, string connectionStringTemplate)
+    public static IServiceCollection SetupDatabaseConnection(this IServiceCollection services,
+        string connectionStringTemplate)
     {
         services.AddDbContextPool<FluffyFriendsContext>(opt =>
             opt.UseNpgsql(connectionStringTemplate));
+        return services;
     }
 
     public static IServiceCollection AddRepositories(this IServiceCollection services)

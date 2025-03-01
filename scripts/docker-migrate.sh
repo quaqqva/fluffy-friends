@@ -1,0 +1,1 @@
+docker exec backend sh -c "export PATH=\"$PATH:/root/.dotnet/tools\" && dotnet ef database update --project Infrastructure --startup-project Application"
