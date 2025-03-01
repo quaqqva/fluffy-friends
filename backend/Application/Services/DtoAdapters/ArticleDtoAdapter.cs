@@ -1,17 +1,32 @@
 using System.Linq.Expressions;
+using Application.Dtos;
 using Application.Dtos.Article;
+using Application.Dtos.ArticleComment;
 using Application.Interfaces;
-using Application.Services.DtoAdapters;
 using Domain.Entities;
-using Infrastructure.Database.Queries;
 using Shared;
 
-namespace Application.Services;
+namespace Application.Services.DtoAdapters;
 
-public class ArticleDtoAdapter : IDtoAdapter<Article, ArticleDto, ArticleCreateDto, ArticleListItemDto,
+public class ArticleDtoAdapter(
+    IDtoAdapter<ArticleComment, ArticleCommentDto, ArticleCommentCreateDto, ArticleCommentDto, ListFiltersDto>
+        commentsAdapter
+) : BaseDtoAdapter<Article, ArticleDto, ArticleCreateDto, ArticleListItemDto,
     ArticleListFiltersDto>
 {
-    public Article ConvertDtoToEntity(ArticleCreateDto articleCreateDto, int id = 0)
+    protected override Expression<Func<Article, ArticleListItemDto>> ListItemSelector =>
+        article => new ArticleListItemDto(
+            article.Id,
+            article.Title,
+            article.PublishedAt,
+            article.Views,
+            article.Comments!.Count,
+            article.MinPrice,
+            article.MaxPrice,
+            article.Category!.Name
+        );
+
+    public override Article ConvertDtoToEntity(ArticleCreateDto articleCreateDto, int id = 0)
     {
         return new Article
         {
@@ -25,49 +40,27 @@ public class ArticleDtoAdapter : IDtoAdapter<Article, ArticleDto, ArticleCreateD
         };
     }
 
-    public ArticleDto ConvertToDto(Article category)
+    public override ArticleDto ConvertToDto(Article category)
     {
-        var commentAdapter = new ArticleCommentDtoAdapter();
-
         return new ArticleDto(
             category.Id,
             category.Title,
             category.Content,
             category.PublishedAt,
             category.Views,
-            Comments: category.Comments!.Select(articleComment => commentAdapter.ConvertToDto(articleComment)).ToList(),
+            Comments: category.Comments!.Select(commentsAdapter.ConvertToDto)
+                .ToList(),
             MinPrice: category.MinPrice,
             MaxPrice: category.MaxPrice,
             Category: category.Category!.Name);
     }
 
-    public DbListParams<Article> ConvertToDbListParams(ArticleListFiltersDto filters)
-    {
-        Expression<Func<Article, dynamic>> selector = article => new ArticleListItemDto(
-            article.Id,
-            article.Title,
-            article.PublishedAt,
-            article.Views,
-            article.Comments!.Count,
-            article.MinPrice,
-            article.MaxPrice,
-            article.Category!.Name
-        );
-
-        DbListParams<Article> result = new(
-            selector,
-            CreateFilter(filters),
-            Limit: filters.Limit ?? 10,
-            Offset: filters.Offset ?? 0);
-        return result;
-    }
-
-    private Expression<Func<Article, bool>> CreateFilter(ArticleListFiltersDto filters)
+    protected override Expression<Func<Article, bool>> CreateFilter(ArticleListFiltersDto filters)
     {
         var predicate = PredicateBuilder.True<Article>();
 
         if (!string.IsNullOrEmpty(filters.Title))
-            predicate = predicate.And(article => article.Title.Contains(filters.Title));
+            predicate = predicate.And(article => article.Title.ToLower().Contains(filters.Title.ToLower()));
 
         if (filters.MinPrice.HasValue) predicate = predicate.And(article => article.MinPrice >= filters.MinPrice.Value);
 

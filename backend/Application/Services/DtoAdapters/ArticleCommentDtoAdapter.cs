@@ -1,15 +1,22 @@
+using System.Linq.Expressions;
 using Application.Dtos;
 using Application.Dtos.ArticleComment;
-using Application.Interfaces;
 using Domain.Entities;
-using Infrastructure.Database.Queries;
 
 namespace Application.Services.DtoAdapters;
 
 public class ArticleCommentDtoAdapter :
-    IDtoAdapter<ArticleComment, ArticleCommentDto, ArticleCommentCreateDto, ArticleCommentDto, ListFiltersDto>
+    BaseDtoAdapter<ArticleComment, ArticleCommentDto, ArticleCommentCreateDto, ArticleCommentDto, ListFiltersDto>
 {
-    public ArticleCommentDto ConvertToDto(ArticleComment category)
+    protected override Expression<Func<ArticleComment, ArticleCommentDto>> ListItemSelector => comment =>
+        new ArticleCommentDto(
+            comment.Id,
+            comment.Author,
+            comment.CreatedAt,
+            comment.Content,
+            comment.ArticleId);
+
+    public override ArticleCommentDto ConvertToDto(ArticleComment category)
     {
         return new ArticleCommentDto(
             category.Id,
@@ -20,7 +27,7 @@ public class ArticleCommentDtoAdapter :
         );
     }
 
-    public ArticleComment ConvertDtoToEntity(ArticleCommentCreateDto createDto, int id = 0)
+    public override ArticleComment ConvertDtoToEntity(ArticleCommentCreateDto createDto, int id = 0)
     {
         return new ArticleComment
         {
@@ -29,12 +36,5 @@ public class ArticleCommentDtoAdapter :
             ArticleId = createDto.ArticleId,
             CreatedAt = DateTime.Now
         };
-    }
-
-    public DbListParams<ArticleComment> ConvertToDbListParams(ListFiltersDto filterDto)
-    {
-        return new DbListParams<ArticleComment>(
-            Limit: filterDto.Limit ?? 10,
-            Offset: filterDto.Offset ?? 0);
     }
 }

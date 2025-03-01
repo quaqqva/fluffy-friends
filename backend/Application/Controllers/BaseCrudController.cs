@@ -9,18 +9,19 @@ namespace Application.Controllers;
 public abstract class BaseCrudController<TEntity, TEntityDto, TCreateDto, TListItemDto, TListFiltersDto>(
     IRepository<TEntity> repository,
     IDtoAdapter<TEntity, TEntityDto, TCreateDto, TListItemDto, TListFiltersDto> adapter)
-    : ControllerBase where TEntity : class, IIdentifiable
+    : ControllerBase
+    where TEntity : class, IIdentifiable, new()
+    where TListFiltersDto : ListFiltersDto
 {
     [HttpPost("list")]
-    public async Task<ActionResult<ListResponseDto<TListItemDto>>> GetEntitiesList([FromBody] TListFiltersDto filters)
+    public async Task<ActionResult<ListResponseDto<TListItemDto>>> GetEntitiesList(
+        [FromBody] TListFiltersDto? filters)
     {
-        var listParams = adapter.ConvertToDbListParams(filters);
-
-        var count = await repository.Count(listParams);
+        var count = await repository.Count(adapter.ConvertToDbCountParams(filters));
 
         if (count <= 0) return Ok(new ListResponseDto<TListItemDto>(count, []));
 
-        var entities = await repository.ReadList<TListItemDto>(listParams);
+        var entities = await repository.ReadList(adapter.ConvertToDbListParams(filters));
         return Ok(new ListResponseDto<TListItemDto>(count, entities));
     }
 

@@ -12,17 +12,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="initial (controllers, migration, template, docker)">
-      <change afterPath="$PROJECT_DIR$/../scripts/docker-migrate.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../scripts/docker-run.sh" afterDir="false" />
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/BaseDtoAdapter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Database/Queries/DbCountParams.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Database/Queries/DbListParams.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Application.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Controllers/BaseCrudController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Controllers/BaseCrudController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Dtos/ArticleCategory/ArticleCategoryListFiltersDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dtos/ArticleCategory/ArticleCategoryListFiltersDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Interfaces/IDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Interfaces/IDtoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapter.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCategoryDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCategoryDtoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCommentDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCommentDtoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Dockerfile.dev" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile.prod" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.prod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Extensions/DbSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Extensions/DbSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.dev.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Interfaces/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Interfaces/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Queries/ListParams.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Repositories/Repository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,6 +56,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/DefaultBuilder/src/WebApplicationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/backend/Infrastructure/Database/Extensions/DbSetup.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Database/Extensions/DbSetup.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -69,39 +75,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.Application: IIS Express.executor": "Run",
-    "Docker.FullStack Dev.executor": "Run",
-    "Docker.ЛР 3: Compose Deployment.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "Shell Script.Docker dev.executor": "Run",
-    "Shell Script.Docker migrate.executor": "Run",
-    "com.codeium.enabled": "true",
-    "git-widget-placeholder": "dev",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.stylelint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.stylelint": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "rider.code.cleanup.on.save": "true",
-    "settings.editor.selected.configurable": "actions.on.save",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.Application: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;ATTACH_DIALOG_SELECTED_CONTAINER&quot;: &quot;backend&quot;,
+    &quot;Docker.FullStack Dev.executor&quot;: &quot;Run&quot;,
+    &quot;Docker.ЛР 3: Compose Deployment.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;Shell Script.Docker dev.executor&quot;: &quot;Run&quot;,
+    &quot;Shell Script.Docker migrate.executor&quot;: &quot;Run&quot;,
+    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ],
-    "rider.external.source.directories": [
-      "C:\\Users\\sanek\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
-      "C:\\Users\\sanek\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
-      "C:\\Users\\sanek\\AppData\\Local\\Symbols\\src"
+    &quot;rider.external.source.directories&quot;: [
+      &quot;C:\\Users\\sanek\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
+      &quot;C:\\Users\\sanek\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
+      &quot;C:\\Users\\sanek\\AppData\\Local\\Symbols\\src&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager" selected="Shell Script.Docker migrate">
+}</component>
+  <component name="RunManager" selected="Shell Script.Docker dev">
     <configuration name="Application: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Application/Application.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -328,7 +335,9 @@
       <workItem from="1740513630252" duration="5327000" />
       <workItem from="1740647462617" duration="31417000" />
       <workItem from="1740752150153" duration="8031000" />
-      <workItem from="1740844145228" duration="1049000" />
+      <workItem from="1740844145228" duration="2634000" />
+      <workItem from="1740846835635" duration="4303000" />
+      <workItem from="1740851431779" duration="6169000" />
     </task>
     <task id="LOCAL-00001" summary="initial (controllers, migration, template, docker)">
       <option name="closed" value="true" />
@@ -338,7 +347,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740755743110</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="ef migrations + docker fix">
+      <option name="closed" value="true" />
+      <created>1740845510551</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740845510551</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -360,6 +377,14 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initial (controllers, migration, template, docker)" />
-    <option name="LAST_COMMIT_MESSAGE" value="initial (controllers, migration, template, docker)" />
+    <MESSAGE value="ef migrations + docker fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="ef migrations + docker fix" />
+  </component>
+  <component name="XDebuggerManager">
+    <watches-manager>
+      <configuration name="backend">
+        <watch expression="this.&lt;listParams&gt;5__1.OrderBy" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

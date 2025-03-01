@@ -1,3 +1,4 @@
+using System.Linq.Expressions;
 using Domain.Interfaces;
 using Infrastructure.Database.Exceptions;
 using Infrastructure.Database.Interfaces;
@@ -21,19 +22,19 @@ public class Repository<TEntity>(FluffyFriendsContext Context) : IRepository<TEn
         Context.Dispose();
     }
 
-    public Task<int> Count(DbListParams<TEntity> listParams)
-    {
-        return BuildQuery<TEntity>(listParams).CountAsync();
-    }
-
     public Task<TEntity?> Read(int id)
     {
         return DbSet.FirstOrDefaultAsync(entity => entity.Id == id);
     }
 
-    public async Task<IEnumerable<TProjection>> ReadList<TProjection>(DbListParams<TEntity> listParams)
+    public async Task<IEnumerable<TProjection>> ReadList<TProjection>(DbListParams<TEntity, TProjection> listParams)
     {
-        return await BuildQuery<TProjection>(listParams).Skip(listParams.Offset).Take(listParams.Limit).ToListAsync();
+        return await BuildQuery(
+            listParams.Select,
+            listParams.Filter,
+            includedProperties: listParams.IncludedProperties,
+            orderBy: listParams.OrderBy
+        ).Skip(listParams.Offset).Take(listParams.Limit).ToListAsync();
     }
 
     public async Task<int> Create(TEntity entity)
@@ -66,18 +67,30 @@ public class Repository<TEntity>(FluffyFriendsContext Context) : IRepository<TEn
         return Context.SaveChangesAsync();
     }
 
-    private IQueryable<TProjection> BuildQuery<TProjection>(DbListParams<TEntity> listParams)
+    public Task<int> Count(DbCountParams<TEntity> countParams)
+    {
+        return BuildQuery<TEntity>(
+            filter: countParams.Filter,
+            includedProperties: countParams.IncludedProperties
+        ).CountAsync();
+    }
+
+    private IQueryable<TProjection> BuildQuery<TProjection>(
+        Expression<Func<TEntity, TProjection>>? select = null,
+        Expression<Func<TEntity, bool>>? filter = null,
+        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
+        IEnumerable<string>? includedProperties = null)
     {
         IQueryable<TEntity> query = DbSet;
 
-        if (listParams.Filter != null) query = query.Where(listParams.Filter);
+        if (filter != null) query = query.Where(filter);
 
-        if (listParams.IncludedProperties != null)
-            query = listParams.IncludedProperties.Aggregate(query, (current, property) => current.Include(property));
+        if (includedProperties != null)
+            query = includedProperties.Aggregate(query, (current, property) => current.Include(property));
 
-        if (listParams.OrderBy != null) query = listParams.OrderBy(query);
+        if (orderBy != null) query = orderBy(query);
 
-        if (listParams.Select != null) return query.Select(listParams.Select).Cast<TProjection>();
+        if (select != null) return query.Select(select).Cast<TProjection>();
 
         return query.Cast<TProjection>();
     }
