@@ -3,7 +3,6 @@ using Application.Dtos.Article;
 using Application.Dtos.ArticleCategory;
 using Application.Dtos.ArticleComment;
 using Application.Interfaces;
-using Application.Services;
 using Application.Services.DtoAdapters;
 using Domain.Entities;
 

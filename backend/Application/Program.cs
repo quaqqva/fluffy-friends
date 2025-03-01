@@ -1,4 +1,6 @@
 using Application.Extensions;
+using Application.Filters;
+using Application.Middlewares;
 using Infrastructure.Database.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -23,7 +25,7 @@ builder.Services.SetupDatabaseConnection(dbConnectionString);
 builder.Services.AddRepositories();
 builder.Services.SetupDtoAdapters();
 
-builder.Services.AddControllers();
+builder.Services.AddControllers(options => { options.Filters.Add<ModelStateValidationFilter>(); });
 builder.Services.AddEndpointsApiExplorer();
 
 if (builder.Environment.IsProduction())
@@ -41,8 +43,9 @@ if (builder.Environment.IsProduction())
     });
 
 var app = builder.Build();
+app.UseMiddleware<ExceptionMiddleware>();
 
-Console.WriteLine(app.Environment.IsDevelopment());
+
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

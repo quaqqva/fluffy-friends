@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using Application.Dtos;
 using Application.Interfaces;
 using Domain.Interfaces;
@@ -36,14 +37,14 @@ public abstract class BaseCrudController<TEntity, TEntityDto, TCreateDto, TListI
     }
 
     [HttpPost]
-    public async Task<ActionResult<IdResponseDto>> CreateEntity([FromBody] TCreateDto createDto)
+    public async Task<ActionResult<IdResponseDto>> CreateEntity([Required] [FromBody] TCreateDto createDto)
     {
         var id = await repository.Create(adapter.ConvertDtoToEntity(createDto));
         return Created(RouteData.Values["controller"]!.ToString() + id, new IdResponseDto(id));
     }
 
     [HttpPut("{id:int}")]
-    public async Task<ActionResult> UpdateEntity([FromRoute] int id, [FromBody] TCreateDto updateDto)
+    public async Task<ActionResult> UpdateEntity([FromRoute] int id, [Required] [FromBody] TCreateDto updateDto)
     {
         var article = adapter.ConvertDtoToEntity(updateDto, id);
         await repository.Update(article);
