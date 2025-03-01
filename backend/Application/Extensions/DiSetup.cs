@@ -8,7 +8,7 @@ using Domain.Entities;
 
 namespace Application.Extensions;
 
-public static class DiExtensions
+public static class DiSetup
 {
     public static void SetupDtoAdapters(this IServiceCollection services)
     {

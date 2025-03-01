@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Infrastructure.Database.Extensions;
 
-public static class DbSetup
+public static class DiSetup
 {
     public static IServiceCollection SetupDatabaseConnection(this IServiceCollection services,
         string connectionStringTemplate)
