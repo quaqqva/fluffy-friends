@@ -1,6 +1,7 @@
 using System.Linq.Expressions;
 using Application.Dtos.ArticleCategory;
 using Domain.Entities;
+using Infrastructure.Database.Queries;
 using Shared;
 
 namespace Application.Services.DtoAdapters;
@@ -15,12 +16,10 @@ public class ArticleCategoryDtoAdapter :
             articleCategory.Name
         );
 
-    public override ArticleCategoryDto ConvertToDto(ArticleCategory category)
-    {
-        return new ArticleCategoryDto(
+    public override DbSelectParams<ArticleCategory, ArticleCategoryDto> DbSelectParams => new(category =>
+        new ArticleCategoryDto(
             category.Id,
-            category.Name);
-    }
+            category.Name));
 
     public override ArticleCategory ConvertDtoToEntity(ArticleCategoryCreateDto dto, int id = 0)
     {

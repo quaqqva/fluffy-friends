@@ -10,7 +10,7 @@ public abstract class BaseCrudController<TEntity, TEntityDto, TCreateDto, TListI
     IRepository<TEntity> repository,
     IDtoAdapter<TEntity, TEntityDto, TCreateDto, TListItemDto, TListFiltersDto> adapter)
     : ControllerBase
-    where TEntity : class, IIdentifiable, new()
+    where TEntity : class, IIdentifiable
     where TListFiltersDto : ListFiltersDto
 {
     [HttpPost("list")]
@@ -28,11 +28,11 @@ public abstract class BaseCrudController<TEntity, TEntityDto, TCreateDto, TListI
     [HttpGet("{id:int}")]
     public async Task<ActionResult<TEntityDto>> GetEntity([FromRoute] int id)
     {
-        var entity = await repository.Read(id);
+        var readEntity = await repository.Read(id, adapter.DbSelectParams);
 
-        if (entity == null) return NotFound();
+        if (readEntity == null) return NotFound();
 
-        return Ok(adapter.ConvertToDto(entity));
+        return Ok(readEntity);
     }
 
     [HttpPost]

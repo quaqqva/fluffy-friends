@@ -22,7 +22,7 @@ public class Repository<TEntity>(FluffyFriendsContext context) : IRepository<TEn
         context.Dispose();
     }
 
-    public virtual Task<TEntity?> Read(int id)
+    public Task<TEntity?> Read(int id)
     {
         return DbSet.FirstOrDefaultAsync(entity => entity.Id == id);
     }
@@ -73,6 +73,11 @@ public class Repository<TEntity>(FluffyFriendsContext context) : IRepository<TEn
             filter: countParams.Filter,
             includedProperties: countParams.IncludedProperties
         ).CountAsync();
+    }
+
+    public Task<TProjection?> Read<TProjection>(int id, DbSelectParams<TEntity, TProjection> selectParams)
+    {
+        return BuildQuery(selectParams.Select, entity => entity.Id == id).FirstOrDefaultAsync();
     }
 
     private IQueryable<TProjection> BuildQuery<TProjection>(

@@ -4,10 +4,11 @@ using Infrastructure.Database.Queries;
 
 namespace Application.Interfaces;
 
-public interface IDtoAdapter<TEntity, out TEntityDto, in TCreateDto, TListItemDto, in TListFiltersDto>
-    where TEntity : class, IIdentifiable, new() where TListFiltersDto : ListFiltersDto
+public interface IDtoAdapter<TEntity, TEntityDto, in TCreateDto, TListItemDto, in TListFiltersDto>
+    where TEntity : class, IIdentifiable
+    where TListFiltersDto : ListFiltersDto
 {
-    TEntityDto ConvertToDto(TEntity category);
+    DbSelectParams<TEntity, TEntityDto> DbSelectParams { get; }
 
     TEntity ConvertDtoToEntity(TCreateDto dto, int id = 0);
 

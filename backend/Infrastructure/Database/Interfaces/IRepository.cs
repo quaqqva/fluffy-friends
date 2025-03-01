@@ -9,6 +9,8 @@ public interface IRepository<TEntity> where TEntity : class, IIdentifiable
 
     public Task<TEntity?> Read(int id);
 
+    public Task<TProjection?> Read<TProjection>(int id, DbSelectParams<TEntity, TProjection> selectParams);
+
     public Task<IEnumerable<TProjection>> ReadList<TProjection>(DbListParams<TEntity, TProjection> listParams);
 
     public Task<int> Create(TEntity entity);

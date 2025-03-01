@@ -2,6 +2,7 @@ using System.Linq.Expressions;
 using Application.Dtos;
 using Application.Dtos.ArticleComment;
 using Domain.Entities;
+using Infrastructure.Database.Queries;
 
 namespace Application.Services.DtoAdapters;
 
@@ -16,16 +17,14 @@ public class ArticleCommentDtoAdapter :
             comment.Content,
             comment.ArticleId);
 
-    public override ArticleCommentDto ConvertToDto(ArticleComment category)
-    {
-        return new ArticleCommentDto(
-            category.Id,
-            category.Author,
-            Content: category.Content,
-            CreatedAt: category.CreatedAt,
-            ArticleId: category.ArticleId
-        );
-    }
+    public override DbSelectParams<ArticleComment, ArticleCommentDto> DbSelectParams => new(
+        comment => new ArticleCommentDto(
+            comment.Id,
+            comment.Author,
+            comment.CreatedAt,
+            comment.Content,
+            comment.ArticleId
+        ));
 
     public override ArticleComment ConvertDtoToEntity(ArticleCommentCreateDto createDto, int id = 0)
     {

@@ -10,7 +10,7 @@ namespace Application.Services.DtoAdapters;
 public abstract class
     BaseDtoAdapter<TEntity, TEntityDto, TCreateDto, TListItemDto, TListFiltersDto> : IDtoAdapter<TEntity, TEntityDto,
     TCreateDto, TListItemDto, TListFiltersDto>
-    where TEntity : class, IIdentifiable, new()
+    where TEntity : class, IIdentifiable
     where TListFiltersDto : ListFiltersDto
 {
     private const int DefaultLimit = 10;
@@ -19,7 +19,7 @@ public abstract class
 
     protected abstract Expression<Func<TEntity, TListItemDto>> ListItemSelector { get; }
 
-    public abstract TEntityDto ConvertToDto(TEntity category);
+    public abstract DbSelectParams<TEntity, TEntityDto> DbSelectParams { get; }
 
     public abstract TEntity ConvertDtoToEntity(TCreateDto dto, int id = 0);
 

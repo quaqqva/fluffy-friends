@@ -12,13 +12,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="fix list filtering">
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Database/Repositories/ArticlesRepository.cs" afterDir="false" />
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="fix articles back">
+      <change afterPath="$PROJECT_DIR$/Infrastructure/Database/Queries/DbSelectParams.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Controllers/BaseCrudController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Controllers/BaseCrudController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Interfaces/IDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Interfaces/IDtoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCategoryDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCategoryDtoAdapter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCommentDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCommentDtoAdapter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/BaseDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/BaseDtoAdapter.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Extensions/DbSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Extensions/DbSetup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Interfaces/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Interfaces/IRepository.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Repositories/ArticlesRepository.cs" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Repositories/Repository.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -49,6 +54,7 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/DefaultBuilder/src/WebApplicationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/backend/Application/Services/DtoAdapters/ArticleCategoryDtoAdapter.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/backend/Application/Services/DtoAdapters/ArticleCommentDtoAdapter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Infrastructure/Database/Extensions/DbSetup.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -329,7 +335,7 @@
       <workItem from="1740752150153" duration="8031000" />
       <workItem from="1740844145228" duration="2634000" />
       <workItem from="1740846835635" duration="4303000" />
-      <workItem from="1740851431779" duration="9171000" />
+      <workItem from="1740851431779" duration="13223000" />
     </task>
     <task id="LOCAL-00001" summary="initial (controllers, migration, template, docker)">
       <option name="closed" value="true" />
@@ -355,7 +361,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740858032027</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix articles back">
+      <option name="closed" value="true" />
+      <created>1740860862789</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740860862789</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -379,7 +393,8 @@
     <MESSAGE value="initial (controllers, migration, template, docker)" />
     <MESSAGE value="ef migrations + docker fix" />
     <MESSAGE value="fix list filtering" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix list filtering" />
+    <MESSAGE value="fix articles back" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix articles back" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
