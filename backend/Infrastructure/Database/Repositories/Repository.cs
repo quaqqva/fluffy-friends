@@ -32,8 +32,7 @@ public class Repository<TEntity>(FluffyFriendsContext context) : IRepository<TEn
         return await BuildQuery(
             listParams.Select,
             listParams.Filter,
-            includedProperties: listParams.IncludedProperties,
-            orderBy: listParams.OrderBy
+            listParams.OrderBy
         ).Skip(listParams.Offset).Take(listParams.Limit).ToListAsync();
     }
 
@@ -70,8 +69,7 @@ public class Repository<TEntity>(FluffyFriendsContext context) : IRepository<TEn
     public Task<int> Count(DbCountParams<TEntity> countParams)
     {
         return BuildQuery<TEntity>(
-            filter: countParams.Filter,
-            includedProperties: countParams.IncludedProperties
+            filter: countParams.Filter
         ).CountAsync();
     }
 
@@ -83,20 +81,14 @@ public class Repository<TEntity>(FluffyFriendsContext context) : IRepository<TEn
     private IQueryable<TProjection> BuildQuery<TProjection>(
         Expression<Func<TEntity, TProjection>>? select = null,
         Expression<Func<TEntity, bool>>? filter = null,
-        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null,
-        IEnumerable<string>? includedProperties = null)
+        Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? orderBy = null)
     {
         IQueryable<TEntity> query = DbSet;
 
         if (filter != null) query = query.Where(filter);
 
-        if (includedProperties != null)
-            query = includedProperties.Aggregate(query, (current, property) => current.Include(property));
-
         if (orderBy != null) query = orderBy(query);
 
-        if (select != null) return query.Select(select).Cast<TProjection>();
-
-        return query.Cast<TProjection>();
+        return select != null ? query.Select(select).Cast<TProjection>() : query.Cast<TProjection>();
     }
 }

@@ -8,5 +8,4 @@ public record DbListParams<TEntity, TSelectProjection>(
     int Offset,
     Expression<Func<TEntity, TSelectProjection>>? Select = null,
     Expression<Func<TEntity, bool>>? Filter = null,
-    Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? OrderBy = null,
-    IEnumerable<string>? IncludedProperties = null) where TEntity : class, IIdentifiable;
+    Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? OrderBy = null) where TEntity : class, IIdentifiable;
