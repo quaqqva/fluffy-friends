@@ -25,14 +25,14 @@ public abstract class BaseCrudController<TEntity, TEntityDto, TCreateDto, TListI
         return Ok(new ListResponseDto<TListItemDto>(count, entities));
     }
 
-    [HttpGet(":id")]
-    public async Task<ActionResult<TEntityDto>> GetEntity(int id)
+    [HttpGet("{id:int}")]
+    public async Task<ActionResult<TEntityDto>> GetEntity([FromRoute] int id)
     {
         var entity = await repository.Read(id);
 
         if (entity == null) return NotFound();
 
-        return adapter.ConvertToDto(entity);
+        return Ok(adapter.ConvertToDto(entity));
     }
 
     [HttpPost]
@@ -42,16 +42,16 @@ public abstract class BaseCrudController<TEntity, TEntityDto, TCreateDto, TListI
         return Created(RouteData.Values["controller"]!.ToString() + id, new IdResponseDto(id));
     }
 
-    [HttpPut(":id")]
-    public async Task<ActionResult> UpdateEntity(int id, [FromBody] TCreateDto updateDto)
+    [HttpPut("{id:int}")]
+    public async Task<ActionResult> UpdateEntity([FromRoute] int id, [FromBody] TCreateDto updateDto)
     {
         var article = adapter.ConvertDtoToEntity(updateDto, id);
         await repository.Update(article);
-        return NoContent();
+        return Ok();
     }
 
-    [HttpDelete(":id")]
-    public async Task<ActionResult> DeleteEntity(int id)
+    [HttpDelete("{id:int}")]
+    public async Task<ActionResult> DeleteEntity([FromRoute] int id)
     {
         await repository.Delete(id);
         return NoContent();

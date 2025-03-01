@@ -7,22 +7,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Database.Repositories;
 
-public class Repository<TEntity>(FluffyFriendsContext Context) : IRepository<TEntity>, IDisposable, IAsyncDisposable
+public class Repository<TEntity>(FluffyFriendsContext context) : IRepository<TEntity>, IDisposable, IAsyncDisposable
     where TEntity : class, IIdentifiable
 {
-    protected readonly DbSet<TEntity> DbSet = Context.Set<TEntity>();
+    protected readonly DbSet<TEntity> DbSet = context.Set<TEntity>();
 
     public async ValueTask DisposeAsync()
     {
-        await Context.DisposeAsync();
+        await context.DisposeAsync();
     }
 
     public void Dispose()
     {
-        Context.Dispose();
+        context.Dispose();
     }
 
-    public Task<TEntity?> Read(int id)
+    public virtual Task<TEntity?> Read(int id)
     {
         return DbSet.FirstOrDefaultAsync(entity => entity.Id == id);
     }
@@ -40,15 +40,15 @@ public class Repository<TEntity>(FluffyFriendsContext Context) : IRepository<TEn
     public async Task<int> Create(TEntity entity)
     {
         var createdEntity = DbSet.Add(entity);
-        await Context.SaveChangesAsync();
+        await context.SaveChangesAsync();
         return createdEntity.Entity.Id;
     }
 
     public Task Update(TEntity entity)
     {
         DbSet.Attach(entity);
-        Context.Entry(entity).State = EntityState.Modified;
-        return Context.SaveChangesAsync();
+        context.Entry(entity).State = EntityState.Modified;
+        return context.SaveChangesAsync();
     }
 
     public async Task Delete(int id)
@@ -57,14 +57,14 @@ public class Repository<TEntity>(FluffyFriendsContext Context) : IRepository<TEn
         if (readEntity == null) throw new DbNotFoundException();
 
         DbSet.Remove(readEntity);
-        await Context.SaveChangesAsync();
+        await context.SaveChangesAsync();
     }
 
     public Task Delete(TEntity entity)
     {
-        if (Context.Entry(entity).State == EntityState.Detached) DbSet.Attach(entity);
+        if (context.Entry(entity).State == EntityState.Detached) DbSet.Attach(entity);
         DbSet.Remove(entity);
-        return Context.SaveChangesAsync();
+        return context.SaveChangesAsync();
     }
 
     public Task<int> Count(DbCountParams<TEntity> countParams)

@@ -34,7 +34,7 @@ public class ArticleCommentDtoAdapter :
             Author = createDto.Author,
             Content = createDto.Content,
             ArticleId = createDto.ArticleId,
-            CreatedAt = DateTime.Now
+            CreatedAt = DateTime.UtcNow
         };
     }
 }

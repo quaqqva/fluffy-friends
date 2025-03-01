@@ -36,7 +36,7 @@ public class ArticleDtoAdapter(
             MinPrice = articleCreateDto.MinPrice,
             MaxPrice = articleCreateDto.MaxPrice,
             CategoryId = articleCreateDto.Category,
-            PublishedAt = DateTime.Now
+            PublishedAt = DateTime.UtcNow
         };
     }
 
@@ -48,11 +48,11 @@ public class ArticleDtoAdapter(
             category.Content,
             category.PublishedAt,
             category.Views,
-            Comments: category.Comments!.Select(commentsAdapter.ConvertToDto)
-                .ToList(),
+            Comments: category.Comments?.Select(commentsAdapter.ConvertToDto)
+                .ToList() ?? [],
             MinPrice: category.MinPrice,
             MaxPrice: category.MaxPrice,
-            Category: category.Category!.Name);
+            Category: category.Category?.Name);
     }
 
     protected override Expression<Func<Article, bool>> CreateFilter(ArticleListFiltersDto filters)

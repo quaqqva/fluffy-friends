@@ -18,18 +18,9 @@ public static class DbSetup
 
     public static IServiceCollection AddRepositories(this IServiceCollection services)
     {
-        var assembly = typeof(Article).Assembly;
-        var entityTypes = assembly.GetTypes()
-            .Where(t => t.IsClass && !t.IsAbstract && t.GetInterfaces().Any(i => i.Name == "IIdentifiable"))
-            .ToList();
-
-        foreach (var entityType in entityTypes)
-        {
-            var repositoryType = typeof(IRepository<>).MakeGenericType(entityType);
-            var repositoryImplementation = typeof(Repository<>).MakeGenericType(entityType);
-
-            services.AddScoped(repositoryType, repositoryImplementation);
-        }
+        services.AddScoped<IRepository<Article>, ArticlesRepository>();
+        services.AddScoped<IRepository<ArticleCategory>, Repository<ArticleCategory>>();
+        services.AddScoped<IRepository<ArticleComment>, Repository<ArticleComment>>();
 
         return services;
     }
