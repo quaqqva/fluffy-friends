@@ -11,5 +11,6 @@ public record ArticleDto(
     int MinPrice,
     int MaxPrice,
     string Category,
+    string PhotoUrl,
     List<ArticleCommentDto> Comments
 );

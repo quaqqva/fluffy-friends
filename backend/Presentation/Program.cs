@@ -19,7 +19,8 @@ builder.Services.SetupDbServices();
 builder.Services.SetupDtoAdapters();
 builder.Services.SetupEntityServices();
 
-builder.Services.AddControllers(options => { options.Filters.Add<ModelStateValidationFilter>(); });
+builder.Services.AddControllers(options => { options.Filters.Add<ModelStateValidationFilter>(); }).AddJsonOptions(
+    options => { options.JsonSerializerOptions.AllowTrailingCommas = true; });
 builder.Services.AddEndpointsApiExplorer();
 
 if (builder.Environment.IsProduction())

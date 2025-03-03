@@ -8,4 +8,5 @@ public record ArticleListItemDto(
     int Comments,
     int MinPrice,
     int MaxPrice,
+    string PhotoUrl,
     string Category);

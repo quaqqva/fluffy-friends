@@ -5,13 +5,15 @@ using Application.Dtos.ArticleComment;
 using Application.Interfaces;
 using Domain.DatabaseParams;
 using Domain.Entities;
+using Domain.Interfaces.CloudStorage;
 using Shared;
 
 namespace Application.Services.DtoAdapters;
 
 public class ArticleDtoAdapter(
     IDtoAdapter<ArticleComment, ArticleCommentDto, ArticleCommentCreateDto, ArticleCommentDto, ListFiltersDto>
-        commentsAdapter
+        commentsAdapter,
+    ICloudStorageEnvironmentService cloudStorageEnvironmentService
 ) : BaseDtoAdapter<Article, ArticleDto, ArticleCreateDto, ArticleListItemDto,
         ArticleListFiltersDto>,
     IDtoAdapter<Article, ArticleDto, ArticleCreateDto, ArticleListItemDto, ArticleListFiltersDto>
@@ -25,6 +27,7 @@ public class ArticleDtoAdapter(
             article.Comments!.Count,
             article.MinPrice,
             article.MaxPrice,
+            cloudStorageEnvironmentService.GetFileUrl(article.Photo!),
             article.Category!.Name
         );
 
@@ -41,6 +44,7 @@ public class ArticleDtoAdapter(
                 article.MinPrice,
                 article.MaxPrice,
                 article.Category!.Name,
+                cloudStorageEnvironmentService.GetFileUrl(article.Photo!),
                 article.Comments!.AsQueryable().Select(commentsAdapter.DbSelectParams.Select).ToList()));
         }
     }
@@ -55,7 +59,8 @@ public class ArticleDtoAdapter(
             MinPrice = articleCreateDto.MinPrice,
             MaxPrice = articleCreateDto.MaxPrice,
             CategoryId = articleCreateDto.Category,
-            PublishedAt = DateTime.UtcNow
+            PublishedAt = DateTime.UtcNow,
+            PhotoId = articleCreateDto.PhotoId
         };
     }
 

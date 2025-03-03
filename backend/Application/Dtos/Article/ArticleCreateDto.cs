@@ -13,4 +13,7 @@ public record ArticleCreateDto
     public int MaxPrice { get; set; }
 
     [Required] public int Category { get; set; }
+
+
+    [Required] public int PhotoId { get; set; }
 }
