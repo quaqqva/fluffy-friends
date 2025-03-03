@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using Shared.Extensions;
 
-namespace Application.Filters;
+namespace Presentation.Filters;
 
 public class ModelStateValidationFilter : ActionFilterAttribute
 {

@@ -17,6 +17,8 @@ services:
       - db
     secrets:
       - postgres_password
+      - minio_user
+      - minio_password
     networks:
       - app-network
     develop:
@@ -28,23 +30,23 @@ services:
             - "bin/"
             - "obj/"
 
-  frontend:
-    build:
-      context: ./frontend
-      dockerfile: Dockerfile.dev
-    container_name: frontend
-    env_file:
-      - .env/.env.dev
-    ports:
-      - "4200:4200"
-    depends_on:
-      - backend
-    networks:
-      - app-network
-    develop:
-      watch:
-        - action: sync
-          path: ./frontend
-          target: /app
-          ignore:
-            - "node_modules/"
+#  frontend:
+#    build:
+#      context: ./frontend
+#      dockerfile: Dockerfile.dev
+#    container_name: frontend
+#    env_file:
+#      - .env/.env.dev
+#    ports:
+#      - "4200:4200"
+#    depends_on:
+#      - backend
+#    networks:
+#      - app-network
+#    develop:
+#      watch:
+#        - action: sync
+#          path: ./frontend
+#          target: /app
+#          ignore:
+#            - "node_modules/"

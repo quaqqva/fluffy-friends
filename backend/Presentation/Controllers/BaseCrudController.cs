@@ -2,10 +2,10 @@ using System.ComponentModel.DataAnnotations;
 using Application.Dtos;
 using Application.Interfaces;
 using Domain.Interfaces;
-using Infrastructure.Database.Interfaces;
+using Domain.Interfaces.Database;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Application.Controllers;
+namespace Presentation.Controllers;
 
 public abstract class BaseCrudController<TEntity, TEntityDto, TCreateDto, TListItemDto, TListFiltersDto>(
     IRepository<TEntity> repository,

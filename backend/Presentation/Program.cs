@@ -1,7 +1,8 @@
 using Application.Extensions;
-using Application.Filters;
-using Application.Middlewares;
+using Infrastructure.CloudStorage.Extensions;
 using Infrastructure.Database.Extensions;
+using Presentation.Filters;
+using Presentation.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,21 +10,14 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var dbConnectionStringTemplate = Environment.GetEnvironmentVariable("ConnectionStrings__DefaultConnection");
+builder.Services.SetupCloudStorageConnection();
 
-if (dbConnectionStringTemplate == null) throw new Exception("Connection string not specified");
-
-var dbPasswordFilePath = Environment.GetEnvironmentVariable("POSTGRES_PASSWORD_FILE");
-
-if (dbPasswordFilePath == null) throw new Exception("POSTGRES_PASSWORD_FILE not specified");
-
-var password = File.ReadAllText(dbPasswordFilePath);
-
-var dbConnectionString = dbConnectionStringTemplate + password;
-
-builder.Services.SetupDatabaseConnection(dbConnectionString);
+builder.Services.SetupDatabaseConnection();
 builder.Services.AddRepositories();
+builder.Services.SetupDbServices();
+
 builder.Services.SetupDtoAdapters();
+builder.Services.SetupEntityServices();
 
 builder.Services.AddControllers(options => { options.Filters.Add<ModelStateValidationFilter>(); });
 builder.Services.AddEndpointsApiExplorer();

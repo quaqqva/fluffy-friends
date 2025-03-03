@@ -21,3 +21,4 @@ C:\Для навигации\Учёба\Университет\8 семак\ПС
 C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\refint\Shared.dll
 C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\Shared.pdb
 C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\ref\Shared.dll
+C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Shared\obj\Debug\net8.0\Shared.sourcelink.json

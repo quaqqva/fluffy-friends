@@ -1,10 +1,10 @@
 using Application.Dtos.ArticleCategory;
 using Application.Interfaces;
 using Domain.Entities;
-using Infrastructure.Database.Interfaces;
+using Domain.Interfaces.Database;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Application.Controllers;
+namespace Presentation.Controllers;
 
 [Route("api/articleCategories")]
 public class ArticleCategoriesController(

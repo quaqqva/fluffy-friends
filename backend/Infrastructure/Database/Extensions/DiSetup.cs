@@ -1,18 +1,23 @@
 using Domain.Entities;
-using Infrastructure.Database.Interfaces;
+using Domain.Interfaces.Database;
 using Infrastructure.Database.Repositories;
+using Infrastructure.Database.Services;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
+using Shared;
 
 namespace Infrastructure.Database.Extensions;
 
 public static class DiSetup
 {
-    public static IServiceCollection SetupDatabaseConnection(this IServiceCollection services,
-        string connectionStringTemplate)
+    public static IServiceCollection SetupDatabaseConnection(this IServiceCollection services)
     {
-        services.AddDbContextPool<FluffyFriendsContext>(opt =>
-            opt.UseNpgsql(connectionStringTemplate));
+        var dbConnectionStringTemplate =
+            EnvironmentReader.ReadEnvironmentVariable("ConnectionStrings__DefaultConnection");
+        var password = EnvironmentReader.ReadFileFromEnvironmentPath("POSTGRES_PASSWORD_FILE");
+        var dbConnectionString = dbConnectionStringTemplate + password;
+
+        services.AddDbContext<FluffyFriendsContext>(options => options.UseNpgsql(dbConnectionString));
         return services;
     }
 
@@ -31,6 +36,12 @@ public static class DiSetup
             services.AddScoped(repositoryType, repositoryImplementation);
         }
 
+        return services;
+    }
+
+    public static IServiceCollection SetupDbServices(this IServiceCollection services)
+    {
+        services.AddScoped<IDbTransactionService, DbTransactionService>();
         return services;
     }
 }

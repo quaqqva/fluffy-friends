@@ -1,5 +1,5 @@
 using System.Linq.Expressions;
 
-namespace Infrastructure.Database.Queries;
+namespace Domain.DatabaseParams;
 
 public record DbCountParams<TEntity>(Expression<Func<TEntity, bool>>? Filter = null);

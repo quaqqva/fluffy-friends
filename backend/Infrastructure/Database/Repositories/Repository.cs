@@ -1,8 +1,8 @@
 using System.Linq.Expressions;
+using Domain.DatabaseParams;
+using Domain.Exceptions;
 using Domain.Interfaces;
-using Infrastructure.Database.Exceptions;
-using Infrastructure.Database.Interfaces;
-using Infrastructure.Database.Queries;
+using Domain.Interfaces.Database;
 using Microsoft.EntityFrameworkCore;
 
 namespace Infrastructure.Database.Repositories;

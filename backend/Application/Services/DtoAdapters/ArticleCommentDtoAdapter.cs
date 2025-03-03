@@ -1,8 +1,8 @@
 using System.Linq.Expressions;
 using Application.Dtos;
 using Application.Dtos.ArticleComment;
+using Domain.DatabaseParams;
 using Domain.Entities;
-using Infrastructure.Database.Queries;
 
 namespace Application.Services.DtoAdapters;
 

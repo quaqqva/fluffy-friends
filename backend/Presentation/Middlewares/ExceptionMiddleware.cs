@@ -1,10 +1,10 @@
 using System.Net;
 using Application.Dtos;
-using Infrastructure.Database.Exceptions;
+using Domain.Exceptions;
 
-namespace Application.Middlewares;
+namespace Presentation.Middlewares;
 
-public class ExceptionMiddleware(RequestDelegate next)
+public class ExceptionMiddleware(RequestDelegate next, IWebHostEnvironment environment)
 {
     public async Task Invoke(HttpContext context)
     {
@@ -15,18 +15,14 @@ public class ExceptionMiddleware(RequestDelegate next)
         catch (Exception exception)
         {
             HttpStatusCode status;
-            var errorMessage = exception.Message;
+            var errorMessage = environment.IsProduction() ? "Internal server error" : exception.Message;
 
             switch (exception)
             {
                 case DbNotFoundException:
                     status = HttpStatusCode.NotFound;
                     break;
-                case ArgumentException:
-                    status = HttpStatusCode.BadRequest;
-                    break;
                 default:
-                    errorMessage = "Internal server error";
                     status = HttpStatusCode.InternalServerError;
                     break;
             }

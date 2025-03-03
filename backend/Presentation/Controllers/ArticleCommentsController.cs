@@ -2,10 +2,10 @@ using Application.Dtos;
 using Application.Dtos.ArticleComment;
 using Application.Interfaces;
 using Domain.Entities;
-using Infrastructure.Database.Interfaces;
+using Domain.Interfaces.Database;
 using Microsoft.AspNetCore.Mvc;
 
-namespace Application.Controllers;
+namespace Presentation.Controllers;
 
 [Route("api/articleComments")]
 public class ArticleCommentsController(

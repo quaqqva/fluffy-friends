@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using Application.Dtos.ArticleCategory;
+using Domain.DatabaseParams;
 using Domain.Entities;
-using Infrastructure.Database.Queries;
 using Shared;
 
 namespace Application.Services.DtoAdapters;

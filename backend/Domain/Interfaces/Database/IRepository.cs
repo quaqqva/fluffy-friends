@@ -1,7 +1,6 @@
-using Domain.Interfaces;
-using Infrastructure.Database.Queries;
+using Domain.DatabaseParams;
 
-namespace Infrastructure.Database.Interfaces;
+namespace Domain.Interfaces.Database;
 
 public interface IRepository<TEntity> where TEntity : class, IIdentifiable
 {

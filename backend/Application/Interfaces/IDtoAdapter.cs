@@ -1,6 +1,6 @@
 using Application.Dtos;
+using Domain.DatabaseParams;
 using Domain.Interfaces;
-using Infrastructure.Database.Queries;
 
 namespace Application.Interfaces;
 

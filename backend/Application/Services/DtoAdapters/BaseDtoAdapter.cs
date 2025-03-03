@@ -1,8 +1,8 @@
 using System.Linq.Expressions;
 using Application.Dtos;
 using Application.Interfaces;
+using Domain.DatabaseParams;
 using Domain.Interfaces;
-using Infrastructure.Database.Queries;
 using Shared;
 
 namespace Application.Services.DtoAdapters;

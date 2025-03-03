@@ -1,7 +1,7 @@
 using System.Linq.Expressions;
 using Domain.Interfaces;
 
-namespace Infrastructure.Database.Queries;
+namespace Domain.DatabaseParams;
 
 public record DbListParams<TEntity, TSelectProjection>(
     int Limit,

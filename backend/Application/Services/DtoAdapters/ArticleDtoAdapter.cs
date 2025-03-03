@@ -3,8 +3,8 @@ using Application.Dtos;
 using Application.Dtos.Article;
 using Application.Dtos.ArticleComment;
 using Application.Interfaces;
+using Domain.DatabaseParams;
 using Domain.Entities;
-using Infrastructure.Database.Queries;
 using Shared;
 
 namespace Application.Services.DtoAdapters;
@@ -13,7 +13,8 @@ public class ArticleDtoAdapter(
     IDtoAdapter<ArticleComment, ArticleCommentDto, ArticleCommentCreateDto, ArticleCommentDto, ListFiltersDto>
         commentsAdapter
 ) : BaseDtoAdapter<Article, ArticleDto, ArticleCreateDto, ArticleListItemDto,
-    ArticleListFiltersDto>
+        ArticleListFiltersDto>,
+    IDtoAdapter<Article, ArticleDto, ArticleCreateDto, ArticleListItemDto, ArticleListFiltersDto>
 {
     protected override Expression<Func<Article, ArticleListItemDto>> ListItemSelector =>
         article => new ArticleListItemDto(

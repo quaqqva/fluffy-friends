@@ -4,7 +4,9 @@ using Application.Dtos.ArticleCategory;
 using Application.Dtos.ArticleComment;
 using Application.Interfaces;
 using Application.Services.DtoAdapters;
+using Application.Services.FileOperations;
 using Domain.Entities;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace Application.Extensions;
 
@@ -27,5 +29,11 @@ public static class DiSetup
                 ArticleCategoryListFiltersDto>,
             ArticleCategoryDtoAdapter
         >();
+    }
+
+    public static void SetupEntityServices(this IServiceCollection services)
+    {
+        services.AddScoped<FileUnitOfWorkService>();
+        services.AddScoped<FileService>();
     }
 }
