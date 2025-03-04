@@ -8,7 +8,7 @@ namespace Infrastructure.CloudStorage.Extensions;
 
 public static class DiSetup
 {
-    public static IServiceCollection SetupCloudStorageConnection(this IServiceCollection services)
+    public static void SetupCloudStorageConnection(this IServiceCollection services)
     {
         var minioUser = EnvironmentReader.ReadFileFromEnvironmentPath("MINIO_ROOT_USER_FILE_PATH");
         var minioPassword = EnvironmentReader.ReadFileFromEnvironmentPath("MINIO_ROOT_PASSWORD_FILE_PATH");
@@ -26,7 +26,5 @@ public static class DiSetup
         services.AddSingleton<ICloudStorageEnvironmentService>(minioEnvironment);
 
         services.AddScoped<ICloudStorageService, MinioStorageService>();
-
-        return services;
     }
 }

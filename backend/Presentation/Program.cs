@@ -1,4 +1,5 @@
 using Application.Extensions;
+using Infrastructure.Cache.Extensions;
 using Infrastructure.CloudStorage.Extensions;
 using Infrastructure.Database.Extensions;
 using Presentation.Filters;
@@ -16,8 +17,11 @@ builder.Services.SetupDatabaseConnection();
 builder.Services.AddRepositories();
 builder.Services.SetupDbServices();
 
+builder.Services.SetupDistributedCache();
+builder.Services.SetupCacheServices();
+
 builder.Services.SetupDtoAdapters();
-builder.Services.SetupEntityServices();
+builder.Services.SetupUtilityServices();
 
 builder.Services.AddControllers(options => { options.Filters.Add<ModelStateValidationFilter>(); }).AddJsonOptions(
     options => { options.JsonSerializerOptions.AllowTrailingCommas = true; });

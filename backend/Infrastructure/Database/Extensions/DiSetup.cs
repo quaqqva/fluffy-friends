@@ -10,7 +10,7 @@ namespace Infrastructure.Database.Extensions;
 
 public static class DiSetup
 {
-    public static IServiceCollection SetupDatabaseConnection(this IServiceCollection services)
+    public static void SetupDatabaseConnection(this IServiceCollection services)
     {
         var dbConnectionStringTemplate =
             EnvironmentReader.ReadEnvironmentVariable("ConnectionStrings__DefaultConnection");
@@ -18,10 +18,9 @@ public static class DiSetup
         var dbConnectionString = dbConnectionStringTemplate + password;
 
         services.AddDbContext<FluffyFriendsContext>(options => options.UseNpgsql(dbConnectionString));
-        return services;
     }
 
-    public static IServiceCollection AddRepositories(this IServiceCollection services)
+    public static void AddRepositories(this IServiceCollection services)
     {
         var assembly = typeof(Article).Assembly;
         var entityTypes = assembly.GetTypes()
@@ -35,13 +34,10 @@ public static class DiSetup
 
             services.AddScoped(repositoryType, repositoryImplementation);
         }
-
-        return services;
     }
 
-    public static IServiceCollection SetupDbServices(this IServiceCollection services)
+    public static void SetupDbServices(this IServiceCollection services)
     {
         services.AddScoped<IDbTransactionService, DbTransactionService>();
-        return services;
     }
 }

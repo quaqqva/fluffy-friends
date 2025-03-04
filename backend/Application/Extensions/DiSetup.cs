@@ -3,6 +3,7 @@ using Application.Dtos.Article;
 using Application.Dtos.ArticleCategory;
 using Application.Dtos.ArticleComment;
 using Application.Interfaces;
+using Application.Services;
 using Application.Services.DtoAdapters;
 using Application.Services.FileOperations;
 using Domain.Entities;
@@ -31,9 +32,18 @@ public static class DiSetup
         >();
     }
 
-    public static void SetupEntityServices(this IServiceCollection services)
+    public static void SetupCacheServices(this IServiceCollection services)
+    {
+        services.AddScoped<EntityCacheService<Article, ArticleDto, ArticleListItemDto>>();
+        services.AddScoped<EntityCacheService<ArticleComment, ArticleCommentDto, ArticleCommentDto>>();
+        services.AddScoped<EntityCacheService<ArticleCategory, ArticleCategoryDto, ArticleCategoryDto>>();
+    }
+
+    public static void SetupUtilityServices(this IServiceCollection services)
     {
         services.AddScoped<FileUnitOfWorkService>();
         services.AddScoped<FileService>();
+
+        services.AddScoped<CacheService>();
     }
 }
