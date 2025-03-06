@@ -8,7 +8,24 @@
       "schematics": {
         "@schematics/angular:component": {
           "style": "scss",
-          "changeDetection": "OnPush"
+          "skipTests": true,
+          "changeDetection": "OnPush",
+          "standalone": true
+        },
+        "@schematics/angular:service": {
+          "skipTests": true
+        },
+        "@schematics/angular:directive": {
+          "skipTests": true
+        },
+        "@schematics/angular:guard": {
+          "skipTests": true
+        },
+        "@schematics/angular:pipe": {
+          "skipTests": true
+        },
+        "@schematics/angular:interceptor": {
+          "skipTests": true
         },
         "@schematics/angular:application": {
           "skipTests": true
@@ -36,7 +53,7 @@
               }
             ],
             "styles": [
-              "src/styles.scss"
+              "src/global-styles/styles.scss"
             ],
             "scripts": [],
             "server": "src/main.server.ts",
@@ -80,6 +97,13 @@
             }
           },
           "defaultConfiguration": "development"
+        },
+        "server": {
+          "builder": "@angular-devkit/build-angular:server",
+          "options": {
+            "outputPath": "dist/my-angular-app/server",
+            "main": "server.ts"
+          }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n"

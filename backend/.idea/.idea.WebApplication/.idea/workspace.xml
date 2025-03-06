@@ -12,77 +12,67 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Application/Dtos/FileResponseDto.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Services/FileOperations/FileService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Application/Services/FileOperations/FileUnitOfWorkService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/File.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/FileModules.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Interfaces/CloudStorage/ICloudStorageEnvironmentService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Interfaces/CloudStorage/ICloudStorageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Interfaces/Database/IDbTransactionService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/CloudStorage/Extensions/DiSetup.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/CloudStorage/Services/MinioStorageEnvironmentService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/CloudStorage/Services/MinioStorageService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Database/FluffyFriendsContextFactory.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Infrastructure/Database/Services/DbTransactionService.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Presentation/Controllers/FileController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared/EnvironmentReader.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Shared/MimeTypeGuesser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.env/.env.dev" beforeDir="false" afterPath="$PROJECT_DIR$/../.env/.env.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/../.gitignore" afterDir="false" />
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="frontend start">
+      <change afterPath="$PROJECT_DIR$/../frontend/.husky/pre-commit" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/components/footer/footer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/components/footer/footer.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/components/footer/footer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/components/header/header.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/components/header/header.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/components/header/header.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/models/routing/app-route-suffixes.enums.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/models/routing/app-routes.enum.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/article.routes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/assets/img/main-cat.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/environments/environment.prod.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/environments/environment.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/src/global-styles/styles.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Application.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Presentation.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Controllers/ArticleCategoriesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Controllers/ArticleCategoriesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Controllers/ArticleCommentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Controllers/ArticleCommentsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Controllers/ArticlesController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Controllers/ArticlesController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Controllers/BaseCrudController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Controllers/BaseCrudController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Extensions/DiSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Extensions/DiSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Filters/ModelStateValidationFilter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Filters/ModelStateValidationFilter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Interfaces/IDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Interfaces/IDtoAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Middlewares/ExceptionMiddleware.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Middlewares/ExceptionMiddleware.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Properties/launchSettings.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCategoryDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCategoryDtoAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCommentDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleCommentDtoAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/BaseDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/BaseDtoAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile.dev" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Exceptions/DbNotFoundException.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Exceptions/DbNotFoundException.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Extensions/DiSetup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Extensions/DiSetup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/FluffyFriendsContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/FluffyFriendsContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Interfaces/IRepository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Interfaces/Database/IRepository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Migrations/FluffyFriendsContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Migrations/FluffyFriendsContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Queries/DbCountParams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/DatabaseParams/DbCountParams.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Queries/DbListParams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/DatabaseParams/DbListParams.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Queries/DbSelectParams.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/DatabaseParams/DbSelectParams.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Repositories/Repository.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Repositories/Repository.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Infrastructure.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/Shared.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/Shared.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.assets.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/ref/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/ref/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/refint/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/refint/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Shared.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Shared.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/project.assets.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/project.nuget.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApplication.sln" beforeDir="false" afterPath="$PROJECT_DIR$/WebApplication.sln" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scripts/docker-migrate.sh" beforeDir="false" afterPath="$PROJECT_DIR$/../scripts/docker-migrate.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/Dockerfile.prod" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/Dockerfile.prod" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/eslint.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/eslint.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.config.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.config.server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.routes.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.routes.server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.routes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.routes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/main.server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/main.server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/main.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/main.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/server.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/styles.scss" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -105,10 +95,14 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/009e1ccafde4086ea52999e878f6e7aa5a7c4ccf/src/Middleware/Spa/SpaServices.Extensions/src/AngularCli/AngularCliMiddlewareExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/DefaultBuilder/src/WebApplicationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Enum.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/505626f37015de7240e52b3d89ac3443dc1563261d395271f2714c7a4389671e/ISpaPrerenderingService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Application/Services/FileOperations/FileUnitOfWorkService.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Presentation/Program.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Presentation/Services/FileUnitOfWorkService.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.deps.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/frontend/angular.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -129,6 +123,7 @@
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;.NET Launch Settings Profile.Application: IIS Express.executor&quot;: &quot;Run&quot;,
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
     &quot;ATTACH_DIALOG_SELECTED_CONTAINER&quot;: &quot;backend&quot;,
     &quot;Docker.FullStack Dev.executor&quot;: &quot;Run&quot;,
     &quot;Docker.ЛР 3: Compose Deployment.executor&quot;: &quot;Run&quot;,
@@ -138,14 +133,19 @@
     &quot;com.codeium.enabled&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
     &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.Run front.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Для навигации\\Учёба\\Университет\\8 семак\\ПСП\\fluffy-friends\\frontend\\node_modules\\prettier&quot;,
     &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\JetBrains Rider 2023.3.4\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -159,7 +159,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="Shell Script.Docker dev">
+  <component name="RunManager" selected="npm.Run front">
     <configuration name="Application: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Presentation/Presentation.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -306,31 +306,6 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
-    <configuration name="FullStack Dev" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
-      <deployment type="docker-compose.yml">
-        <settings>
-          <option name="envFilePath" value="" />
-          <option name="envVars">
-            <list>
-              <DockerEnvVarImpl>
-                <option name="name" value="ENV" />
-                <option name="value" value="dev" />
-              </DockerEnvVarImpl>
-            </list>
-          </option>
-          <option name="commandLineOptions" value="--build" />
-          <option name="secondarySourceFiles">
-            <list>
-              <option value="../docker-compose.dev.yml" />
-            </list>
-          </option>
-          <option name="sourceFilePath" value="../docker-compose.yml" />
-          <option name="upDetach" value="false" />
-        </settings>
-      </deployment>
-      <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
-      <method v="2" />
-    </configuration>
     <configuration name="FullStack Prod" type="docker-deploy" factoryName="docker-compose.yml" server-name="Docker">
       <deployment type="docker-compose.yml">
         <settings>
@@ -353,6 +328,13 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration name="Run front" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/../frontend/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue=".NET Launch Settings Profile.WebApplication1: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.WebApplication1: http" />
@@ -360,10 +342,10 @@
       <item itemvalue=".NET Launch Settings Profile.Application: http" />
       <item itemvalue=".NET Launch Settings Profile.Application: https" />
       <item itemvalue=".NET Launch Settings Profile.Application: IIS Express" />
-      <item itemvalue="Docker.FullStack Dev" />
       <item itemvalue="Docker.FullStack Prod" />
       <item itemvalue="Docker.ЛР 3: Compose Deployment" />
       <item itemvalue="Multi-Launch.Multi-Launch: WebApplication" />
+      <item itemvalue="npm.Run front" />
       <item itemvalue="Shell Script.Docker dev" />
       <item itemvalue="Shell Script.Docker migrate" />
     </list>
@@ -394,6 +376,11 @@
       <workItem from="1740933340902" duration="13647000" />
       <workItem from="1741012226489" duration="4141000" />
       <workItem from="1741036392263" duration="3994000" />
+      <workItem from="1741250686029" duration="413000" />
+      <workItem from="1741282589425" duration="672000" />
+      <workItem from="1741283283900" duration="3629000" />
+      <workItem from="1741287032015" duration="625000" />
+      <workItem from="1741297017183" duration="1259000" />
     </task>
     <task id="LOCAL-00001" summary="initial (controllers, migration, template, docker)">
       <option name="closed" value="true" />
@@ -471,6 +458,7 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="initial (controllers, migration, template, docker)" />
     <MESSAGE value="ef migrations + docker fix" />
@@ -479,7 +467,8 @@
     <MESSAGE value=":id get selects refactor" />
     <MESSAGE value="remove repository included properties filter" />
     <MESSAGE value="rename di setup files" />
-    <option name="LAST_COMMIT_MESSAGE" value="rename di setup files" />
+    <MESSAGE value="frontend start" />
+    <option name="LAST_COMMIT_MESSAGE" value="frontend start" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
@@ -487,5 +476,9 @@
         <watch expression="this.&lt;listParams&gt;5__1.OrderBy" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>
