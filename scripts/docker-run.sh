@@ -6,7 +6,7 @@ then
 elif [ "$1" == "prod" ]
 then
     export ENV=prod
-    docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build
+    docker compose -f docker-compose.yml -f docker-compose.prod.yml up --build -d
 else
     echo "Invalid argument. Please enter 'dev' or 'prod'."
 fi
