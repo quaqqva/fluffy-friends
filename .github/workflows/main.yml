@@ -22,4 +22,5 @@ jobs:
             git checkout main
             git pull https://quaqqva:${{ secrets.GITHUB_TOKEN }}@github.com/quaqqva/fluffy-friends.git main
             sudo bash ./scripts/docker-run.sh prod
+            sudo bash ./scripts/docker-migrate.sh
 
