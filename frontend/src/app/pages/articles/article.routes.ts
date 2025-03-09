@@ -1,4 +1,4 @@
-import { AppRouteSuffixes } from '../../core/models/routing/app-route-suffixes.enums';
+import { AppRouteSuffixes } from '../../core/models/routing/app-route-suffixes.enum';
 import { Routes } from '@angular/router';
 
 export const articleRoutes: Routes = [
