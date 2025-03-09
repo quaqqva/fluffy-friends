@@ -3,6 +3,20 @@ version: "3.8"
 services:
   backend:
     restart: always
+  
+  db-migrate:
+    depends_on:
+      - db
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.migrate
+    container_name: db-migrate
+    env_file:
+      - .env/.env.prod
+    secrets:
+      - postgres_password
+    networks:
+      - app-network
 
 #  frontend:
 #    build:
