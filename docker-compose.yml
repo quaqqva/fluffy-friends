@@ -48,6 +48,9 @@ services:
     secrets:
       - minio_user
       - minio_password
+    depends_on:
+      create-buckets:
+        condition: service_completed_successfully
     command: server --console-address ":9001" /data
     networks:
       - app-network
