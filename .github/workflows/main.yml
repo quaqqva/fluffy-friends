@@ -24,7 +24,7 @@ jobs:
               git pull origin main
             else
               echo "📂 Папка не существует, клонирую репозиторий..."
-              git clone -b main https://github.com/quaqqva/fluffy-friends.git /var/www/flufy-friends
+              git clone -b main git clone https://quaqqva:${GITHUB_TOKEN}@github.com/quaqqva/fluffy-friends.git /var/www/flufy-friends /var/www/flufy-friends
               cd /var/www/flufy-friends
             fi
             sudo bash ./scripts/docker-run.sh prod
