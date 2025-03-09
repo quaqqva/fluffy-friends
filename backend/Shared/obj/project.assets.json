@@ -1,11 +1,37 @@
 {
   "version": 3,
   "targets": {
-    "net8.0": {}
+    "net8.0": {
+      "MimeTypesMap/1.0.9": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/MimeTypesMap.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/MimeTypesMap.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MimeTypesMap/1.0.9": {
+      "sha512": "M0TuSCwL1a8QV0VKw8ysY4AIs6v/Aor3N7GXQeqgNlAvqjx9Kj9KxNd09Pg5RzpY1tCOU8mkrfYBi1Lxwj8quQ==",
+      "type": "package",
+      "path": "mimetypesmap/1.0.9",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "README.md",
+        "lib/netstandard2.0/MimeTypesMap.dll",
+        "mimetypesmap.1.0.9.nupkg.sha512",
+        "mimetypesmap.nuspec"
+      ]
+    }
+  },
   "projectFileDependencyGroups": {
-    "net8.0": []
+    "net8.0": [
+      "MimeTypesMap >= 1.0.9"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\sanek\\.nuget\\packages\\": {}
@@ -43,6 +69,12 @@
     "frameworks": {
       "net8.0": {
         "targetAlias": "net8.0",
+        "dependencies": {
+          "MimeTypesMap": {
+            "target": "Package",
+            "version": "[1.0.9, )"
+          }
+        },
         "imports": [
           "net461",
           "net462",

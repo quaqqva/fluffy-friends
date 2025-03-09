@@ -5,17 +5,94 @@ services:
     image: postgres:16
     container_name: db
     restart: always
+    ports:
+      - "127.0.0.1:5432:5432"
     env_file:
       - .env/.env.${ENV}
     secrets:
       - postgres_password
     networks:
       - app-network
+  
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.${ENV}
+    container_name: backend
+    env_file:
+      - .env/.env.${ENV}
+    ports:
+      - 8080:8080
+    secrets:
+      - postgres_password
+      - minio_user
+      - minio_password
+    depends_on:
+      - db
+      - minio
+      - redis
+    networks:
+      - app-network
+  
+  minio:
+    image: minio/minio:latest
+    container_name: minio
+    restart: always
+    env_file:
+      - .env/.env.${ENV}
+    ports:
+      - "9000:9000"
+      - "9001:9001"
+    volumes:
+      - minio-data:/data
+    secrets:
+      - minio_user
+      - minio_password
+    command: server --console-address ":9001" /data
+    networks:
+      - app-network
+  
+  create-buckets:
+    image: minio/mc
+    depends_on:
+      - minio
+    env_file:
+      - .env/.env.${ENV}
+    entrypoint: [ "/bin/sh", "-c", "sleep 5;
+      mc alias set myminio http://minio:9000 $(cat /run/secrets/minio_user) $(cat /run/secrets/minio_password);
+      mc mb myminio/$${MINIO_BUCKET};
+      mc anonymous set download myminio/$${MINIO_BUCKET};
+      exit 0;" ]
+    secrets:
+      - minio_user
+      - minio_password
+    networks:
+      - app-network
+  
+  redis:
+    image: redis:latest
+    container_name: redis
+    restart: always
+    command: redis-server --appendonly yes
+    ports:
+      - "127.0.0.1:6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-network
 
 secrets:
   postgres_password:
-    file: ./db-password.txt
+    file: ./.env/passwords/db-password.txt
+  minio_user:
+    file: ./.env/passwords/minio-user.txt
+  minio_password:
+    file: ./.env/passwords/minio-password.txt
 
 networks:
   app-network:
     driver: bridge
+
+volumes:
+  minio-data:
+  redis-data:

@@ -1,17 +1,55 @@
 using System.Linq.Expressions;
+using Application.Dtos;
 using Application.Dtos.Article;
+using Application.Dtos.ArticleComment;
 using Application.Interfaces;
-using Application.Services.DtoAdapters;
+using Domain.DatabaseParams;
 using Domain.Entities;
-using Infrastructure.Database.Queries;
+using Domain.Interfaces.CloudStorage;
 using Shared;
 
-namespace Application.Services;
+namespace Application.Services.DtoAdapters;
 
-public class ArticleDtoAdapter : IDtoAdapter<Article, ArticleDto, ArticleCreateDto, ArticleListItemDto,
-    ArticleListFiltersDto>
+public class ArticleDtoAdapter(
+    IDtoAdapter<ArticleComment, ArticleCommentDto, ArticleCommentCreateDto, ArticleCommentDto, ListFiltersDto>
+        commentsAdapter,
+    ICloudStorageEnvironmentService cloudStorageEnvironmentService
+) : BaseDtoAdapter<Article, ArticleDto, ArticleCreateDto, ArticleListItemDto,
+        ArticleListFiltersDto>,
+    IDtoAdapter<Article, ArticleDto, ArticleCreateDto, ArticleListItemDto, ArticleListFiltersDto>
 {
-    public Article ConvertDtoToEntity(ArticleCreateDto articleCreateDto, int id = 0)
+    protected override Expression<Func<Article, ArticleListItemDto>> ListItemSelector =>
+        article => new ArticleListItemDto(
+            article.Id,
+            article.Title,
+            article.PublishedAt,
+            article.Views,
+            article.Comments!.Count,
+            article.MinPrice,
+            article.MaxPrice,
+            cloudStorageEnvironmentService.GetFileUrl(article.Photo!),
+            article.Category!.Name
+        );
+
+    public override DbSelectParams<Article, ArticleDto> DbSelectParams
+    {
+        get
+        {
+            return new DbSelectParams<Article, ArticleDto>(article => new ArticleDto(
+                article.Id,
+                article.Title,
+                article.Content,
+                article.PublishedAt,
+                article.Views,
+                article.MinPrice,
+                article.MaxPrice,
+                article.Category!.Name,
+                cloudStorageEnvironmentService.GetFileUrl(article.Photo!),
+                article.Comments!.AsQueryable().Select(commentsAdapter.DbSelectParams.Select).ToList()));
+        }
+    }
+
+    public override Article ConvertDtoToEntity(ArticleCreateDto articleCreateDto, int id = 0)
     {
         return new Article
         {
@@ -21,53 +59,17 @@ public class ArticleDtoAdapter : IDtoAdapter<Article, ArticleDto, ArticleCreateD
             MinPrice = articleCreateDto.MinPrice,
             MaxPrice = articleCreateDto.MaxPrice,
             CategoryId = articleCreateDto.Category,
-            PublishedAt = DateTime.Now
+            PublishedAt = DateTime.UtcNow,
+            PhotoId = articleCreateDto.PhotoId
         };
     }
 
-    public ArticleDto ConvertToDto(Article category)
-    {
-        var commentAdapter = new ArticleCommentDtoAdapter();
-
-        return new ArticleDto(
-            category.Id,
-            category.Title,
-            category.Content,
-            category.PublishedAt,
-            category.Views,
-            Comments: category.Comments!.Select(articleComment => commentAdapter.ConvertToDto(articleComment)).ToList(),
-            MinPrice: category.MinPrice,
-            MaxPrice: category.MaxPrice,
-            Category: category.Category!.Name);
-    }
-
-    public DbListParams<Article> ConvertToDbListParams(ArticleListFiltersDto filters)
-    {
-        Expression<Func<Article, dynamic>> selector = article => new ArticleListItemDto(
-            article.Id,
-            article.Title,
-            article.PublishedAt,
-            article.Views,
-            article.Comments!.Count,
-            article.MinPrice,
-            article.MaxPrice,
-            article.Category!.Name
-        );
-
-        DbListParams<Article> result = new(
-            selector,
-            CreateFilter(filters),
-            Limit: filters.Limit ?? 10,
-            Offset: filters.Offset ?? 0);
-        return result;
-    }
-
-    private Expression<Func<Article, bool>> CreateFilter(ArticleListFiltersDto filters)
+    protected override Expression<Func<Article, bool>> CreateFilter(ArticleListFiltersDto filters)
     {
         var predicate = PredicateBuilder.True<Article>();
 
         if (!string.IsNullOrEmpty(filters.Title))
-            predicate = predicate.And(article => article.Title.Contains(filters.Title));
+            predicate = predicate.And(article => article.Title.ToLower().Contains(filters.Title.ToLower()));
 
         if (filters.MinPrice.HasValue) predicate = predicate.And(article => article.MinPrice >= filters.MinPrice.Value);
 

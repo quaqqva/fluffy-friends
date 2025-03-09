@@ -14,7 +14,7 @@ public class ArticleComment : IIdentifiable
 
     [Required] public int ArticleId { get; set; }
 
-    public Article? Article { get; set; }
+    [ForeignKey(nameof(ArticleId))] public Article? Article { get; set; }
 
     [Key] public int Id { get; set; }
 }

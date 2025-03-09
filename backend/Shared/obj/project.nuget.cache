@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "4FK/fYhROrTxsum4VVu+uJxR9Z3PNhPwd15tcE5PlAlzj2deiyXaT+40nxEa1x5LTCs+SrRgBk3dOi0af/3p/g==",
+  "dgSpecHash": "zfByfy+GJ28BkJ6yx+Y0NIKlqhZqnSjLX7Bw3g9aZtN+D2ifY3zdE3S6WVT6s17P8bnQwd6sX6PTgUJsTcYMxA==",
   "success": true,
   "projectFilePath": "C:\\Для навигации\\Учёба\\Университет\\8 семак\\ПСП\\fluffy-friends\\backend\\Shared\\Shared.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\sanek\\.nuget\\packages\\mimetypesmap\\1.0.9\\mimetypesmap.1.0.9.nupkg.sha512"
+  ],
   "logs": []
 }

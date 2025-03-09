@@ -20,9 +20,13 @@ public class Article : IIdentifiable
 
     [Required] public int CategoryId { get; set; }
 
-    public ArticleCategory? Category { get; set; }
+    [ForeignKey(nameof(CategoryId))] public ArticleCategory? Category { get; set; }
 
     public ICollection<ArticleComment>? Comments { get; set; }
+
+    [Required] public int PhotoId { get; set; }
+
+    [ForeignKey(nameof(PhotoId))] public File? Photo { get; set; }
 
     [Key] public int Id { get; set; }
 }

@@ -1,24 +1,27 @@
 using System.Linq.Expressions;
 using Application.Dtos.ArticleCategory;
-using Application.Interfaces;
+using Domain.DatabaseParams;
 using Domain.Entities;
-using Infrastructure.Database.Queries;
 using Shared;
 
 namespace Application.Services.DtoAdapters;
 
 public class ArticleCategoryDtoAdapter :
-    IDtoAdapter<ArticleCategory, ArticleCategoryDto, ArticleCategoryCreateDto, ArticleCategoryDto,
+    BaseDtoAdapter<ArticleCategory, ArticleCategoryDto, ArticleCategoryCreateDto, ArticleCategoryDto,
         ArticleCategoryListFiltersDto>
 {
-    public ArticleCategoryDto ConvertToDto(ArticleCategory category)
-    {
-        return new ArticleCategoryDto(
-            category.Id,
-            category.Name);
-    }
+    protected override Expression<Func<ArticleCategory, ArticleCategoryDto>> ListItemSelector => articleCategory =>
+        new ArticleCategoryDto(
+            articleCategory.Id,
+            articleCategory.Name
+        );
 
-    public ArticleCategory ConvertDtoToEntity(ArticleCategoryCreateDto dto, int id = 0)
+    public override DbSelectParams<ArticleCategory, ArticleCategoryDto> DbSelectParams => new(category =>
+        new ArticleCategoryDto(
+            category.Id,
+            category.Name));
+
+    public override ArticleCategory ConvertDtoToEntity(ArticleCategoryCreateDto dto, int id = 0)
     {
         return new ArticleCategory
         {
@@ -27,20 +30,13 @@ public class ArticleCategoryDtoAdapter :
         };
     }
 
-    public DbListParams<ArticleCategory> ConvertToDbListParams(ArticleCategoryListFiltersDto filterDto)
-    {
-        return new DbListParams<ArticleCategory>(
-            Filter: CreateFilter(filterDto),
-            Limit: filterDto.Limit ?? 10,
-            Offset: filterDto.Offset ?? 0);
-    }
-
-    private Expression<Func<ArticleCategory, bool>> CreateFilter(ArticleCategoryListFiltersDto filters)
+    protected override Expression<Func<ArticleCategory, bool>> CreateFilter(ArticleCategoryListFiltersDto filters)
     {
         var predicate = PredicateBuilder.True<ArticleCategory>();
 
         if (!string.IsNullOrEmpty(filters.Name))
-            predicate = predicate.And(articleCategory => articleCategory.Name.Contains(filters.Name));
+            predicate = predicate.And(articleCategory =>
+                articleCategory.Name.ToLower().Contains(filters.Name!.ToLower()));
 
         return predicate;
     }

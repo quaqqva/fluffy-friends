@@ -1,40 +1,39 @@
+using System.Linq.Expressions;
 using Application.Dtos;
 using Application.Dtos.ArticleComment;
-using Application.Interfaces;
+using Domain.DatabaseParams;
 using Domain.Entities;
-using Infrastructure.Database.Queries;
 
 namespace Application.Services.DtoAdapters;
 
 public class ArticleCommentDtoAdapter :
-    IDtoAdapter<ArticleComment, ArticleCommentDto, ArticleCommentCreateDto, ArticleCommentDto, ListFiltersDto>
+    BaseDtoAdapter<ArticleComment, ArticleCommentDto, ArticleCommentCreateDto, ArticleCommentDto, ListFiltersDto>
 {
-    public ArticleCommentDto ConvertToDto(ArticleComment category)
-    {
-        return new ArticleCommentDto(
-            category.Id,
-            category.Author,
-            Content: category.Content,
-            CreatedAt: category.CreatedAt,
-            ArticleId: category.ArticleId
-        );
-    }
+    protected override Expression<Func<ArticleComment, ArticleCommentDto>> ListItemSelector => comment =>
+        new ArticleCommentDto(
+            comment.Id,
+            comment.Author,
+            comment.CreatedAt,
+            comment.Content,
+            comment.ArticleId);
 
-    public ArticleComment ConvertDtoToEntity(ArticleCommentCreateDto createDto, int id = 0)
+    public override DbSelectParams<ArticleComment, ArticleCommentDto> DbSelectParams => new(
+        comment => new ArticleCommentDto(
+            comment.Id,
+            comment.Author,
+            comment.CreatedAt,
+            comment.Content,
+            comment.ArticleId
+        ));
+
+    public override ArticleComment ConvertDtoToEntity(ArticleCommentCreateDto createDto, int id = 0)
     {
         return new ArticleComment
         {
             Author = createDto.Author,
             Content = createDto.Content,
             ArticleId = createDto.ArticleId,
-            CreatedAt = DateTime.Now
+            CreatedAt = DateTime.UtcNow
         };
-    }
-
-    public DbListParams<ArticleComment> ConvertToDbListParams(ListFiltersDto filterDto)
-    {
-        return new DbListParams<ArticleComment>(
-            Limit: filterDto.Limit ?? 10,
-            Offset: filterDto.Offset ?? 0);
     }
 }

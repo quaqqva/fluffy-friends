@@ -1,14 +1,18 @@
+using Application.Dtos;
+using Domain.DatabaseParams;
 using Domain.Interfaces;
-using Infrastructure.Database.Queries;
 
 namespace Application.Interfaces;
 
-public interface IDtoAdapter<TEntity, out TEntityDto, in TCreateDto, TListItemDto, in TListFiltersDto>
+public interface IDtoAdapter<TEntity, TEntityDto, in TCreateDto, TListItemDto, in TListFiltersDto>
     where TEntity : class, IIdentifiable
+    where TListFiltersDto : ListFiltersDto
 {
-    TEntityDto ConvertToDto(TEntity category);
+    DbSelectParams<TEntity, TEntityDto> DbSelectParams { get; }
 
     TEntity ConvertDtoToEntity(TCreateDto dto, int id = 0);
 
-    DbListParams<TEntity> ConvertToDbListParams(TListFiltersDto filterDto);
+    DbCountParams<TEntity> ConvertToDbCountParams(TListFiltersDto? filtersDto);
+
+    DbListParams<TEntity, TListItemDto> ConvertToDbListParams(TListFiltersDto? filterDto);
 }
