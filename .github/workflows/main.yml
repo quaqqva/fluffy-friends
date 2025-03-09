@@ -17,16 +17,10 @@ jobs:
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            if [ -d "/var/www/flufy-friends" ]; then
-              echo "📂 Папка существует, обновляю репозиторий..."
-              cd /var/www/flufy-friends
-              git checkout main
-              git pull origin main
-            else
-              echo "📂 Папка не существует, клонирую репозиторий..."
-              git clone -b main https://quaqqva:${{ secrets.GITHUB_TOKEN }}@github.com/quaqqva/fluffy-friends.git /var/www/flufy-friends
-              cd /var/www/flufy-friends
-            fi
+            set -e
+            cd /var/www/flufy-friends
+            git checkout main
+            git pull https://quaqqva:${{ secrets.GITHUB_TOKEN }}@github.com/quaqqva/fluffy-friends.git main
             sudo bash ./scripts/docker-run.sh prod
             sudo bash ./scripts/docker-migrate.sh
 
