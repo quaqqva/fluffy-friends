@@ -2,6 +2,9 @@ version: "3.8"
 
 services:
   backend:
+    depends_on:
+      db-migrate:
+        condition: service_completed_successfully
     restart: always
   
   db-migrate:
