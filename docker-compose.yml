@@ -41,7 +41,7 @@ services:
     env_file:
       - .env/.env.${ENV}
     ports:
-      - "9000:9000"
+      - "9002:9000"
       - "9001:9001"
     volumes:
       - minio-data:/data
