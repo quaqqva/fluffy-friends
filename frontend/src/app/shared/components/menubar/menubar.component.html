@@ -1,0 +1,17 @@
+<p-menubar [model]="$any(items)">
+  <ng-template #item let-item>
+    <a
+      [routerLink]="item.routerLink"
+      class="menubar-item cursor-pointer"
+      pRipple
+    >
+      @if (item.icon) {
+        <fa-icon [icon]="item.icon"></fa-icon>
+      }
+      <span>{{ item.label }}</span>
+      @if (item.items) {
+        <fa-icon [icon]="faAngleDown"></fa-icon>
+      }
+    </a>
+  </ng-template>
+</p-menubar>

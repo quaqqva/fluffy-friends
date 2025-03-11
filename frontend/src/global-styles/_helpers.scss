@@ -1,0 +1,19 @@
+@use './variables';
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.main-with-header-offset {
+  padding-top: variables.$headerHeight;
+}
+
+.hover-underline {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
