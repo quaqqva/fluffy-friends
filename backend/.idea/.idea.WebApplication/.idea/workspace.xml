@@ -15,11 +15,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="add mockups">
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="add not found page">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/models/api/articles/article-list-filters.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/models/api/articles/article-list-filters.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/api/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/api/api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article-comment-create/article-comment-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article-comment-create/article-comment-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -403,7 +413,8 @@
       <workItem from="1740752150153" duration="3395000" />
       <workItem from="1741561020710" duration="242000" />
       <workItem from="1741693614761" duration="48000" />
-      <workItem from="1741724240080" duration="37262000" />
+      <workItem from="1741724240080" duration="40464000" />
+      <workItem from="1741815114227" duration="1827000" />
     </task>
     <task id="LOCAL-00001" summary="add migration container">
       <option name="closed" value="true" />
@@ -477,7 +488,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741811193655</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add not found page">
+      <option name="closed" value="true" />
+      <created>1741811536773</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1741811536773</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -507,7 +526,8 @@
     <MESSAGE value="article create" />
     <MESSAGE value="article page" />
     <MESSAGE value="add mockups" />
-    <option name="LAST_COMMIT_MESSAGE" value="add mockups" />
+    <MESSAGE value="add not found page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add not found page" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

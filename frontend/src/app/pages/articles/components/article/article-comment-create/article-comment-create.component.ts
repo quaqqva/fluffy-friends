@@ -10,7 +10,6 @@ import { ButtonComponent } from '../../../../../shared/components/button/button.
 import { ButtonTypes } from '../../../../../shared/components/button/models/button-types.enum';
 import { TextareaComponent } from '../../../../../shared/components/textarea/textarea.component';
 import { InputComponent } from '../../../../../shared/components/input/input.component';
-import { FloatLabelVariants } from '../../../../../shared/models/float-label-variants.enum';
 
 @Component({
   selector: 'app-article-comment-create',
@@ -28,7 +27,6 @@ import { FloatLabelVariants } from '../../../../../shared/models/float-label-var
 export class ArticleCommentCreateComponent {
   public form: FormGroup<ArticleCommentCreateForm>;
   protected readonly ButtonTypes = ButtonTypes;
-  protected readonly FloatLabelVariants = FloatLabelVariants;
 
   public constructor(fb: FormBuilder) {
     this.form = fb.nonNullable.group({

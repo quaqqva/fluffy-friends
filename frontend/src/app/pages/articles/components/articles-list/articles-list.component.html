@@ -4,16 +4,20 @@
 
     <app-article-list-filters></app-article-list-filters>
 
-    <div class="grid padding-top-24 padding-bottom-24">
-      @for (article of articles; track article.id) {
-        <div class="col w-33">
-          <app-article-card [article]="article"></app-article-card>
-        </div>
-      }
-    </div>
+    @if (isLoading()) {
+      <app-preloader></app-preloader>
+    } @else {
+      <div class="grid padding-top-24 padding-bottom-24">
+        @for (article of articles(); track article.id) {
+          <div class="col w-33">
+            <app-article-card [article]="article"></app-article-card>
+          </div>
+        }
+      </div>
 
-    <div class="load-more-button">
-      <app-button [icon]="faPlus">Показать ещё</app-button>
-    </div>
+      <div class="load-more-button">
+        <app-button [icon]="faPlus">Показать ещё</app-button>
+      </div>
+    }
   </div>
 </div>

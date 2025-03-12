@@ -9,7 +9,7 @@ import {
 } from '@angular/platform-browser';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { appTheme } from './app.theme';
-import { provideHttpClient } from '@angular/common/http';
+import { provideHttpClient, withFetch } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -22,6 +22,6 @@ export const appConfig: ApplicationConfig = {
         preset: appTheme,
       },
     }),
-    provideHttpClient(),
+    provideHttpClient(withFetch()),
   ],
 };

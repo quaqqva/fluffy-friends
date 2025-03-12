@@ -59,34 +59,38 @@
 
   <div class="articles-section">
     <p class="h2 margin-bottom-12 text-align-center">Последние статьи</p>
-    <div class="articles-section__carousel-wrapper">
-      <app-button
-        (click)="carousel.step(1)"
-        [disabled]="carousel.isBackwardNavDisabled()"
-        [iconOnly]="true"
-        [icon]="faChevronLeft"
-      ></app-button>
-      <p-carousel
-        #carousel
-        [circular]="false"
-        [numScroll]="1"
-        [numVisible]="3"
-        [showNavigators]="false"
-        [value]="articles"
-        class="articles-section__carousel"
-      >
-        <ng-template #item let-article>
-          <div class="articles-section__article-wrapper">
-            <app-article-card [article]="article"></app-article-card>
-          </div>
-        </ng-template>
-      </p-carousel>
-      <app-button
-        (click)="carousel.step(-1)"
-        [disabled]="carousel.isForwardNavDisabled()"
-        [iconOnly]="true"
-        [icon]="faChevronRight"
-      ></app-button>
-    </div>
+    @if (isLoading()) {
+      <app-preloader></app-preloader>
+    } @else {
+      <div class="articles-section__carousel-wrapper">
+        <app-button
+          (click)="carousel.step(1)"
+          [disabled]="carousel.isBackwardNavDisabled()"
+          [iconOnly]="true"
+          [icon]="faChevronLeft"
+        ></app-button>
+        <p-carousel
+          #carousel
+          [circular]="false"
+          [numScroll]="1"
+          [numVisible]="3"
+          [showNavigators]="false"
+          [value]="lastArticles()"
+          class="articles-section__carousel"
+        >
+          <ng-template #item let-article>
+            <div class="articles-section__article-wrapper">
+              <app-article-card [article]="article"></app-article-card>
+            </div>
+          </ng-template>
+        </p-carousel>
+        <app-button
+          (click)="carousel.step(-1)"
+          [disabled]="carousel.isForwardNavDisabled()"
+          [iconOnly]="true"
+          [icon]="faChevronRight"
+        ></app-button>
+      </div>
+    }
   </div>
 </div>

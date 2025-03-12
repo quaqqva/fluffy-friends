@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { EMPTY, Observable } from 'rxjs';
+import { EMPTY, Observable, take } from 'rxjs';
 import { environment } from '../../../../environments/environment';
 import { ApiRequestData } from '../../models/api/api-request-data.interface';
 
@@ -24,7 +24,9 @@ export class ApiService {
       }),
     };
 
-    return this.http.post<T>(this.apiUrl + data.path, data.body, httpOptions);
+    return this.http
+      .post<T>(this.apiUrl + data.path, data.body, httpOptions)
+      .pipe(take(1));
   }
 
   get<T>(data: ApiRequestData<unknown, T>): Observable<T> {
@@ -32,7 +34,7 @@ export class ApiService {
       return data.mockupData || EMPTY;
     }
 
-    return this.http.get<T>(this.apiUrl + data.path);
+    return this.http.get<T>(this.apiUrl + data.path).pipe(take(1));
   }
 
   put<T = never>(data: ApiRequestData): Observable<T> {
@@ -46,7 +48,9 @@ export class ApiService {
       }),
     };
 
-    return this.http.put<T>(this.apiUrl + data.path, data.body, httpOptions);
+    return this.http
+      .put<T>(this.apiUrl + data.path, data.body, httpOptions)
+      .pipe(take(1));
   }
 
   delete<T = never>(data: ApiRequestData): Observable<T> {
@@ -54,6 +58,6 @@ export class ApiService {
       return data.mockupData || EMPTY;
     }
 
-    return this.http.delete<T>(this.apiUrl + data.path);
+    return this.http.delete<T>(this.apiUrl + data.path).pipe(take(1));
   }
 }
