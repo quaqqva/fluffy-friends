@@ -6,6 +6,8 @@ import { ArticleListFilters } from '../../models/api/articles/article-list-filte
 import { ApiService } from './api.service';
 import { ListResponse } from '../../models/api/list-response.interface';
 import { CreateArticleRequest } from '../../models/api/articles/create-article-request.interface';
+import { ArticlesListMockup } from '../../mockups/articles/articles-list.mockup';
+import { ArticleInfoMockup } from '../../mockups/articles/article-info.mockup';
 
 @Injectable({
   providedIn: 'root',
@@ -16,18 +18,10 @@ export class ArticlesApiService extends EntityApiService<
   ArticleListFilters,
   ArticleListItem
 > {
-  protected listMockup: ListResponse<ArticleListItem> = { count: 0, items: [] };
+  protected listMockup: ListResponse<ArticleListItem> =
+    ArticlesListMockup.response;
 
-  protected infoMockup: Article = {
-    id: 0,
-    title: '',
-    content: '',
-    minPrice: 0,
-    maxPrice: 0,
-    photoUrl: '',
-    category: '',
-    comments: [],
-  };
+  protected infoMockup: Article = ArticleInfoMockup.response;
 
   protected apiUrl = 'articles';
 

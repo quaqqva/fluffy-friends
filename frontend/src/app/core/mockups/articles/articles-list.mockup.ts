@@ -1,5 +1,5 @@
 export class ArticlesListMockup {
-  static list = {
+  static response = {
     count: 4,
     items: [
       {

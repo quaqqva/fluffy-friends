@@ -4,6 +4,8 @@ import { ArticleComment } from '../../models/api/article-comments/article-commen
 import { CreateArticleCommentRequest } from '../../models/api/article-comments/create-article-comment-request.interface';
 import { ListResponse } from '../../models/api/list-response.interface';
 import { ApiService } from './api.service';
+import { ArticleCommentInfoMockup } from '../../mockups/article-comments/article-comment-info.mockup';
+import { ArticleCommentsListMockup } from '../../mockups/article-comments/article-comments-list.mockup';
 
 @Injectable({
   providedIn: 'root',
@@ -12,17 +14,12 @@ export class ArticleCommentsApiService extends EntityApiService<
   ArticleComment,
   CreateArticleCommentRequest
 > {
-  protected infoMockup: ArticleComment = {
-    id: 0,
-    createdAt: '',
-    author: '',
-    articleId: 0,
-    content: '',
-  };
+  protected infoMockup: ArticleComment = ArticleCommentInfoMockup.response;
 
   protected apiUrl = 'articleComments';
 
-  protected listMockup: ListResponse<ArticleComment> = { count: 0, items: [] };
+  protected listMockup: ListResponse<ArticleComment> =
+    ArticleCommentsListMockup.response;
 
   public constructor(api: ApiService) {
     super(api);

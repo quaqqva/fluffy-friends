@@ -3,7 +3,7 @@ import { ArticleListItem } from '../../../../core/models/api/articles/article-li
 import { ArticlesListMockup } from '../../../../core/mockups/articles/articles-list.mockup';
 import { ArticleCardComponent } from '../article-card/article-card.component';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { faPlus, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { InputNumber } from 'primeng/inputnumber';
 import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
@@ -35,15 +35,8 @@ import { ButtonComponent } from '../../../../shared/components/button/button.com
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ArticlesListComponent {
-  public readonly articles: ArticleListItem[] = ArticlesListMockup.list.items;
+  public readonly articles: ArticleListItem[] =
+    ArticlesListMockup.response.items;
 
-  sortOptions = [
-    { label: 'Новизне', value: 'new' },
-    { label: 'Популярности', value: 'popular' },
-  ];
-
-  selectedSort = 'new';
-
-  protected readonly faSearch = faSearch;
   protected readonly faPlus = faPlus;
 }

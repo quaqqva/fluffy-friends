@@ -19,7 +19,7 @@ import { ArticlesListMockup } from '../../core/mockups/articles/articles-list.mo
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HomeComponent {
-  public articles: ArticleListItem[] = ArticlesListMockup.list.items;
+  public articles: ArticleListItem[] = ArticlesListMockup.response.items;
 
   protected readonly faChevronLeft = faChevronLeft;
   protected readonly faChevronRight = faChevronRight;
