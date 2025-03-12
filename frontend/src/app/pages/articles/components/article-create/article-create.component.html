@@ -1,105 +1,43 @@
-<h1>Добавление новой статьи</h1>
-<form
-  action="#"
-  enctype="multipart/form-data"
-  id="articleForm"
-  method="post"
-  novalidate
->
-  <!-- Заголовок статьи -->
-  <div class="form-group">
-    <label for="title">Заголовок статьи</label>
-    <input
-      id="title"
-      name="title"
-      placeholder="Введите заголовок статьи"
-      required
-      type="text"
-    />
-    <p class="error-message" id="titleError"></p>
+<div class="main-with-header-offset">
+  <div class="container">
+    <h1 class="h2">Добавление новой статьи</h1>
+    <form>
+      <div class="grid padding-top-24">
+        <div class="col w-50">
+          <app-input [control]="titleControl" [label]="'Заголовок'"></app-input>
+        </div>
+        <div class="col w-50">
+          <app-select
+            [control]="categoryControl"
+            [label]="'Категория'"
+            [options]="[]"
+          ></app-select>
+        </div>
+        <div class="col w-50">
+          <app-input
+            [control]="minPriceControl"
+            [label]="'Минимальная цена питомца'"
+            [mask]="InputMasks.Number"
+          ></app-input>
+        </div>
+        <div class="col w-50">
+          <app-input
+            [control]="maxPriceControl"
+            [label]="'Максимальная цена питомца'"
+            [mask]="InputMasks.Number"
+          ></app-input>
+        </div>
+        <div class="col w-100">
+          <app-text-editor
+            [control]="contentControl"
+            [label]="'Наполнение статьи'"
+          ></app-text-editor>
+        </div>
+        <div class="col w-100">
+          <app-dropzone [label]="'Превью статьи'"></app-dropzone>
+        </div>
+      </div>
+      <app-button [icon]="faPlus" class="submit-button">Создать</app-button>
+    </form>
   </div>
-
-  <!-- Категория статьи -->
-  <div class="form-group">
-    <label for="category">Категория</label>
-    <select id="category" name="category" required>
-      <option value="">Выберите категорию</option>
-      <option value="Кошки">Кошки</option>
-      <option value="Собаки">Собаки</option>
-      <option value="Грызуны">Грызуны</option>
-    </select>
-    <p class="error-message" id="categoryError"></p>
-  </div>
-
-  <!-- Краткое описание -->
-  <div class="form-group">
-    <label for="description">Краткое описание</label>
-    <textarea
-      id="description"
-      name="description"
-      placeholder="Напишите краткое описание статьи..."
-      required
-      rows="3"
-    ></textarea>
-    <p class="error-message" id="descriptionError"></p>
-  </div>
-
-  <!-- Основной текст статьи -->
-  <div class="form-group">
-    <label for="content">Текст статьи</label>
-    <textarea
-      id="content"
-      name="content"
-      placeholder="Введите основной текст статьи..."
-      required
-      rows="8"
-    ></textarea>
-    <p class="error-message" id="contentError"></p>
-  </div>
-
-  <!-- Дата публикации -->
-  <div class="form-group">
-    <label for="publishDate">Дата публикации</label>
-    <input id="publishDate" name="publishDate" required type="date" />
-    <p class="error-message" id="publishDateError"></p>
-  </div>
-
-  <!-- Диапазон цены -->
-  <div class="form-group">
-    <label for="priceMin">Минимальная цена питомца</label>
-    <input
-      id="priceMin"
-      min="0"
-      name="priceMin"
-      placeholder="Минимальная цена"
-      required
-      type="number"
-    />
-    <p class="error-message" id="priceMinError"></p>
-  </div>
-
-  <div class="form-group">
-    <label for="priceMax">Максимальная цена питомца</label>
-    <input
-      id="priceMax"
-      min="0"
-      name="priceMax"
-      placeholder="Максимальная цена"
-      required
-      type="number"
-    />
-    <p class="error-message" id="priceMaxError"></p>
-  </div>
-
-  <!-- Загрузка изображения -->
-  <div class="form-group">
-    <label for="image">Изображение статьи</label>
-    <input accept="image/*" id="image" name="image" required type="file" />
-    <p class="error-message" id="imageError"></p>
-  </div>
-
-  <!-- Кнопка отправки -->
-  <div class="form-group submit-btn">
-    <button type="submit">Опубликовать статью</button>
-  </div>
-</form>
+</div>

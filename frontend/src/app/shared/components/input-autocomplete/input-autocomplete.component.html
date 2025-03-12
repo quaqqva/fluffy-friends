@@ -15,5 +15,9 @@
 </p-inputgroup>
 
 <ng-template #input>
-  <p-autocomplete [formControl]="control" fluid multiple></p-autocomplete>
+  <p-autocomplete
+    [fluid]="true"
+    [formControl]="control"
+    multiple
+  ></p-autocomplete>
 </ng-template>

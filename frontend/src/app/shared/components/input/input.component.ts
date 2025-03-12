@@ -10,10 +10,10 @@ import { FloatLabel } from 'primeng/floatlabel';
 import { NgClass, NgTemplateOutlet } from '@angular/common';
 import { FormControl, ReactiveFormsModule } from '@angular/forms';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
-import { InputMasks } from './models/input-masks.type';
 import type { MaskitoOptions } from '@maskito/core';
 import { maskitoCaretGuard, maskitoNumberOptionsGenerator } from '@maskito/kit';
 import { MaskitoDirective } from '@maskito/angular';
+import { InputMasks } from './models/input-masks.enum';
 
 @Component({
   selector: 'app-input',
@@ -39,14 +39,15 @@ export class InputComponent {
   @Input() placeholder = '';
   @Input() bigFontSize = false;
   @Input() icon?: IconDefinition;
-  @Input() mask: InputMasks = 'none';
+  @Input() mask: InputMasks | null = null;
+  @Input() withClear = false;
   protected readonly faXmark = faXmark;
 
-  get maskOptions(): MaskitoOptions | null {
+  public get maskOptions(): MaskitoOptions | null {
     switch (this.mask) {
-      case 'none':
+      case null:
         return null;
-      case 'number': {
+      case InputMasks.Number: {
         const numberOptions = maskitoNumberOptionsGenerator({
           decimalSeparator: ',',
           precision: 8,

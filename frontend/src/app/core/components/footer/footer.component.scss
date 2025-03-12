@@ -1,10 +1,12 @@
-/* Footer */
+@use '../../../../global-styles/variables';
+
 .footer {
   margin-left: 60px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   border-top-left-radius: 40px;
 
-  background: #fcd9d6;
+  background: variables.$pink;
+  height: variables.$footerHeight;
   padding: 15px 30px;
   font-size: 0.9rem;
 

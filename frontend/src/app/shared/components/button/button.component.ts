@@ -10,6 +10,7 @@ import {
 } from '@fortawesome/angular-fontawesome';
 import { NgClass } from '@angular/common';
 import { ButtonThemes } from './models/button-themes.enum';
+import { ButtonTypes } from './models/button-types.enum';
 
 @Component({
   selector: 'app-button',
@@ -23,5 +24,6 @@ export class ButtonComponent {
   @Input() icon!: IconDefinition;
   @Input() iconOnly = false;
   @Input() theme: ButtonThemes = ButtonThemes.Primary;
+  @Input() type: ButtonTypes = ButtonTypes.Button;
   @HostBinding('class.pointer-events-none') @Input() disabled = false;
 }

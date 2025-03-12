@@ -1,8 +1,8 @@
 @use '../../../../global-styles/variables';
 
 :host {
-  --p-autocomplete-padding-y: 0.625rem;
-  --p-autocomplete-padding-x: 0.625rem;
+  --p-autocomplete-padding-y: #{variables.$inputVerticalPadding};
+  --p-autocomplete-padding-x: #{variables.$inputHorizontalPadding};
   --p-autocomplete-color: #{variables.$black};
   --p-autocomplete-background: #{variables.$white};
   --p-autocomplete-border-color: #{variables.$blue};

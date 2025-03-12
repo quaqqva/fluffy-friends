@@ -1,1 +1,5 @@
+@use '../global-styles/variables';
 
+.main {
+  min-height: calc(100vh - variables.$footerHeight);
+}

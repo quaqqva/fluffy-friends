@@ -6,6 +6,7 @@
         [control]="titleControl"
         [icon]="faSearch"
         [label]="'Заголовок'"
+        [withClear]="true"
       ></app-input>
     </div>
     <div class="col w-100">
@@ -18,14 +19,14 @@
       <app-input
         [control]="minPriceControl"
         [label]="'Минимальная цена'"
-        [mask]="'number'"
+        [mask]="InputMasks.Number"
       ></app-input>
     </div>
     <div class="col w-50">
       <app-input
         [control]="maxPriceControl"
         [label]="'Максимальная цена'"
-        [mask]="'number'"
+        [mask]="InputMasks.Number"
       ></app-input>
     </div>
   </div>

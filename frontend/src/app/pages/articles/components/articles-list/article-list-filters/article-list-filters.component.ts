@@ -10,6 +10,7 @@ import { ArticleListFiltersForm } from './models/article-list-filters-form.inter
 import { InputComponent } from '../../../../../shared/components/input/input.component';
 import { AutoComplete } from 'primeng/autocomplete';
 import { InputAutocompleteComponent } from '../../../../../shared/components/input-autocomplete/input-autocomplete.component';
+import { InputMasks } from '../../../../../shared/components/input/models/input-masks.enum';
 
 @Component({
   selector: 'app-article-list-filters',
@@ -28,6 +29,7 @@ export class ArticleListFiltersComponent {
   public form: FormGroup<ArticleListFiltersForm>;
 
   protected readonly faSearch = faSearch;
+  protected readonly InputMasks = InputMasks;
 
   public constructor(fb: FormBuilder) {
     this.form = fb.group({

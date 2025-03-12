@@ -1,0 +1,17 @@
+@if (label) {
+  <p-floatlabel [variant]="'on'">
+    <ng-container *ngTemplateOutlet="select"></ng-container>
+    <label [for]="select">{{ label }}</label>
+  </p-floatlabel>
+} @else {
+  <ng-container *ngTemplateOutlet="select"></ng-container>
+}
+
+<ng-template #select>
+  <p-select
+    [fluid]="true"
+    [formControl]="control"
+    [optionLabel]="'name'"
+    [options]="options"
+  ></p-select>
+</ng-template>

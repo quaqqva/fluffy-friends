@@ -15,14 +15,16 @@
   } @else {
     <ng-container *ngTemplateOutlet="input"></ng-container>
   }
-  <p-inputgroup-addon>
-    <fa-icon
-      (click)="control.setValue('')"
-      [icon]="faXmark"
-      [ngClass]="{ 'big-font-size': bigFontSize }"
-      class="cursor-pointer"
-    ></fa-icon>
-  </p-inputgroup-addon>
+  @if (withClear) {
+    <p-inputgroup-addon>
+      <fa-icon
+        (click)="control.setValue('')"
+        [icon]="faXmark"
+        [ngClass]="{ 'big-font-size': bigFontSize }"
+        class="cursor-pointer"
+      ></fa-icon>
+    </p-inputgroup-addon>
+  }
 </p-inputgroup>
 
 <ng-template #input>
