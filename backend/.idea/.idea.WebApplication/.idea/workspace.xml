@@ -15,19 +15,37 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="add migration container">
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="header and footer">
+      <change afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/button/models/button-themes.enum.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/obj/Shared.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Shared.csproj.nuget.dgspec.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/project.assets.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/project.nuget.cache" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/rider.project.model.nuget.info" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/rider.project.restore.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.prod.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/models/api/articles/article-list-item.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/models/api/articles/article-list-item.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/models/api/articles/article.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/models/api/articles/article.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/menubar/menubar.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/menubar/menubar.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/global-styles/_helpers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/global-styles/_helpers.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/global-styles/_typography.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/global-styles/_typography.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/global-styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/global-styles/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="TypeScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -50,8 +68,12 @@
   }
 }</component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/009e1ccafde4086ea52999e878f6e7aa5a7c4ccf/src/Middleware/Spa/SpaServices.Extensions/src/AngularCli/AngularCliMiddlewareExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/DefaultBuilder/src/WebApplicationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Infrastructure/Database/Extensions/DbSetup.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Enum.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/505626f37015de7240e52b3d89ac3443dc1563261d395271f2714c7a4389671e/ISpaPrerenderingService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.deps.json" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/backend/Shared/obj/Shared.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -77,8 +99,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Shell Script.Docker dev.executor": "Run",
     "Shell Script.Docker prod.executor": "Run",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
     "com.codeium.enabled": "true",
     "git-widget-placeholder": "dev",
+    "list.type.of.created.stylesheet": "SCSS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.stylelint": "true",
     "node.js.detected.package.tslint": "true",
@@ -86,8 +114,11 @@
     "node.js.selected.package.stylelint": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.Run front.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Для навигации\\Учёба\\Университет\\8 семак\\ПСП\\fluffy-friends\\frontend\\node_modules\\prettier",
     "rider.code.cleanup.on.save": "true",
     "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "C:\\Для навигации\\Учёба\\Университет\\8 семак\\ПСП\\fluffy-friends\\frontend\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -98,7 +129,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Shell Script.Docker prod">
+  <component name="RunManager" selected="npm.Run front">
     <configuration name="Application: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Application/Application.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -337,6 +368,13 @@
       <EXTENSION ID="com.jetbrains.rider.docker.debug" isFastModeEnabled="true" isSslEnabled="false" />
       <method v="2" />
     </configuration>
+    <configuration name="Run front" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/../frontend/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue=".NET Launch Settings Profile.Presentation: IIS Express" />
       <item itemvalue=".NET Launch Settings Profile.Presentation: http" />
@@ -351,6 +389,7 @@
       <item itemvalue="Docker.FullStack Prod" />
       <item itemvalue="Docker.ЛР 3: Compose Deployment" />
       <item itemvalue="Multi-Launch.Multi-Launch: WebApplication" />
+      <item itemvalue="npm.Run front" />
       <item itemvalue="Shell Script.Docker prod" />
       <item itemvalue="Shell Script.Docker dev" />
     </list>
@@ -374,6 +413,9 @@
       <workItem from="1740513630252" duration="5327000" />
       <workItem from="1740647462617" duration="31417000" />
       <workItem from="1740752150153" duration="3395000" />
+      <workItem from="1741561020710" duration="242000" />
+      <workItem from="1741693614761" duration="48000" />
+      <workItem from="1741724240080" duration="16189000" />
     </task>
     <task id="LOCAL-00001" summary="add migration container">
       <option name="closed" value="true" />
@@ -383,7 +425,31 @@
       <option name="project" value="LOCAL" />
       <updated>1741559555696</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="adjust container dependencies">
+      <option name="closed" value="true" />
+      <created>1741560868609</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1741560868609</updated>
+    </task>
+    <task id="LOCAL-00003" summary="adjust container dependencies [2]">
+      <option name="closed" value="true" />
+      <created>1741561164904</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1741561164904</updated>
+    </task>
+    <task id="LOCAL-00004" summary="header and footer">
+      <option name="closed" value="true" />
+      <created>1741732916692</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1741732916692</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -405,7 +471,10 @@
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="add migration container" />
-    <option name="LAST_COMMIT_MESSAGE" value="add migration container" />
+    <MESSAGE value="adjust container dependencies" />
+    <MESSAGE value="adjust container dependencies [2]" />
+    <MESSAGE value="header and footer" />
+    <option name="LAST_COMMIT_MESSAGE" value="header and footer" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

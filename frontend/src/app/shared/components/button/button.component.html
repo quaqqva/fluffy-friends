@@ -1,0 +1,13 @@
+<button
+  [ngClass]="{
+    'button_icon-only': iconOnly,
+    button_disabled: disabled,
+    'cursor-pointer': !disabled,
+  }"
+  class="button button_theme-{{ theme }}"
+>
+  @if (icon) {
+    <fa-icon [icon]="icon"></fa-icon>
+  }
+  <ng-content></ng-content>
+</button>

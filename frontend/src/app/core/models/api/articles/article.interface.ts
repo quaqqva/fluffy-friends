@@ -6,7 +6,9 @@ export interface Article {
   content: string;
   minPrice: number;
   maxPrice: number;
+  views: number;
   category: string;
   photoUrl: string;
+  publishedAt: string;
   comments: ArticleComment[];
 }
