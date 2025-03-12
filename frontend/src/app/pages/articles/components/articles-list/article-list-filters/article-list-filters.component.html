@@ -1,0 +1,32 @@
+<form [formGroup]="form">
+  <div class="grid">
+    <div class="col w-100">
+      <app-input
+        [bigFontSize]="true"
+        [control]="titleControl"
+        [icon]="faSearch"
+        [label]="'Заголовок'"
+      ></app-input>
+    </div>
+    <div class="col w-100">
+      <app-input-autocomplete
+        [control]="categoriesTextControl"
+        [label]="'Категории'"
+      ></app-input-autocomplete>
+    </div>
+    <div class="col w-50">
+      <app-input
+        [control]="minPriceControl"
+        [label]="'Минимальная цена'"
+        [mask]="'number'"
+      ></app-input>
+    </div>
+    <div class="col w-50">
+      <app-input
+        [control]="maxPriceControl"
+        [label]="'Максимальная цена'"
+        [mask]="'number'"
+      ></app-input>
+    </div>
+  </div>
+</form>

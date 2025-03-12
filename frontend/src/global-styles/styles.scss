@@ -1,96 +1,28 @@
 @use './variables';
 @use './reset';
 @use './typography';
-@use './helpers';
+@use './helpers/helpers';
 
 body {
   color: #333;
   background: variables.$white;
 }
 
-/* Поиск и фильтры */
-.search-filter {
-  width: 80%;
-  display: grid;
-  grid-template-columns: repeat(minmax(200, 1fr), auto-fit);
-  grid-template-rows: repeat(2, 1fr);
-  margin: 20px auto;
-  align-items: center;
-}
+:root {
+  --p-inputgroup-addon-border-radius: 12px;
+  --p-inputgroup-addon-border-color: #{variables.$blue};
+  --p-inputgroup-addon-padding: 0.2rem;
+  --p-inputgroup-addon-background: #{variables.$blue};
+  --p-inputgroup-addon-color: #{variables.$white};
+  --p-inputgroup-addon-min-width: 50px;
 
-.search-bar {
-  width: 100%;
-  position: relative;
-}
-
-.search-bar .fa-search {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-  color: #8AC0F3;
-  font-size: 1.2em;
-}
-
-.search-bar input {
-  padding: 10px;
-  border: 1px solid #ccc;
-  width: 100%;
-  padding: 20px 50px;
-  border-radius: 12px;
-  border: 1px solid #8AC0F3;
-}
-
-.clear-btn {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-
-  border: none;
-  background: none;
-  cursor: pointer;
-  font-size: 1.2rem;
-}
-
-.category-filter input,
-.price-filters input {
-  border-radius: 6px;
-  border: 1px solid #8AC0F3;
-  padding: 4px;
-}
-
-.category-filter button,
-.sort-options button {
-  padding: 5px 10px;
-  border: none;
-  background: #8AC0F3;
-  color: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.category-filter button.active,
-.sort-options button.active {
-  background: #555;
-}
-
-.load-more-button {
-  display: block;
-  margin: 0 auto;
-  width: 40%;
-
-  padding: 16px 0;
-  background: #8AC0F3;
-  border: none;
-  cursor: pointer;
-  border-radius: 12px;
-
-  color: white;
-  font-size: 20px;
-  font-weight: bold;
-
-  margin-bottom: 20px;
+  --p-floatlabel-font-weight: 400;
+  --p-floatlabel-position-x: 10px;
+  --p-floatlabel-color: #{variables.$gray};
+  --p-floatlabel-transition-duration: 0.3s;
+  --p-floatlabel-on-active-background: #{variables.$white};
+  --p-floatlabel-on-active-padding: 0.25rem;
+  --p-floatlabel-on-border-radius: 4px;
 }
 
 .article {

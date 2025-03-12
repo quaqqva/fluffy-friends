@@ -6,6 +6,8 @@
 }
 
 .button {
+  width: 100%;
+
   border-radius: 12px;
   padding: 12px;
 
@@ -30,5 +32,11 @@
   &_disabled {
     background: variables.$gray;
     color: variables.$white
+  }
+
+  &__icon {
+    &_with-padding-right {
+      padding-right: 12px;
+    }
   }
 }

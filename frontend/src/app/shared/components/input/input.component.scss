@@ -1,0 +1,15 @@
+@use '../../../../global-styles/variables';
+
+:host {
+  --p-inputtext-color: #{variables.$black};
+  --p-inputtext-background: #{variables.$white};
+  --p-inputtext-padding-y: 0.625rem;
+  --p-inputtext-padding-x: 0.625rem;
+  --p-inputtext-border-color: #{variables.$blue};
+  --p-inputtext-transition-duration: #{variables.$transitionDuration};
+  --p-inputtext-border-radius: 12px;
+}
+
+.big-font-size {
+  font-size: 2rem;
+}

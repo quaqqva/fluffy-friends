@@ -4,10 +4,14 @@
     button_disabled: disabled,
     'cursor-pointer': !disabled,
   }"
-  class="button button_theme-{{ theme }}"
+  class="button button_theme-{{ theme }} body-bold"
 >
   @if (icon) {
-    <fa-icon [icon]="icon"></fa-icon>
+    <fa-icon
+      [ngClass]="{ 'button__icon_with-padding-right': !iconOnly }"
+      class="button__icon"
+      [icon]="icon"
+    ></fa-icon>
   }
   <ng-content></ng-content>
 </button>

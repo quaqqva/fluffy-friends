@@ -1,0 +1,38 @@
+<p-inputgroup>
+  @if (icon) {
+    <p-inputgroup-addon>
+      <fa-icon
+        [icon]="icon"
+        [ngClass]="{ 'big-font-size': bigFontSize }"
+      ></fa-icon>
+    </p-inputgroup-addon>
+  }
+  @if (label) {
+    <p-floatlabel [variant]="'on'">
+      <ng-container *ngTemplateOutlet="input"></ng-container>
+      <label [for]="input">{{ label }}</label>
+    </p-floatlabel>
+  } @else {
+    <ng-container *ngTemplateOutlet="input"></ng-container>
+  }
+  <p-inputgroup-addon>
+    <fa-icon
+      (click)="control.setValue('')"
+      [icon]="faXmark"
+      [ngClass]="{ 'big-font-size': bigFontSize }"
+      class="cursor-pointer"
+    ></fa-icon>
+  </p-inputgroup-addon>
+</p-inputgroup>
+
+<ng-template #input>
+  <input
+    [formControl]="control"
+    [maskito]="maskOptions"
+    [ngClass]="{
+      'big-font-size': bigFontSize,
+    }"
+    [placeholder]="placeholder"
+    pInputText
+  />
+</ng-template>

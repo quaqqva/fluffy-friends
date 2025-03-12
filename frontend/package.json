@@ -33,6 +33,8 @@
     "@fortawesome/free-brands-svg-icons": "^6.7.1",
     "@fortawesome/free-regular-svg-icons": "^6.7.1",
     "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@maskito/angular": "^3.4.0",
+    "@maskito/kit": "^3.4.0",
     "@primeng/themes": "^19.0.9",
     "express": "^4.18.2",
     "primeng": "^19.0.9",

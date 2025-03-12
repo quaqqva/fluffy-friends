@@ -1,4 +1,5 @@
 import { definePreset } from '@primeng/themes';
+// import Aura from '@primeng/themes/aura';
 
 export const appTheme = definePreset({
   semantic: {
@@ -55,36 +56,6 @@ export const appTheme = definePreset({
       950: '#807960',
     },
     text: '#3e3e3e',
-    colorScheme: {
-      light: {
-        primary: {
-          color: '{text}',
-          inverseColor: '${surface.50}',
-          hoverColor: '${accent.300}',
-          activeColor: '${accent.400}',
-        },
-        highlight: {
-          background: '#FFF6C9',
-          focusBackground: '#FFF3B8',
-          color: '#3E3E3E',
-          focusColor: '#3E3E3E',
-        },
-      },
-      dark: {
-        primary: {
-          color: '${text}',
-          inverseColor: '${surface.50}',
-          hoverColor: '${secondary.500}',
-          activeColor: '${secondary.600}',
-        },
-        highlight: {
-          background: 'rgba(138, 192, 243, .16)',
-          focusBackground: 'rgba(138, 192, 243, .24)',
-          color: 'rgba(255,255,255,.87)',
-          focusColor: 'rgba(255,255,255,.87)',
-        },
-      },
-    },
   },
   components: {
     chip: {

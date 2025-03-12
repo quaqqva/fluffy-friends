@@ -1,155 +1,19 @@
-<h1 class="main-title">Каталог</h1>
+<div class="main-with-header-offset">
+  <div class="container">
+    <h1 class="h2 padding-bottom-24">Каталог</h1>
 
-<!-- Поле поиска и фильтр -->
-<div class="search-filter">
-  <div class="search-bar">
-    <i class="fa fa-search"></i>
-    <input placeholder="Начните поиск..." type="text" />
-    <button class="clear-btn">✖</button>
-  </div>
-  <div class="category-filter">
-    <input placeholder="Введите категорию..." type="text" />
-  </div>
-  <div class="price-filters">
-    <input placeholder="Цена от..." type="number" />
-    <input placeholder="Цена до..." type="number" />
-  </div>
-  <div class="sort-options">
-    <p>Сортировать по:</p>
-    <button>Новизне</button>
-    <button>Популярности</button>
-  </div>
-</div>
+    <app-article-list-filters></app-article-list-filters>
 
-<!-- Карточки статей -->
-<div class="articles">
-  <div class="journal-articles-container">
-    <!-- Карточка 1 -->
-    <a class="card" href="article.html">
-      <img alt="Кот прыгает" src="/assets/img/article-logo-1.png" />
-      <div class="card-content">
-        <div class="article-additional-info">
-          <div class="tags">
-            <p class="tag">Кошки</p>
-          </div>
-          <p class="article-date">14.12.2024</p>
+    <div class="grid padding-top-24 padding-bottom-24">
+      @for (article of articles; track article.id) {
+        <div class="col w-33">
+          <app-article-card [article]="article"></app-article-card>
         </div>
-        <p style="font-size: 1.2em">
-          <strong>Отучаем кота шуметь по ночам</strong>
-        </p>
-        <div class="article-stats">
-          <div>
-            <i class="fa fa-comment"></i>
-            <p>120</p>
-          </div>
-          <div>
-            <i class="fa fa-eye"></i>
-            <p>1200</p>
-          </div>
-        </div>
-      </div>
-    </a>
+      }
+    </div>
 
-    <a class="card" href="article.html">
-      <img alt="Собака и корм" src="/assets/img/article-logo-3.png" />
-      <div class="card-content">
-        <div class="article-additional-info">
-          <div class="tags">
-            <p class="tag">Собаки</p>
-          </div>
-          <p class="article-date">12.12.2024</p>
-        </div>
-        <p style="font-size: 1.2em">
-          <strong>Как научить собаку есть сухой корм</strong>
-        </p>
-        <div class="article-stats">
-          <div>
-            <i class="fa fa-comment"></i>
-            <p>0</p>
-          </div>
-          <div>
-            <i class="fa fa-eye"></i>
-            <p>487</p>
-          </div>
-        </div>
-      </div>
-    </a>
-    <a class="card" href="article.html">
-      <img alt="Пушистый кот" src="/assets/img/article-logo-4.png" />
-      <div class="card-content">
-        <div class="article-additional-info">
-          <div class="tags">
-            <p class="tag">Кошки</p>
-          </div>
-          <p class="article-date">17.09.2024</p>
-        </div>
-        <p style="font-size: 1.2em">
-          <strong>Различают ли кошки, к кому обращается хозяин?</strong>
-        </p>
-        <div class="article-stats">
-          <div>
-            <i class="fa fa-comment"></i>
-            <p>1</p>
-          </div>
-          <div>
-            <i class="fa fa-eye"></i>
-            <p>607</p>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <a class="card" href="article.html">
-      <img alt="Собака ест с рук" src="/assets/img/article-logo-5.png" />
-      <div class="card-content">
-        <div class="article-additional-info">
-          <div class="tags">
-            <p class="tag">Собаки</p>
-          </div>
-          <p class="article-date">12.12.2024</p>
-        </div>
-        <p style="font-size: 1.2em">
-          <strong>Почему собаки любят есть с рук?</strong>
-        </p>
-        <div class="article-stats">
-          <div>
-            <i class="fa fa-comment"></i>
-            <p>0</p>
-          </div>
-          <div>
-            <i class="fa fa-eye"></i>
-            <p>607</p>
-          </div>
-        </div>
-      </div>
-    </a>
-
-    <a class="card" href="article.html">
-      <img
-        alt="Невская маскарадная кошка"
-        src="/assets/img/article-logo-6.png"
-      />
-      <div class="card-content">
-        <div class="article-additional-info">
-          <div class="tags">
-            <p class="tag">Кошки</p>
-          </div>
-          <p class="article-date">12.12.2024</p>
-        </div>
-        <p style="font-size: 1.2em">
-          <strong>5 причин НЕ заводить невскую маскарадную кошку</strong>
-        </p>
-        <div class="article-stats">
-          <div>
-            <i class="fa fa-comment"></i>
-            <p>2</p>
-          </div>
-          <div>
-            <i class="fa fa-eye"></i>
-            <p>1981</p>
-          </div>
-        </div>
-      </div>
-    </a>
+    <div class="load-more-button">
+      <app-button [icon]="faPlus">Показать ещё</app-button>
+    </div>
   </div>
 </div>

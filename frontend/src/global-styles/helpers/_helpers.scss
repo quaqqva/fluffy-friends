@@ -1,4 +1,5 @@
-@use './variables';
+@use './grid';
+@use '../variables';
 
 .no-margin {
   margin: 0 !important;
@@ -6,6 +7,14 @@
 
 .margin-bottom-12 {
   margin-bottom: 12px !important;
+}
+
+.padding-top-24 {
+  padding-top: 24px !important;
+}
+
+.padding-bottom-24 {
+  padding-bottom: 24px !important;
 }
 
 .main-with-header-offset {

@@ -1,0 +1,23 @@
+@use '../../../../global-styles/variables';
+
+:host {
+  --p-autocomplete-padding-y: 0.625rem;
+  --p-autocomplete-padding-x: 0.625rem;
+  --p-autocomplete-color: #{variables.$black};
+  --p-autocomplete-background: #{variables.$white};
+  --p-autocomplete-border-color: #{variables.$blue};
+  --p-autocomplete-border-radius: 12px;
+  --p-autocomplete-transition-duration: #{variables.$transitionDuration};
+
+  ::ng-deep {
+    p-autocomplete,
+    .p-autocomplete {
+      width: 100% !important;
+    }
+  }
+}
+
+label {
+  z-index: 1;
+}
+
