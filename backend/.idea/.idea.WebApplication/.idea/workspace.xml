@@ -15,22 +15,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="article page">
-      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/mockups/article-categories/article-categories-list.mockup.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/mockups/article-categories/article-category-info.mockup.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/mockups/article-comments/article-comment-info.mockup.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/mockups/article-comments/article-comments-list.mockup.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/app/core/mockups/articles/article-info.mockup.ts" afterDir="false" />
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="add mockups">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/angular.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/components/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/components/header/header.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/mockups/articles/articles-list.mockup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/mockups/articles/articles-list.mockup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/api/article-categories-api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/api/article-categories-api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/api/article-comments-api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/api/article-comments-api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/api/articles-api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/api/articles-api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/article-list-filters.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/article-list-filters.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/not-found/not-found.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +61,7 @@
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/505626f37015de7240e52b3d89ac3443dc1563261d395271f2714c7a4389671e/ISpaPrerenderingService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.deps.json" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/backend/Shared/obj/Shared.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/frontend/angular.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -413,7 +403,7 @@
       <workItem from="1740752150153" duration="3395000" />
       <workItem from="1741561020710" duration="242000" />
       <workItem from="1741693614761" duration="48000" />
-      <workItem from="1741724240080" duration="36973000" />
+      <workItem from="1741724240080" duration="37262000" />
     </task>
     <task id="LOCAL-00001" summary="add migration container">
       <option name="closed" value="true" />
@@ -479,7 +469,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741809706484</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add mockups">
+      <option name="closed" value="true" />
+      <created>1741811193655</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1741811193655</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +506,8 @@
     <MESSAGE value="articles list" />
     <MESSAGE value="article create" />
     <MESSAGE value="article page" />
-    <option name="LAST_COMMIT_MESSAGE" value="article page" />
+    <MESSAGE value="add mockups" />
+    <option name="LAST_COMMIT_MESSAGE" value="add mockups" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
