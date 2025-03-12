@@ -14,6 +14,7 @@ import type { MaskitoOptions } from '@maskito/core';
 import { maskitoCaretGuard, maskitoNumberOptionsGenerator } from '@maskito/kit';
 import { MaskitoDirective } from '@maskito/angular';
 import { InputMasks } from './models/input-masks.enum';
+import { FloatLabelVariants } from '../../models/float-label-variants.enum';
 
 @Component({
   selector: 'app-input',
@@ -36,6 +37,7 @@ import { InputMasks } from './models/input-masks.enum';
 export class InputComponent {
   @Input({ required: true }) control!: FormControl;
   @Input() label = '';
+  @Input() floatLabelVariant: FloatLabelVariants = FloatLabelVariants.On;
   @Input() placeholder = '';
   @Input() bigFontSize = false;
   @Input() icon?: IconDefinition;

@@ -1,0 +1,43 @@
+@use '../../../../../global-styles/variables';
+
+.article {
+  padding: 20px;
+  background: variables.$white;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+
+  &__meta-info {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+
+    display: flex;
+    gap: 10px;
+    align-items: center;
+  }
+
+  &__preview-wrapper {
+    position: relative;
+    width: 100%;
+    border-radius: 8px;
+    padding: 20px 0;
+    overflow: hidden;
+  }
+
+  &__preview {
+    object-fit: cover;
+  }
+}
+
+.article-comments {
+  margin-top: 40px;
+  background-color: variables.$yellow;
+  padding: 20px;
+  border-radius: 8px;
+
+  &__divider {
+    width: 100%;
+    height: 1px;
+    margin: 12px 0;
+    background-color: variables.$gray;
+  }
+}
