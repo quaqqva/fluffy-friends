@@ -21,15 +21,7 @@ services:
     networks:
       - app-network
 
-#  frontend:
-#    build:
-#      context: ./frontend
-#      dockerfile: Dockerfile.prod
-#    container_name: frontend
-#    env_file:
-#      - .env/.env.prod
-#    depends_on:
-#      - backend
-#    networks:
-#      - app-network
-#    restart: always
+  frontend:
+    ports:
+      - "80:4000"
+

@@ -8,7 +8,6 @@ import { Article } from '../../../../core/models/api/articles/article.interface'
 import { DatePipe, NgOptimizedImage } from '@angular/common';
 import { ArticleCommentCreateComponent } from './article-comment-create/article-comment-create.component';
 import { ArticleCommentComponent } from './article-comment/article-comment.component';
-import { SafeHtmlPipe } from 'primeng/menu';
 import { PlatformStateService } from '../../../../core/services/platform-state.service';
 import { TransferStateService } from '../../../../core/services/transfer-state.service';
 import { ArticlesApiService } from '../../../../core/services/api/articles-api.service';
@@ -26,7 +25,6 @@ import { ArticleComment } from '../../../../core/models/api/article-comments/art
     ArticleCommentCreateComponent,
     ArticleCommentComponent,
     DatePipe,
-    SafeHtmlPipe,
     PreloaderComponent,
   ],
   templateUrl: './article.component.html',

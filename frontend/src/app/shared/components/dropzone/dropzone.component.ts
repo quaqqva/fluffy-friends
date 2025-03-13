@@ -11,9 +11,7 @@ import { FileSelectEvent, FileUpload } from 'primeng/fileupload';
 import { FileApiService } from '../../../core/services/api/file-api.service';
 import { FileResponse } from '../../../core/models/api/file/file-response.interface';
 import { NgClass } from '@angular/common';
-import { ButtonComponent } from '../button/button.component';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
-import { PreloaderComponent } from '../preloader/preloader.component';
 import { FileState } from './models/file-state.interface';
 import { FileItemComponent } from './file-item/file-item.component';
 import { SafeToastService } from '../../../core/services/safe-toast.service';
@@ -21,13 +19,7 @@ import { SafeToastService } from '../../../core/services/safe-toast.service';
 @Component({
   selector: 'app-dropzone',
   standalone: true,
-  imports: [
-    FileUpload,
-    NgClass,
-    ButtonComponent,
-    PreloaderComponent,
-    FileItemComponent,
-  ],
+  imports: [FileUpload, NgClass, FileItemComponent],
   templateUrl: './dropzone.component.html',
   styleUrl: './dropzone.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

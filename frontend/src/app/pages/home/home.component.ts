@@ -13,7 +13,6 @@ import {
   faChevronLeft,
   faChevronRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { ProgressSpinner } from 'primeng/progressspinner';
 import { PreloaderComponent } from '../../shared/components/preloader/preloader.component';
 import { PlatformStateService } from '../../core/services/platform-state.service';
 import { TransferStateService } from '../../core/services/transfer-state.service';
@@ -28,7 +27,6 @@ import { SafeToastService } from '../../core/services/safe-toast.service';
     ArticleCardComponent,
     Carousel,
     ButtonComponent,
-    ProgressSpinner,
     PreloaderComponent,
   ],
   templateUrl: './home.component.html',

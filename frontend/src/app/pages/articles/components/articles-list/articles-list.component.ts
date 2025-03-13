@@ -7,15 +7,8 @@ import {
 } from '@angular/core';
 import { ArticleListItem } from '../../../../core/models/api/articles/article-list-item.interface';
 import { ArticleCardComponent } from '../article-card/article-card.component';
-import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { InputNumber } from 'primeng/inputnumber';
-import { DropdownModule } from 'primeng/dropdown';
 import { FormsModule } from '@angular/forms';
-import { InputText } from 'primeng/inputtext';
-import { ButtonDirective } from 'primeng/button';
-import { InputGroup } from 'primeng/inputgroup';
-import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ArticleListFiltersComponent } from './article-list-filters/article-list-filters.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
 import { PreloaderComponent } from '../../../../shared/components/preloader/preloader.component';
@@ -28,14 +21,7 @@ import { ArticleViewListFilters } from '../../models/article-view-list-filters.i
   standalone: true,
   imports: [
     ArticleCardComponent,
-    FaIconComponent,
-    InputNumber,
-    DropdownModule,
     FormsModule,
-    InputText,
-    ButtonDirective,
-    InputGroup,
-    InputComponent,
     ArticleListFiltersComponent,
     ButtonComponent,
     PreloaderComponent,

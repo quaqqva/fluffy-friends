@@ -15,7 +15,6 @@ import {
 } from '@angular/forms';
 import { ArticleListFiltersForm } from './models/article-list-filters-form.interface';
 import { InputComponent } from '../../../../../shared/components/input/input.component';
-import { AutoComplete } from 'primeng/autocomplete';
 import { InputAutocompleteComponent } from '../../../../../shared/components/input-autocomplete/input-autocomplete.component';
 import { InputMasks } from '../../../../../shared/components/input/models/input-masks.enum';
 import { ArticleViewListFilters } from '../../../models/article-view-list-filters.interface';
@@ -26,12 +25,7 @@ import { debounceTime, distinctUntilChanged } from 'rxjs';
 @Component({
   selector: 'app-article-list-filters',
   standalone: true,
-  imports: [
-    ReactiveFormsModule,
-    InputComponent,
-    AutoComplete,
-    InputAutocompleteComponent,
-  ],
+  imports: [ReactiveFormsModule, InputComponent, InputAutocompleteComponent],
   templateUrl: './article-list-filters.component.html',
   styleUrl: './article-list-filters.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
