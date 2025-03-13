@@ -31,6 +31,9 @@ public class ArticleDtoAdapter(
             article.Category!.Name
         );
 
+    protected override Func<IQueryable<Article>, IOrderedQueryable<Article>> OrderBy =>
+        articles => articles.OrderByDescending(article => article.PublishedAt);
+
     public override DbSelectParams<Article, ArticleDto> DbSelectParams
     {
         get

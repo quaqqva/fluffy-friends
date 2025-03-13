@@ -15,54 +15,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="complete dropzone and api requests">
-      <change beforePath="$PROJECT_DIR$/../.env/.env.dev" beforeDir="false" afterPath="$PROJECT_DIR$/../.env/.env.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../.env/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/../.env/.env.prod" afterDir="false" />
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="front and back sync">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Dtos/Article/ArticleCreateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dtos/Article/ArticleCreateDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Dtos/Article/ArticleDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dtos/Article/ArticleDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Dtos/Article/ArticleListItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dtos/Article/ArticleListItemDto.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/EntityCacheService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/EntityCacheService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Article.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Article.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Migrations/FluffyFriendsContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Migrations/FluffyFriendsContextModelSnapshot.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Controllers/ArticleCommentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Controllers/ArticleCommentsController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Controllers/BaseCrudController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Controllers/BaseCrudController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.deps.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.CoreCompileInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.FileListAbsolute.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/ref/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/ref/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/refint/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/refint/Shared.dll" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/api/entity-api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/api/entity-api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/api/file-api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/api/file-api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/safe-toast.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/safe-toast.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/transfer-state.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/transfer-state.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-card/article-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-card/article-card.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-card/article-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-card/article-card.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/services/articles-list.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/services/articles-list.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/file-item/file-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/file-item/file-item.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/environments/environment.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/global-styles/helpers/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/global-styles/helpers/_grid.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/BaseDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/BaseDtoAdapter.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -466,7 +422,7 @@
       <workItem from="1741724240080" duration="40464000" />
       <workItem from="1741815114227" duration="2178000" />
       <workItem from="1741818018943" duration="1459000" />
-      <workItem from="1741873259522" duration="19901000" />
+      <workItem from="1741873259522" duration="20257000" />
     </task>
     <task id="LOCAL-00001" summary="add migration container">
       <option name="closed" value="true" />
@@ -564,7 +520,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741885513324</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="front and back sync">
+      <option name="closed" value="true" />
+      <created>1741893956461</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1741893956461</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +561,8 @@
     <MESSAGE value="add not found page" />
     <MESSAGE value="add ssr and some api calls" />
     <MESSAGE value="complete dropzone and api requests" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete dropzone and api requests" />
+    <MESSAGE value="front and back sync" />
+    <option name="LAST_COMMIT_MESSAGE" value="front and back sync" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
