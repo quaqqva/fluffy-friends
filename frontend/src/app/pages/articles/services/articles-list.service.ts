@@ -27,6 +27,7 @@ export class ArticlesListService {
 
       this._totalCount.set(articlesResponse!.count);
       this._articlesList.set(articlesResponse!.items);
+      this.offset += this.limit;
 
       this._restoredFromSever = true;
     }
@@ -39,7 +40,7 @@ export class ArticlesListService {
   }
 
   public get canLoadMore(): boolean {
-    return this.offset + this.articlesList.length < this.totalCount;
+    return this.offset < this.totalCount;
   }
 
   private _totalCount: WritableSignal<number> = signal(0);

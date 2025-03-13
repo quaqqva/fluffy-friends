@@ -120,6 +120,7 @@ export class ArticleCreateComponent {
     this.isLoading.set(true);
     this.articlesApi.create(this.serializedForm).subscribe({
       next: () => {
+        this.toast.success('Статья успешно создана');
         this.router.navigate(['/', AppRoutes.Articles]);
       },
       error: () => {

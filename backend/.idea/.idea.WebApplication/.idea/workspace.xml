@@ -15,12 +15,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="add descending sort by date">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/services/toast.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/services/toast.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/global-styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/global-styles/styles.scss" afterDir="false" />
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="toasts fix">
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/services/articles-list.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/services/articles-list.service.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -425,7 +423,7 @@
       <workItem from="1741724240080" duration="40464000" />
       <workItem from="1741815114227" duration="2178000" />
       <workItem from="1741818018943" duration="1459000" />
-      <workItem from="1741873259522" duration="21711000" />
+      <workItem from="1741873259522" duration="22009000" />
     </task>
     <task id="LOCAL-00001" summary="add migration container">
       <option name="closed" value="true" />
@@ -539,7 +537,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741894397214</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="toasts fix">
+      <option name="closed" value="true" />
+      <created>1741895729349</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1741895729349</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +580,8 @@
     <MESSAGE value="complete dropzone and api requests" />
     <MESSAGE value="front and back sync" />
     <MESSAGE value="add descending sort by date" />
-    <option name="LAST_COMMIT_MESSAGE" value="add descending sort by date" />
+    <MESSAGE value="toasts fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="toasts fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
