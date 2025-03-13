@@ -1,0 +1,30 @@
+@use './variables';
+@use './reset';
+@use './typography';
+@use './helpers/helpers';
+
+body {
+  color: #333;
+  background: variables.$white;
+}
+
+:root {
+  --p-inputgroup-addon-border-radius: 12px;
+  --p-inputgroup-addon-border-color: #{variables.$blue};
+  --p-inputgroup-addon-padding: 0.2rem;
+  --p-inputgroup-addon-background: #{variables.$blue};
+  --p-inputgroup-addon-color: #{variables.$white};
+  --p-inputgroup-addon-min-width: 50px;
+
+  --p-floatlabel-font-weight: 400;
+  --p-floatlabel-position-x: 10px;
+  --p-floatlabel-color: #{variables.$gray};
+  --p-floatlabel-transition-duration: 0.3s;
+  --p-floatlabel-on-active-background: #{variables.$white};
+  --p-floatlabel-on-active-padding: 0.25rem;
+  --p-floatlabel-on-border-radius: 4px;
+}
+
+.p-toast-message-icon {
+  --p-icon-size: 30px;
+}

@@ -13,18 +13,22 @@ export class FileApiService {
   public constructor(private api: ApiService) {}
 
   public create(module: string, file: File): Observable<FileResponse> {
-    const path = `${this.apiUrl}/create`;
+    const path = this.apiUrl;
 
     const formData = new FormData();
     formData.append('module', module);
     formData.append('file', file);
 
-    const mockupData = getMockup(path, { id: 0, name: '', path: '' }, formData);
+    const mockupData = getMockup(
+      path,
+      { id: 2, name: 'Файл.png', path: 'google.com' },
+      formData,
+    );
 
     const requestData = {
       path,
       mockupData,
-      formData,
+      body: formData,
     };
 
     return this.api.post<FileResponse>(requestData);

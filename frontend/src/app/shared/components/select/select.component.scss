@@ -1,0 +1,29 @@
+@use '../../../../global-styles/variables';
+
+:host {
+  --p-select-color: #{variables.$black};
+  --p-select-background: #{variables.$white};
+  --p-select-padding-y: #{variables.$inputVerticalPadding};
+  --p-select-padding-x: #{variables.$inputHorizontalPadding};
+  --p-select-border-color: #{variables.$blue};
+  --p-select-transition-duration: #{variables.$transitionDuration};
+  --p-select-border-radius: 12px;
+
+  --p-select-overlay-color: #{variables.$black};
+  --p-select-overlay-background: #{variables.$white};
+  --p-select-overlay-border-radius: 8px;
+  --p-select-overlay-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  --p-select-option-padding: 1rem;
+  --p-select-option-color: #{variables.$black};
+
+  ::ng-deep {
+    .p-select {
+      padding-right: var(--p-select-padding-x);
+
+      &.ng-invalid.ng-touched {
+        --p-select-border-color: #{variables.$red};
+      }
+    }
+  }
+}

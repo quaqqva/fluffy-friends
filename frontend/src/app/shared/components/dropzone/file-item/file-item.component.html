@@ -1,0 +1,14 @@
+<div class="file-item">
+  <div class="file-info">
+    <span>{{ fileState.file.name }}</span>
+  </div>
+  @if (fileState.response) {
+    <app-button
+      (click)="deleted.emit()"
+      [iconOnly]="true"
+      [icon]="faTrash"
+    ></app-button>
+  } @else {
+    <app-preloader [small]="true" [inline]="true"></app-preloader>
+  }
+</div>

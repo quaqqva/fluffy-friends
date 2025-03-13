@@ -49,10 +49,10 @@ public abstract class BaseCrudController<TEntity, TEntityDto, TCreateDto, TListI
     }
 
     [HttpPost]
-    public async Task<ActionResult<IdResponseDto>> CreateEntity([Required] [FromBody] TCreateDto createDto)
+    public virtual async Task<ActionResult<IdResponseDto>> CreateEntity([Required] [FromBody] TCreateDto createDto)
     {
         var id = await repository.Create(adapter.ConvertDtoToEntity(createDto));
-        await Task.WhenAll(cacheService.ClearEntityCache(id), cacheService.ClearListCache());
+        await cacheService.ClearListCache();
 
         return Created(RouteData.Values["controller"]!.ToString() + id, new IdResponseDto(id));
     }

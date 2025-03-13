@@ -1,0 +1,19 @@
+@if (label) {
+  <p-floatlabel [variant]="floatLabelVariant">
+    <ng-container *ngTemplateOutlet="textarea"></ng-container>
+    <label [for]="textarea">{{ label }}</label>
+  </p-floatlabel>
+} @else {
+  <ng-container *ngTemplateOutlet="textarea"></ng-container>
+}
+<ng-template #textarea>
+  <textarea
+    [autoResize]="false"
+    [fluid]="true"
+    [formControl]="control"
+    class="textarea"
+    cols="30"
+    pTextarea
+    rows="5"
+  ></textarea>
+</ng-template>

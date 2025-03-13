@@ -14,9 +14,9 @@ public class Article : IIdentifiable
 
     public int Views { get; set; }
 
-    public int MinPrice { get; set; }
+    public int? MinPrice { get; set; }
 
-    public int MaxPrice { get; set; }
+    public int? MaxPrice { get; set; }
 
     [Required] public int CategoryId { get; set; }
 

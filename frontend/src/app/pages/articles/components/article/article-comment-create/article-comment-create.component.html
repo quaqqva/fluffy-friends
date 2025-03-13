@@ -1,0 +1,22 @@
+@if (isLoading()) {
+  <app-preloader></app-preloader>
+} @else {
+  <form (ngSubmit)="onSubmit()" [formGroup]="form">
+    <div class="grid justify-center">
+      <div class="col w-100">
+        <app-input [control]="authorControl" [label]="'Автор'"></app-input>
+      </div>
+      <div class="col w-100">
+        <app-textarea
+          [control]="contentControl"
+          [label]="'Сообщение'"
+        ></app-textarea>
+      </div>
+      <div class="col w-50">
+        <app-button [type]="ButtonTypes.Submit" class="submit-button"
+          >Отправить
+        </app-button>
+      </div>
+    </div>
+  </form>
+}

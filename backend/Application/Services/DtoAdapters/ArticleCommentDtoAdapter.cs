@@ -25,6 +25,9 @@ public class ArticleCommentDtoAdapter :
             comment.Content,
             comment.ArticleId
         ));
+    
+    protected override Func<IQueryable<ArticleComment>, IOrderedQueryable<ArticleComment>> OrderBy =>
+        comments => comments.OrderByDescending(comment => comment.CreatedAt);
 
     public override ArticleComment ConvertDtoToEntity(ArticleCommentCreateDto createDto, int id = 0)
     {

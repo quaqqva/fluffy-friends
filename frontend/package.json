@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve --no-hmr",
+    "start": "ng serve",
+    "start:docker": "ng serve --host=0.0.0.0 --no-hmr",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
@@ -32,9 +33,13 @@
     "@fortawesome/angular-fontawesome": "^1.0.0",
     "@fortawesome/free-brands-svg-icons": "^6.7.1",
     "@fortawesome/free-regular-svg-icons": "^6.7.1",
+    "@fortawesome/free-solid-svg-icons": "^6.7.2",
+    "@maskito/angular": "^3.4.0",
+    "@maskito/kit": "^3.4.0",
     "@primeng/themes": "^19.0.9",
     "express": "^4.18.2",
     "primeng": "^19.0.9",
+    "quill": "^2.0.3",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.15.0"

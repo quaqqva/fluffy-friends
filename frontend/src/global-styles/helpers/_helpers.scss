@@ -1,0 +1,50 @@
+@use './grid';
+@use '../variables';
+
+.no-margin {
+  margin: 0 !important;
+}
+
+.margin-bottom-12 {
+  margin-bottom: 12px !important;
+}
+
+.padding-top-24 {
+  padding-top: 24px !important;
+}
+
+.padding-bottom-24 {
+  padding-bottom: 24px !important;
+}
+
+.main-with-header-offset {
+  padding-top: calc(variables.$headerHeight + 24px);
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1920px;
+  padding: 0 30px;
+}
+
+.hover-underline {
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+.pointer-events-none {
+  pointer-events: none !important;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.color-gray {
+  color: variables.$gray;
+}

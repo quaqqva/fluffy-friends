@@ -29,7 +29,7 @@ export abstract class EntityApiService<
 
     const requestData = {
       path,
-      listParams: listFilters,
+      body: listFilters,
       mockupData,
     };
 
@@ -50,7 +50,7 @@ export abstract class EntityApiService<
   }
 
   public create(body: TEntityCreateBody): Observable<IdResponse> {
-    const path = `${this.apiUrl}/create`;
+    const path = this.apiUrl;
 
     const mockupData = getMockup(path, IdMockup.response.success, body);
 

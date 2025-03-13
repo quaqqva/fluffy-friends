@@ -1,217 +1,101 @@
-<div class="hero">
-  <div class="hero-content">
-    <h1>Сообщество любителей домашних животных</h1>
-    <p>Присоединяйтесь к нам и радуйте себя и своего питомца!</p>
+<div class="hero-section">
+  <div class="hero-section__inner">
+    <h1 class="margin-bottom-12 h2">Сообщество любителей домашних животных</h1>
+    <p class="body">Присоединяйтесь к нам и радуйте себя и своего питомца!</p>
   </div>
-  <div class="hero-image">
-    <div class="overlay"></div>
-    <img [ngSrc]="'/assets/img/main-cat.png'" alt="Белый кот" fill />
+  <div class="hero-section__image-wrapper">
+    <div class="hero-section__image-overlay"></div>
+    <img
+      [ngSrc]="'/assets/img/main-cat.png'"
+      alt="Белый кот"
+      class="hero-section__image"
+      fill
+      priority
+    />
   </div>
 </div>
 
-<div style="padding: 0 60px">
-  <p><strong>Добро пожаловать!</strong></p>
-  <p>
-    Наш форум создан для тех, кто ценит своих домашних питомцев и хочет делиться
-    своим опытом, задавать вопросы и находить полезные советы. Здесь вы найдете
-    сообщество таких же заботливых хозяев, как вы, готовых помочь в любых
-    вопросах, связанных с содержанием, уходом, здоровьем и воспитанием животных.
-  </p>
+<div class="container">
+  <div class="text-section">
+    <p><strong>Добро пожаловать!</strong></p>
+    <p>
+      Наш форум создан для тех, кто ценит своих домашних питомцев и хочет
+      делиться своим опытом, задавать вопросы и находить полезные советы. Здесь
+      вы найдете сообщество таких же заботливых хозяев, как вы, готовых помочь в
+      любых вопросах, связанных с содержанием, уходом, здоровьем и воспитанием
+      животных.
+    </p>
+    <p><strong>Что вы можете сделать на форуме:</strong></p>
+    <ul>
+      <li>Создавать темы для обсуждений и делиться своими историями.</li>
+      <li>Задавать вопросы о поведении, питании и здоровье животных.</li>
+      <li>Читать полезные статьи и узнавать новое о питомцах.</li>
+      <li>Обсуждать интересные случаи, связанные с вашими любимцами.</li>
+      <li>
+        Находить рекомендации по ветеринарным клиникам, грумерам и другим
+        услугам.
+      </li>
+    </ul>
 
-  <p><strong>Что вы можете сделать на форуме:</strong></p>
-  <ul>
-    <li>Создавать темы для обсуждений и делиться своими историями.</li>
-    <li>Задавать вопросы о поведении, питании и здоровье животных.</li>
-    <li>Читать полезные статьи и узнавать новое о питомцах.</li>
-    <li>Обсуждать интересные случаи, связанные с вашими любимцами.</li>
-    <li>
-      Находить рекомендации по ветеринарным клиникам, грумерам и другим услугам.
-    </li>
-  </ul>
+    <p>
+      Наш форум охватывает всех питомцев – от кошек и собак до экзотических
+      животных. Каждый найдет здесь раздел по интересам и поддержку от
+      единомышленников.
+    </p>
 
-  <p>
-    Наш форум охватывает всех питомцев – от кошек и собак до экзотических
-    животных. Каждый найдет здесь раздел по интересам и поддержку от
-    единомышленников.
-  </p>
+    <p>
+      <strong
+        >Чтобы начать общение, зарегистрируйтесь и присоединяйтесь к
+        обсуждениям!</strong
+      >
+      Мы стараемся сделать наше сообщество комфортным и безопасным для каждого,
+      поэтому не забывайте соблюдать правила форума.
+    </p>
 
-  <p>
-    <strong
-      >Чтобы начать общение, зарегистрируйтесь и присоединяйтесь к
-      обсуждениям!</strong
-    >
-    Мы стараемся сделать наше сообщество комфортным и безопасным для каждого,
-    поэтому не забывайте соблюдать правила форума.
-  </p>
+    <p>
+      Добро пожаловать в "Пушистые друзья" – место, где ваши питомцы и вы
+      найдёте новых друзей!
+    </p>
+  </div>
 
-  <p>
-    Добро пожаловать в "Пушистые друзья" – место, где ваши питомцы и вы найдёте
-    новых друзей!
-  </p>
-</div>
-
-<!-- Секция статей -->
-<div class="articles">
-  <p style="font-size: 2em"><strong>Последние статьи</strong></p>
-  <div class="articles-slider-wrapper">
-    <button class="prev-btn slider-btn">
-      <i class="fa fa-chevron-left"></i>
-    </button>
-    <div class="articles-slider">
-      <div class="articles-container">
-        <a class="card" href="article.html">
-          <img alt="Кот прыгает" src="/assets/img/article-logo-1.png" />
-          <div class="card-content">
-            <div class="article-additional-info">
-              <div class="tags">
-                <p class="tag">Кошки</p>
-              </div>
-              <p class="article-date">14.12.2024</p>
+  <div class="articles-section">
+    <p class="h2 margin-bottom-12 text-align-center">Последние статьи</p>
+    @if (isLoading()) {
+      <app-preloader></app-preloader>
+    } @else if (lastArticles().length === 0) {
+      <p class="h3 padding-top-24 padding-bottom-24 text-align-center">
+        Нет статей
+      </p>
+    } @else {
+      <div class="articles-section__carousel-wrapper">
+        <app-button
+          (click)="carousel.step(1)"
+          [disabled]="carousel.isBackwardNavDisabled()"
+          [iconOnly]="true"
+          [icon]="faChevronLeft"
+        ></app-button>
+        <p-carousel
+          #carousel
+          [circular]="false"
+          [numScroll]="1"
+          [numVisible]="3"
+          [showNavigators]="false"
+          [value]="lastArticles()"
+          class="articles-section__carousel"
+        >
+          <ng-template #item let-article>
+            <div class="articles-section__article-wrapper">
+              <app-article-card [article]="article"></app-article-card>
             </div>
-            <p style="font-size: 1.2em">
-              <strong>Отучаем кота шуметь по ночам</strong>
-            </p>
-            <div class="article-stats">
-              <div>
-                <i class="fa fa-comment"></i>
-                <p>120</p>
-              </div>
-              <div>
-                <i class="fa fa-eye"></i>
-                <p>1200</p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a class="card" href="article.html">
-          <img alt="Две белые собаки" src="/assets/img/article-logo-2.png" />
-          <div class="card-content">
-            <div class="article-additional-info">
-              <div class="tags">
-                <p class="tag">Собаки</p>
-              </div>
-              <p class="article-date">19.12.2024</p>
-            </div>
-            <p style="font-size: 1.2em">
-              <strong>5 секретов генетики собак</strong>
-            </p>
-            <div class="article-stats">
-              <div>
-                <i class="fa fa-comment"></i>
-                <p>20</p>
-              </div>
-              <div>
-                <i class="fa fa-eye"></i>
-                <p>10000</p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a class="card" href="article.html">
-          <img alt="Собака и корм" src="/assets/img/article-logo-3.png" />
-          <div class="card-content">
-            <div class="article-additional-info">
-              <div class="tags">
-                <p class="tag">Собаки</p>
-              </div>
-              <p class="article-date">12.12.2024</p>
-            </div>
-            <p style="font-size: 1.2em">
-              <strong>Как научить собаку есть сухой корм</strong>
-            </p>
-            <div class="article-stats">
-              <div>
-                <i class="fa fa-comment"></i>
-                <p>0</p>
-              </div>
-              <div>
-                <i class="fa fa-eye"></i>
-                <p>487</p>
-              </div>
-            </div>
-          </div>
-        </a>
-        <a class="card" href="article.html">
-          <img alt="Пушистый кот" src="/assets/img/article-logo-4.png" />
-          <div class="card-content">
-            <div class="article-additional-info">
-              <div class="tags">
-                <p class="tag">Кошки</p>
-              </div>
-              <p class="article-date">17.09.2024</p>
-            </div>
-            <p style="font-size: 1.2em">
-              <strong>Различают ли кошки, к кому обращается хозяин?</strong>
-            </p>
-            <div class="article-stats">
-              <div>
-                <i class="fa fa-comment"></i>
-                <p>1</p>
-              </div>
-              <div>
-                <i class="fa fa-eye"></i>
-                <p>607</p>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a class="card" href="article.html">
-          <img alt="Собака ест с рук" src="/assets/img/article-logo-5.png" />
-          <div class="card-content">
-            <div class="article-additional-info">
-              <div class="tags">
-                <p class="tag">Собаки</p>
-              </div>
-              <p class="article-date">12.12.2024</p>
-            </div>
-            <p style="font-size: 1.2em">
-              <strong>Почему собаки любят есть с рук?</strong>
-            </p>
-            <div class="article-stats">
-              <div>
-                <i class="fa fa-comment"></i>
-                <p>0</p>
-              </div>
-              <div>
-                <i class="fa fa-eye"></i>
-                <p>607</p>
-              </div>
-            </div>
-          </div>
-        </a>
-
-        <a class="card" href="article.html">
-          <img
-            alt="Невская маскарадная кошка"
-            src="/assets/img/article-logo-6.png"
-          />
-          <div class="card-content">
-            <div class="article-additional-info">
-              <div class="tags">
-                <p class="tag">Кошки</p>
-              </div>
-              <p class="article-date">12.12.2024</p>
-            </div>
-            <p style="font-size: 1.2em">
-              <strong>5 причин НЕ заводить невскую маскарадную кошку</strong>
-            </p>
-            <div class="article-stats">
-              <div>
-                <i class="fa fa-comment"></i>
-                <p>2</p>
-              </div>
-              <div>
-                <i class="fa fa-eye"></i>
-                <p>1981</p>
-              </div>
-            </div>
-          </div>
-        </a>
+          </ng-template>
+        </p-carousel>
+        <app-button
+          (click)="carousel.step(-1)"
+          [disabled]="carousel.isForwardNavDisabled()"
+          [iconOnly]="true"
+          [icon]="faChevronRight"
+        ></app-button>
       </div>
-    </div>
-    <button class="next-btn slider-btn">
-      <i class="fa fa-chevron-right"></i>
-    </button>
+    }
   </div>
 </div>

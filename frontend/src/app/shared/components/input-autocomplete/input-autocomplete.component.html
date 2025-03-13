@@ -1,0 +1,26 @@
+<p-inputgroup>
+  @if (icon) {
+    <p-inputgroup-addon>
+      <fa-icon [icon]="icon"></fa-icon>
+    </p-inputgroup-addon>
+  }
+  @if (label) {
+    <p-floatlabel [variant]="'on'">
+      <ng-container *ngTemplateOutlet="input"></ng-container>
+      <label [for]="input">{{ label }}</label>
+    </p-floatlabel>
+  } @else {
+    <ng-container *ngTemplateOutlet="input"></ng-container>
+  }
+</p-inputgroup>
+
+<ng-template #input>
+  <p-autocomplete
+    (completeMethod)="onSearch($event)"
+    [fluid]="true"
+    [formControl]="control"
+    [optionLabel]="'name'"
+    [suggestions]="options"
+    multiple
+  ></p-autocomplete>
+</ng-template>

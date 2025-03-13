@@ -1,0 +1,27 @@
+@use '../../../../global-styles/variables';
+
+:host {
+  --p-editor-toolbar-border-color: #{variables.$blue};
+  --p-editor-toolbar-background: #{variables.$yellow};
+  --p-editor-toolbar-border-radius: 12px;
+
+  --p-editor-content-background: #{variables.$white};
+  --p-editor-content-color: #{variables.$black};
+  --p-editor-content-border-radius: 12px;
+  --p-editor-content-border-color: #{variables.$blue};
+
+  --p-editor-toolbar-item-color: #{variables.$black};
+  --p-editor-toolbar-item-hover-color: #{variables.$black};
+  --p-editor-toolbar-item-active-color: #{variables.$blue};
+
+  ::ng-deep {
+    .p-editor.ng-invalid.ng-touched {
+      --p-editor-content-border-color: #{variables.$red};
+      --p-editor-toolbar-border-color: #{variables.$red};
+    }
+
+    .p-editor-content {
+      min-height: 320px;
+    }
+  }
+}

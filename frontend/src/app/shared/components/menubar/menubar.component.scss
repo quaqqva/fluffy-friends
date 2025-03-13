@@ -1,0 +1,21 @@
+@use '../../../../global-styles/variables';
+
+:host {
+  --p-menubar-border-radius: 12px;
+  --p-menubar-gap: 20px;
+
+  --p-menubar-submenu-background: #{variables.$white};
+  --p-menubar-submenu-padding: 8px;
+
+  --p-menubar-submenu-border-color: transparent;
+  --p-menubar-submenu-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  --p-menubar-submenu-gap: 12px;
+}
+
+.menubar-item {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+
+  font-size: 1.5em;
+}

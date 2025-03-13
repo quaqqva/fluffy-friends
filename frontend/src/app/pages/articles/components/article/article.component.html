@@ -1,103 +1,39 @@
-<article class="article">
-  <h1>5 причин НЕ заводить невскую маскарадную кошку</h1>
-  <div class="article-meta">
-    <p>Автор: Анна Павлова</p>
-    |
-    <p>21.08.2024 13:30</p>
-  </div>
-  <img
-    alt="Невская маскарадная кошка"
-    class="article-img"
-    src="assets/img/article-logo-6.png"
-  />
+<div class="main-with-header-offset">
+  <div class="container">
+    @if (isLoading()) {
+      <app-preloader></app-preloader>
+    } @else {
+      <article class="article">
+        <h1 class="h1">{{ article().title }}</h1>
+        <div class="article__meta-info">
+          <p>{{ article().publishedAt | date: 'dd.MM.YYYY hh:mm' }}</p>
+        </div>
+        <div class="article__preview-wrapper">
+          <img
+            [ngSrc]="article().photoUrl"
+            alt="Обложка статьи '{{ article().title }}'"
+            class="article__preview"
+            fill
+          />
+        </div>
 
-  <p>
-    Невская маскарадная кошка – удивительная порода, которая привлекает
-    владельцев своим внешним видом и характером. Однако стоит взвесить все «за»
-    и «против», прежде чем завести такую кошку.
-  </p>
+        <div [innerHTML]="article().content" class="article__inner"></div>
+      </article>
 
-  <!-- Секции статьи -->
-  <h2>1. Уборка шерсти</h2>
-  <p>
-    Эти кошки имеют длинную, густую шерсть, которая требует регулярного ухода.
-    Если вы не готовы к постоянному вычесыванию и уборке шерсти по всему дому,
-    эта порода может вас разочаровать.
-  </p>
+      <div class="article-comments margin-bottom-12">
+        <p class="h3 margin-bottom-12">Комментарии</p>
+        <app-article-comment-create
+          [articleId]="article().id"
+          (created)="onCommentCreate($event)"
+        ></app-article-comment-create>
 
-  <img
-    alt="Невская маскарадная кошка сидит"
-    src="assets/img/article-img-2.png"
-  />
-
-  <h2>2. Проблемы с колтунами</h2>
-  <p>
-    При недостаточном уходе за шерстью могут образоваться колтуны, которые
-    доставляют дискомфорт животному.
-  </p>
-
-  <h3>Почему образуются колтуны?</h3>
-  <p>
-    Колтуны образуются из-за спутанной шерсти, особенно если кошка часто
-    двигается или имеет доступ к улице. Без регулярного расчесывания шерсть
-    слипается.
-  </p>
-
-  <h3>Как предотвратить образование колтунов?</h3>
-  <p>
-    Регулярное использование специальных расчесок и кондиционеров для
-    длинношерстных кошек может минимизировать риск образования колтунов. Также
-    важно вовремя купать животное.
-  </p>
-
-  <h2>3. Привередливость в еде</h2>
-  <p>
-    Кошки этой породы часто требуют особого подхода к питанию, что может стать
-    проблемой для владельцев.
-  </p>
-
-  <h2>4. Стоимость питомца</h2>
-  <p>
-    Стоимость котят этой породы достаточно высока. Кроме того, уход за ними
-    требует дополнительных затрат.
-  </p>
-
-  <img
-    alt="Котенок в корзине"
-    src="assets/img/article-img-1.png"
-    style="width: 100%"
-  />
-</article>
-
-<div class="comments-section" style="max-width: 800px; margin: 0 auto">
-  <p><strong>Комментарии</strong></p>
-
-  <!-- Поле добавления комментария -->
-  <div class="comment-form">
-    <textarea placeholder="Напишите комментарий..." rows="4"></textarea>
-    <button>Отправить</button>
-  </div>
-
-  <!-- Список комментариев -->
-  <div class="comment">
-    <p><strong>Алексей</strong></p>
-    <p>21.08.2024 14:00</p>
-    <p>
-      Спасибо за статью! Действительно, уход за такой кошкой – это целая наука.
-    </p>
-  </div>
-  <div class="comment">
-    <p><strong>Мария</strong></p>
-    <p>21.08.2024 15:15</p>
-    <p>
-      У меня такая кошка. Много шерсти, но она невероятно красивая и ласковая!
-    </p>
-  </div>
-  <div class="comment">
-    <p><strong>Екатерина</strong></p>
-    <p>21.08.2024 17:45</p>
-    <p>
-      Согласна с пунктом про еду, мой кот тоже очень привередлив в выборе корма.
-    </p>
+        @for (comment of comments(); track comment.id) {
+          <app-article-comment [comment]="comment"></app-article-comment>
+          @if ($index !== comments().length - 1) {
+            <div class="article-comments__divider"></div>
+          }
+        }
+      </div>
+    }
   </div>
 </div>

@@ -1,0 +1,20 @@
+@use '../../../../global-styles/variables';
+
+:host {
+  --p-textarea-color: #{variables.$black};
+  --p-textarea-background: #{variables.$white};
+  --p-textarea-padding-y: #{variables.$inputVerticalPadding};
+  --p-textarea-padding-x: #{variables.$inputHorizontalPadding};
+  --p-textarea-border-color: #{variables.$blue};
+  --p-textarea-transition-duration: #{variables.$transitionDuration};
+  --p-textarea-border-radius: 12px;
+  --p-floatlabel-position-y: 20px;
+}
+
+.textarea {
+  resize: none;
+
+  &.ng-invalid.ng-touched {
+    --p-textarea-border-color: #{variables.$red};
+  }
+}

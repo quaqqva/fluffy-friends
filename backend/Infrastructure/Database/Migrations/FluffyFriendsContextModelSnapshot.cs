@@ -37,10 +37,10 @@ namespace Infrastructure.Database.Migrations
                         .IsRequired()
                         .HasColumnType("text");
 
-                    b.Property<int>("MaxPrice")
+                    b.Property<int?>("MaxPrice")
                         .HasColumnType("integer");
 
-                    b.Property<int>("MinPrice")
+                    b.Property<int?>("MinPrice")
                         .HasColumnType("integer");
 
                     b.Property<int>("PhotoId")

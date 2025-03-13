@@ -1,0 +1,31 @@
+:host {
+  --p-progressspinner-color-1: var(--p-primary-400);
+  --p-progressspinner-color-2: var(--p-secondary-400);
+  --p-progressspinner-color-3: var(--p-accent-400);
+  --p-progressspinner-color-4: var(--p-secondary-950);
+
+  display: flex;
+  width: 100%;
+  min-height: 300px;
+  justify-content: center;
+  align-items: center;
+
+  &.small {
+    $smallSize: 28px;
+
+    width: $smallSize;
+    height: $smallSize;
+    min-height: auto;
+
+    ::ng-deep {
+      .p-progressspinner {
+        width: $smallSize;
+        height: $smallSize;
+      }
+    }
+  }
+
+  &.inline {
+    display: inline-flex;
+  }
+}

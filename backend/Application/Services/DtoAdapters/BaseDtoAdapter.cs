@@ -19,6 +19,8 @@ public abstract class
 
     protected abstract Expression<Func<TEntity, TListItemDto>> ListItemSelector { get; }
 
+    protected virtual Func<IQueryable<TEntity>, IOrderedQueryable<TEntity>>? OrderBy => null;
+
     public abstract DbSelectParams<TEntity, TEntityDto> DbSelectParams { get; }
 
     public abstract TEntity ConvertDtoToEntity(TCreateDto dto, int id = 0);
@@ -35,7 +37,8 @@ public abstract class
             Select: ListItemSelector,
             Filter: filterDto == null ? null : CreateFilter(filterDto),
             Limit: filterDto?.Limit ?? DefaultLimit,
-            Offset: filterDto?.Offset ?? DefaultOffset);
+            Offset: filterDto?.Offset ?? DefaultOffset,
+            OrderBy: OrderBy);
     }
 
     protected virtual Expression<Func<TEntity, bool>> CreateFilter(TListFiltersDto filters)

@@ -80,6 +80,16 @@ services:
       - redis-data:/data
     networks:
       - app-network
+  
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.${ENV}
+    container_name: frontend
+    depends_on:
+      - backend
+    networks:
+      - app-network
 
 secrets:
   postgres_password:

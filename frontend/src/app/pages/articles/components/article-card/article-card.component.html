@@ -1,0 +1,44 @@
+<a [routerLink]="['/', AppRoutes.Articles, article.id]" class="article-card">
+  <div class="article-card__preview-wrapper">
+    <img
+      alt="Логотип статьи {{ article.title }} "
+      class="article-card__preview"
+      fill
+      ngSrc="{{ article.photoUrl }}"
+    />
+  </div>
+
+  <div class="article-card__inner">
+    <div class="article-card__additional-info">
+      <p-chip>{{ article.category }}</p-chip>
+      <p class="body color-gray">
+        {{ article.publishedAt | date: 'dd.MM.YYYY hh:mm' }}
+      </p>
+    </div>
+    <p class="h3">{{ article.title }}</p>
+    <div class="article-card__statistics">
+      <div>
+        <fa-icon [icon]="faComment" class="color-gray"></fa-icon>
+        <p>{{ article.comments }}</p>
+      </div>
+      <div>
+        <fa-icon [icon]="faEye" class="color-gray"></fa-icon>
+        <p>{{ article.views }}</p>
+      </div>
+    </div>
+    @if (article.minPrice || article.maxPrice) {
+      <div class="grid">
+        @if (article.minPrice) {
+          <div class="col w-50">
+            <p class="body">Цена от {{ article.minPrice }} ₽</p>
+          </div>
+        }
+        @if (article.maxPrice) {
+          <div class="col w-50">
+            <p class="body">Цена до {{ article.maxPrice }} ₽</p>
+          </div>
+        }
+      </div>
+    }
+  </div>
+</a>
