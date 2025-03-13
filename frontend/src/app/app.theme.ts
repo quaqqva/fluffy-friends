@@ -65,6 +65,7 @@ export const appTheme = definePreset({
           borderRadius: '4px',
           paddingY: '4px',
           paddingX: '8px',
+          gap: '8px',
         },
       },
     },

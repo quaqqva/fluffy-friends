@@ -1,4 +1,9 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  HostBinding,
+  Input,
+} from '@angular/core';
 import { ProgressSpinner } from 'primeng/progressspinner';
 
 @Component({
@@ -9,4 +14,7 @@ import { ProgressSpinner } from 'primeng/progressspinner';
   styleUrl: './preloader.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class PreloaderComponent {}
+export class PreloaderComponent {
+  @HostBinding('class.small') @Input() small = false;
+  @HostBinding('class.inline') @Input() inline = false;
+}

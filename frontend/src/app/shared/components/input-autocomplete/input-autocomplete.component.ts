@@ -1,4 +1,10 @@
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import {
+  ChangeDetectionStrategy,
+  Component,
+  EventEmitter,
+  Input,
+  Output,
+} from '@angular/core';
 import { FormControl, FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {
   FaIconComponent,
@@ -8,7 +14,9 @@ import { FloatLabel } from 'primeng/floatlabel';
 import { InputGroup } from 'primeng/inputgroup';
 import { InputGroupAddon } from 'primeng/inputgroupaddon';
 import { NgTemplateOutlet } from '@angular/common';
-import { AutoComplete } from 'primeng/autocomplete';
+import { AutoComplete, AutoCompleteCompleteEvent } from 'primeng/autocomplete';
+import { SelectOptionItem } from '../../models/select-option-item.interface';
+import { debounceTime, distinctUntilChanged, filter, Subject } from 'rxjs';
 
 @Component({
   selector: 'app-input-autocomplete',
@@ -29,8 +37,28 @@ import { AutoComplete } from 'primeng/autocomplete';
 })
 export class InputAutocompleteComponent {
   @Input({ required: true }) control!: FormControl;
+  @Input({ required: true }) options!: SelectOptionItem[];
   @Input() label = '';
   @Input() placeholder = '';
   @Input() bigFontSize = false;
   @Input() icon?: IconDefinition;
+  @Output() search = new EventEmitter<string>();
+
+  private readonly queryDebouncer = new Subject<string>();
+
+  public constructor() {
+    this.queryDebouncer
+      .pipe(
+        debounceTime(500),
+        distinctUntilChanged(),
+        filter((value) => !!value && value.length > 2),
+      )
+      .subscribe((query) => {
+        this.search.emit(query);
+      });
+  }
+
+  public onSearch(event: AutoCompleteCompleteEvent): void {
+    this.queryDebouncer.next(event.query);
+  }
 }

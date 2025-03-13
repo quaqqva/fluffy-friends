@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Inject,
   signal,
   WritableSignal,
 } from '@angular/core';
@@ -18,11 +17,10 @@ import { InputGroup } from 'primeng/inputgroup';
 import { InputComponent } from '../../../../shared/components/input/input.component';
 import { ArticleListFiltersComponent } from './article-list-filters/article-list-filters.component';
 import { ButtonComponent } from '../../../../shared/components/button/button.component';
-import { PlatformStateService } from '../../../../core/services/platform-state.service';
-import { TransferStateService } from '../../../../core/services/transfer-state.service';
-import { ToastService } from '../../../../shared/services/toast.service';
-import { ArticlesApiService } from '../../../../core/services/api/articles-api.service';
 import { PreloaderComponent } from '../../../../shared/components/preloader/preloader.component';
+import { SafeToastService } from '../../../../core/services/safe-toast.service';
+import { ArticlesListService } from '../../services/articles-list.service';
+import { ArticleViewListFilters } from '../../models/article-view-list-filters.interface';
 
 @Component({
   selector: 'app-articles-list',
@@ -48,54 +46,54 @@ import { PreloaderComponent } from '../../../../shared/components/preloader/prel
 export class ArticlesListComponent {
   public readonly articles: WritableSignal<ArticleListItem[]> = signal([]);
 
-  public readonly isLoading: WritableSignal<boolean> = signal(false);
-
+  public readonly isInitialLoading: WritableSignal<boolean> = signal(false);
+  public readonly isLoadMoreLoading: WritableSignal<boolean> = signal(false);
   protected readonly faPlus = faPlus;
-
-  private readonly stateKey = 'catalog-articles';
-
-  private toast: ToastService | null = null;
+  private currentFilters?: ArticleViewListFilters;
 
   public constructor(
-    platformState: PlatformStateService,
-    private transferState: TransferStateService,
-    private articlesApi: ArticlesApiService,
+    public articlesList: ArticlesListService,
+    private toast: SafeToastService,
   ) {
-    const isBrowser = platformState.isBrowser;
-
-    if (isBrowser) {
-      this.toast = Inject(ToastService);
-    }
-
-    if (isBrowser && transferState.hasState(this.stateKey)) {
-      this.articles.set(
-        transferState.getState<ArticleListItem[]>(this.stateKey)!,
-      );
-    } else {
-      this.fetchArticles(isBrowser);
+    if (!articlesList.restoredFromSever) {
+      this.isInitialLoading.set(true);
+      this.articlesList.fetchNextArticles().subscribe({
+        next: () => {
+          this.isInitialLoading.set(false);
+        },
+        error: () => {
+          this.toast.error('Ошибка загрузки статей');
+          this.isInitialLoading.set(false);
+        },
+      });
     }
   }
 
-  private fetchArticles(isBrowser: boolean): void {
-    if (isBrowser) {
-      this.isLoading.set(true);
-    }
+  public onFiltersChange(filters: ArticleViewListFilters): void {
+    this.currentFilters = filters;
+    this.articlesList.resetList();
 
-    this.articlesApi.getList({ limit: 6, offset: 0 }).subscribe({
-      next: (response) => {
-        const articles = response.items!;
-        this.articles.set(articles);
-
-        if (isBrowser) {
-          this.isLoading.set(false);
-        } else {
-          this.transferState.saveState(this.stateKey, articles);
-        }
+    this.isInitialLoading.set(true);
+    this.articlesList.fetchNextArticles(filters).subscribe({
+      next: () => {
+        this.isInitialLoading.set(false);
       },
       error: () => {
-        if (isBrowser) {
-          this.toast!.error('Ошибка загрузки статей');
-        }
+        this.toast.error('Ошибка загрузки статей');
+        this.isInitialLoading.set(false);
+      },
+    });
+  }
+
+  public onClickLoadMore(): void {
+    this.isLoadMoreLoading.set(true);
+    this.articlesList.fetchNextArticles(this.currentFilters).subscribe({
+      next: () => {
+        this.isLoadMoreLoading.set(false);
+      },
+      error: () => {
+        this.toast.error('Ошибка загрузки статей');
+        this.isLoadMoreLoading.set(false);
       },
     });
   }

@@ -10,8 +10,10 @@
     </div>
     <div class="col w-100">
       <app-input-autocomplete
-        [control]="categoriesTextControl"
+        (search)="onCategorySearch($event)"
+        [control]="categoriesControl"
         [label]="'Категории'"
+        [options]="categoryOptions()"
       ></app-input-autocomplete>
     </div>
     <div class="col w-50">

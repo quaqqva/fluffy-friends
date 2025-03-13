@@ -1,18 +1,18 @@
 <button
   [ngClass]="{
     'button_icon-only': iconOnly,
-    button_disabled: disabled,
-    'cursor-pointer': !disabled,
+    button_disabled: disabled || isLoading,
+    'cursor-pointer': !disabled && !isLoading,
   }"
   [type]="type"
   class="button button_theme-{{ theme }} body-bold"
 >
-  @if (icon) {
-    <fa-icon
-      [ngClass]="{ 'button__icon_with-padding-right': !iconOnly }"
-      class="button__icon"
-      [icon]="icon"
-    ></fa-icon>
+  @if (icon && !isLoading) {
+    <fa-icon class="button__icon" [icon]="icon"></fa-icon>
   }
+  @if (isLoading) {
+    <app-preloader [small]="true" [inline]="true"></app-preloader>
+  }
+
   <ng-content></ng-content>
 </button>

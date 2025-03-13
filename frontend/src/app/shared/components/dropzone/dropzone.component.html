@@ -1,0 +1,29 @@
+@if (label) {
+  <p class="body-bold margin-bottom-12">{{ label }}</p>
+}
+<div (drop)="onFileDrop($event)" class="dropzone">
+  <p-fileUpload
+    (onSelect)="onFileSelect($event)"
+    [accept]="acceptedFormats"
+    [fileLimit]="maxFiles"
+    [multiple]="maxFiles > 1"
+    chooseLabel="Выбрать файлы"
+    customUpload
+    mode="basic"
+  >
+    <ng-template #content></ng-template>
+    <ng-template #file></ng-template>
+  </p-fileUpload>
+  <p>Перетащите файлы сюда или нажмите "Выбрать файлы"</p>
+</div>
+
+@if (uploadedFiles().length > 0) {
+  <div class="uploaded-files">
+    @for (file of uploadedFiles(); track file.file) {
+      <app-file-item
+        [fileState]="file"
+        (deleted)="removeFile(file)"
+      ></app-file-item>
+    }
+  </div>
+}

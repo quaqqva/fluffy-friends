@@ -8,10 +8,13 @@
   --p-textarea-border-color: #{variables.$blue};
   --p-textarea-transition-duration: #{variables.$transitionDuration};
   --p-textarea-border-radius: 12px;
-
   --p-floatlabel-position-y: 20px;
 }
 
-textarea {
+.textarea {
   resize: none;
+
+  &.ng-invalid.ng-touched {
+    --p-textarea-border-color: #{variables.$red};
+  }
 }

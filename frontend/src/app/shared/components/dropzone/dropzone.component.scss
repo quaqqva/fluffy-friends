@@ -1,0 +1,43 @@
+@use '../../../../global-styles/variables';
+
+:host {
+  --p-fileupload-basic-gap: 0.5rem;
+  --p-button-gap: 0.5rem;
+
+  ::ng-deep {
+    .filelabel {
+      display: none;
+    }
+
+    p-button,
+    .p-fileupload-choose-button {
+      width: 100%;
+    }
+  }
+}
+
+.dropzone {
+  border: 2px dashed variables.$blue;
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s;
+  border-radius: 8px;
+  background: var(--surface-50);
+
+  &:hover {
+    background: variables.$blue;
+    border: 2px dashed variables.$yellow
+  }
+
+  &.drag-over {
+    background: var(--primary-100);
+  }
+}
+
+.uploaded-files {
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}

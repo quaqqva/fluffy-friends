@@ -9,4 +9,23 @@
   min-height: 300px;
   justify-content: center;
   align-items: center;
+
+  &.small {
+    $smallSize: 28px;
+
+    width: $smallSize;
+    height: $smallSize;
+    min-height: auto;
+
+    ::ng-deep {
+      .p-progressspinner {
+        width: $smallSize;
+        height: $smallSize;
+      }
+    }
+  }
+
+  &.inline {
+    display: inline-flex;
+  }
 }

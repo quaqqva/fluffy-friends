@@ -19,7 +19,7 @@ export class ArticleInfoMockup {
     minPrice: 100,
     maxPrice: 100000,
     views: 10,
-    publishedAt: '13.03.2025 12:10',
+    publishedAt: new Date().toISOString(),
     photoUrl: 'google.com',
     category: 'Кошки',
     comments: [],

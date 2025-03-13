@@ -15,6 +15,11 @@
   --p-editor-toolbar-item-active-color: #{variables.$blue};
 
   ::ng-deep {
+    .p-editor.ng-invalid.ng-touched {
+      --p-editor-content-border-color: #{variables.$red};
+      --p-editor-toolbar-border-color: #{variables.$red};
+    }
+
     .p-editor-content {
       min-height: 320px;
     }

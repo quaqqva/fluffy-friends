@@ -20,6 +20,10 @@
   ::ng-deep {
     .p-select {
       padding-right: var(--p-select-padding-x);
+
+      &.ng-invalid.ng-touched {
+        --p-select-border-color: #{variables.$red};
+      }
     }
   }
 }

@@ -19,7 +19,11 @@ export class FileApiService {
     formData.append('module', module);
     formData.append('file', file);
 
-    const mockupData = getMockup(path, { id: 0, name: '', path: '' }, formData);
+    const mockupData = getMockup(
+      path,
+      { id: 2, name: 'Файл.png', path: 'google.com' },
+      formData,
+    );
 
     const requestData = {
       path,

@@ -1,43 +1,59 @@
 <div class="main-with-header-offset">
   <div class="container">
-    <h1 class="h2">Добавление новой статьи</h1>
-    <form>
-      <div class="grid padding-top-24">
-        <div class="col w-50">
-          <app-input [control]="titleControl" [label]="'Заголовок'"></app-input>
+    @if (isLoading()) {
+      <app-preloader></app-preloader>
+    } @else {
+      <h1 class="h2">Добавление новой статьи</h1>
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="grid padding-top-24">
+          <div class="col w-50">
+            <app-input
+              [control]="titleControl"
+              [label]="'Заголовок'"
+            ></app-input>
+          </div>
+          <div class="col w-50">
+            <app-select
+              [control]="categoryControl"
+              [label]="'Категория'"
+              [options]="categoryOptions()"
+            ></app-select>
+          </div>
+          <div class="col w-50">
+            <app-input
+              [control]="minPriceControl"
+              [label]="'Минимальная цена питомца'"
+              [mask]="InputMasks.Number"
+            ></app-input>
+          </div>
+          <div class="col w-50">
+            <app-input
+              [control]="maxPriceControl"
+              [label]="'Максимальная цена питомца'"
+              [mask]="InputMasks.Number"
+            ></app-input>
+          </div>
+          <div class="col w-100">
+            <app-text-editor
+              [control]="contentControl"
+              [label]="'Наполнение статьи'"
+            ></app-text-editor>
+          </div>
+          <div class="col w-100">
+            <app-dropzone
+              [module]="'article-photos'"
+              [label]="'Превью статьи'"
+              (filesUploaded)="photoIdControl.setValue($event[0].id)"
+            ></app-dropzone>
+          </div>
         </div>
-        <div class="col w-50">
-          <app-select
-            [control]="categoryControl"
-            [label]="'Категория'"
-            [options]="[]"
-          ></app-select>
-        </div>
-        <div class="col w-50">
-          <app-input
-            [control]="minPriceControl"
-            [label]="'Минимальная цена питомца'"
-            [mask]="InputMasks.Number"
-          ></app-input>
-        </div>
-        <div class="col w-50">
-          <app-input
-            [control]="maxPriceControl"
-            [label]="'Максимальная цена питомца'"
-            [mask]="InputMasks.Number"
-          ></app-input>
-        </div>
-        <div class="col w-100">
-          <app-text-editor
-            [control]="contentControl"
-            [label]="'Наполнение статьи'"
-          ></app-text-editor>
-        </div>
-        <div class="col w-100">
-          <app-dropzone [label]="'Превью статьи'"></app-dropzone>
-        </div>
-      </div>
-      <app-button [icon]="faPlus" class="submit-button">Создать</app-button>
-    </form>
+        <app-button
+          [icon]="faPlus"
+          [type]="ButtonTypes.Submit"
+          class="submit-button"
+          >Создать
+        </app-button>
+      </form>
+    }
   </div>
 </div>

@@ -13,3 +13,7 @@
 .big-font-size {
   font-size: 2rem;
 }
+
+.input.ng-invalid.ng-touched {
+  --p-inputtext-border-color: #{variables.$red};
+}

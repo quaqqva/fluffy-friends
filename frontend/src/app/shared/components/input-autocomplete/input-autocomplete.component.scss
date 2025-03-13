@@ -9,6 +9,17 @@
   --p-autocomplete-border-radius: 12px;
   --p-autocomplete-transition-duration: #{variables.$transitionDuration};
 
+  --p-autocomplete-overlay-color: #{variables.$black};
+  --p-autocomplete-overlay-background: #{variables.$white};
+  --p-autocomplete-overlay-border-radius: 8px;
+  --p-autocomplete-overlay-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+
+  --p-autocomplete-option-padding: 1rem;
+  --p-autocomplete-option-color: #{variables.$black};
+
+  --p-autocomplete-chip-padding-y: 0.25rem;
+  --p-autocomplete-chip-border-radius: 4px;
+
   ::ng-deep {
     p-autocomplete,
     .p-autocomplete {

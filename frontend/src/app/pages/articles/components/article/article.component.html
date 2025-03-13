@@ -22,9 +22,12 @@
 
       <div class="article-comments margin-bottom-12">
         <p class="h3 margin-bottom-12">Комментарии</p>
-        <app-article-comment-create></app-article-comment-create>
+        <app-article-comment-create
+          [articleId]="article().id"
+          (created)="onCommentCreate($event)"
+        ></app-article-comment-create>
 
-        @for (comment of article().comments; track comment.id) {
+        @for (comment of comments(); track comment.id) {
           <app-article-comment [comment]="comment"></app-article-comment>
           @if ($index !== article().comments.length - 1) {
             <div class="article-comments__divider"></div>

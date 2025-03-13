@@ -16,8 +16,11 @@
 
 <ng-template #input>
   <p-autocomplete
+    (completeMethod)="onSearch($event)"
     [fluid]="true"
     [formControl]="control"
+    [optionLabel]="'name'"
+    [suggestions]="options"
     multiple
   ></p-autocomplete>
 </ng-template>

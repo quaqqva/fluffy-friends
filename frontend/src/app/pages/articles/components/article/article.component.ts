@@ -16,6 +16,7 @@ import { ArticleInfoMockup } from '../../../../core/mockups/articles/article-inf
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppRoutes } from '../../../../core/models/routing/app-routes.enum';
 import { PreloaderComponent } from '../../../../shared/components/preloader/preloader.component';
+import { ArticleComment } from '../../../../core/models/api/article-comments/article-comment.interface';
 
 @Component({
   selector: 'app-article',
@@ -39,6 +40,8 @@ export class ArticleComponent {
 
   public readonly isLoading: WritableSignal<boolean> = signal(false);
 
+  public readonly comments: WritableSignal<ArticleComment[]> = signal([]);
+
   private readonly stateKey = 'article';
 
   public constructor(
@@ -52,10 +55,15 @@ export class ArticleComponent {
 
     if (isBrowser && transferState.hasState(this.stateKey)) {
       this.article.set(transferState.getState<Article>(this.stateKey)!);
+      this.comments.set(this.article().comments);
     } else {
       const id = this.route.snapshot.params['id'];
       this.fetchArticle(id, isBrowser);
     }
+  }
+
+  public onCommentCreate(comment: ArticleComment): void {
+    this.comments.update((comments) => [comment, ...comments]);
   }
 
   private fetchArticle(id: string, isBrowser: boolean): void {

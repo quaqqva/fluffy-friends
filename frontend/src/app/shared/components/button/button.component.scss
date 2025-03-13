@@ -6,6 +6,13 @@
 }
 
 .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+
+  font-size: 1.5rem;
+
   width: 100%;
 
   border-radius: 12px;
@@ -15,9 +22,6 @@
   outline: none;
 
   &_icon-only {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     aspect-ratio: 1 / 1;
     padding: 20px;
     border-radius: 50%;
@@ -32,11 +36,5 @@
   &_disabled {
     background: variables.$gray;
     color: variables.$white
-  }
-
-  &__icon {
-    &_with-padding-right {
-      padding-right: 12px;
-    }
   }
 }

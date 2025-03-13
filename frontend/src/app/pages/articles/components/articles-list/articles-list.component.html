@@ -2,22 +2,31 @@
   <div class="container">
     <h1 class="h2 padding-bottom-24">Каталог</h1>
 
-    <app-article-list-filters></app-article-list-filters>
+    <app-article-list-filters
+      (filtersChanged)="onFiltersChange($event)"
+    ></app-article-list-filters>
 
-    @if (isLoading()) {
+    @if (isInitialLoading()) {
       <app-preloader></app-preloader>
     } @else {
-      <div class="grid padding-top-24 padding-bottom-24">
-        @for (article of articles(); track article.id) {
+      <div class="grid justify-flex-start padding-top-24 padding-bottom-24">
+        @for (article of articlesList.articlesList; track article.id) {
           <div class="col w-33">
             <app-article-card [article]="article"></app-article-card>
           </div>
         }
       </div>
 
-      <div class="load-more-button">
-        <app-button [icon]="faPlus">Показать ещё</app-button>
-      </div>
+      @if (articlesList.canLoadMore) {
+        <div class="load-more-button">
+          <app-button
+            [isLoading]="isLoadMoreLoading()"
+            [icon]="faPlus"
+            (click)="onClickLoadMore()"
+            >Показать ещё
+          </app-button>
+        </div>
+      }
     }
   </div>
 </div>

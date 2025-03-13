@@ -11,11 +11,12 @@ import {
 import { NgClass } from '@angular/common';
 import { ButtonThemes } from './models/button-themes.enum';
 import { ButtonTypes } from './models/button-types.enum';
+import { PreloaderComponent } from '../preloader/preloader.component';
 
 @Component({
   selector: 'app-button',
   standalone: true,
-  imports: [FaIconComponent, NgClass],
+  imports: [FaIconComponent, NgClass, PreloaderComponent],
   templateUrl: './button.component.html',
   styleUrl: './button.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
@@ -23,6 +24,7 @@ import { ButtonTypes } from './models/button-types.enum';
 export class ButtonComponent {
   @Input() icon!: IconDefinition;
   @Input() iconOnly = false;
+  @Input() isLoading = false;
   @Input() theme: ButtonThemes = ButtonThemes.Primary;
   @Input() type: ButtonTypes = ButtonTypes.Button;
   @HostBinding('class.pointer-events-none') @Input() disabled = false;
