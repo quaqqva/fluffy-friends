@@ -15,10 +15,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="front and back sync">
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="add descending sort by date">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/ArticleDtoAdapter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Application/Services/DtoAdapters/BaseDtoAdapter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/DtoAdapters/BaseDtoAdapter.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/services/toast.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/services/toast.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/global-styles/styles.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/global-styles/styles.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +61,7 @@
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Http/Routing/src/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Enum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/505626f37015de7240e52b3d89ac3443dc1563261d395271f2714c7a4389671e/ISpaPrerenderingService.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/backend/Application/Services/DtoAdapters/ArticleCommentDtoAdapter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.deps.json" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
@@ -422,7 +425,7 @@
       <workItem from="1741724240080" duration="40464000" />
       <workItem from="1741815114227" duration="2178000" />
       <workItem from="1741818018943" duration="1459000" />
-      <workItem from="1741873259522" duration="20257000" />
+      <workItem from="1741873259522" duration="21711000" />
     </task>
     <task id="LOCAL-00001" summary="add migration container">
       <option name="closed" value="true" />
@@ -528,7 +531,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741893956461</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="add descending sort by date">
+      <option name="closed" value="true" />
+      <created>1741894397214</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1741894397214</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -562,7 +573,8 @@
     <MESSAGE value="add ssr and some api calls" />
     <MESSAGE value="complete dropzone and api requests" />
     <MESSAGE value="front and back sync" />
-    <option name="LAST_COMMIT_MESSAGE" value="front and back sync" />
+    <MESSAGE value="add descending sort by date" />
+    <option name="LAST_COMMIT_MESSAGE" value="add descending sort by date" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

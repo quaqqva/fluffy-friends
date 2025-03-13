@@ -12,6 +12,7 @@ export class ToastService {
       severity: 'success',
       summary: 'Успех',
       detail: successMessage,
+      life: 150000,
     });
   }
 
@@ -20,6 +21,7 @@ export class ToastService {
       severity: 'error',
       summary: 'Ошибка',
       detail: errorMessage,
+      life: 150000,
     });
   }
 }

@@ -2,19 +2,7 @@ import { definePreset } from '@primeng/themes';
 
 export const appTheme = definePreset({
   semantic: {
-    primary: {
-      50: '#FFFBF0',
-      100: '#FFF9E2',
-      200: '#FFF7D4',
-      300: '#FFF5C6',
-      400: '#FFF3B8',
-      500: '#FFF6C9',
-      600: '#E6D0B4',
-      700: '#CCBA9F',
-      800: '#B3A58A',
-      900: '#998F75',
-      950: '#807960',
-    },
+    primary: '#FFE1DA',
     surface: {
       50: '#F5F5F5',
       100: '#EDEDED',
@@ -55,6 +43,7 @@ export const appTheme = definePreset({
       950: '#807960',
     },
     text: '#3e3e3e',
+    red: '#fd3f3f',
   },
   components: {
     chip: {
@@ -66,6 +55,31 @@ export const appTheme = definePreset({
           paddingY: '4px',
           paddingX: '8px',
           gap: '8px',
+        },
+      },
+    },
+    toast: {
+      colorScheme: {
+        root: {
+          width: '250px',
+          borderRadius: '12px',
+          summaryFontWeight: '600',
+          summaryFontSize: '16px',
+          textGap: '4px',
+          iconSize: '30px',
+          detailFontWeight: '400',
+          detailFontSize: '14px',
+          contentPadding: '1rem',
+          contentGap: '12px',
+          successDetailColor: `{text}`,
+          successBorderColor: '{accent.400}',
+          successBackground: '{accent.400}',
+          successColor: '{text}',
+          successShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px',
+          errorDetailColor: '{surface.50}',
+          errorBorderColor: '{red}',
+          errorBackground: '{red}',
+          errorColor: '{surface.50}',
         },
       },
     },
