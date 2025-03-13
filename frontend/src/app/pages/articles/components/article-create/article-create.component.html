@@ -43,6 +43,7 @@
             <app-dropzone
               [module]="'article-photos'"
               [label]="'Превью статьи'"
+              [error]="photoIdControl.invalid && photoIdControl.touched"
               (filesUploaded)="photoIdControl.setValue($event[0].id)"
             ></app-dropzone>
           </div>

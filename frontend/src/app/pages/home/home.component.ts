@@ -1,7 +1,6 @@
 import {
   ChangeDetectionStrategy,
   Component,
-  Inject,
   signal,
   WritableSignal,
 } from '@angular/core';
@@ -19,7 +18,7 @@ import { PreloaderComponent } from '../../shared/components/preloader/preloader.
 import { PlatformStateService } from '../../core/services/platform-state.service';
 import { TransferStateService } from '../../core/services/transfer-state.service';
 import { ArticlesApiService } from '../../core/services/api/articles-api.service';
-import { ToastService } from '../../shared/services/toast.service';
+import { SafeToastService } from '../../core/services/safe-toast.service';
 
 @Component({
   selector: 'app-home',
@@ -45,18 +44,13 @@ export class HomeComponent {
 
   private readonly stateKey = 'home-articles';
 
-  private toast: ToastService | null = null;
-
   public constructor(
     platformState: PlatformStateService,
     private transferState: TransferStateService,
     private articlesApi: ArticlesApiService,
+    private toast: SafeToastService,
   ) {
     const isBrowser = platformState.isBrowser;
-
-    if (isBrowser) {
-      this.toast = Inject(ToastService);
-    }
 
     if (isBrowser && transferState.hasState(this.stateKey)) {
       this.lastArticles.set(

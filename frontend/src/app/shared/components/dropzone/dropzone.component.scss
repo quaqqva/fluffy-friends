@@ -27,7 +27,11 @@
 
   &:hover {
     background: variables.$blue;
-    border: 2px dashed variables.$yellow
+    border-color: variables.$yellow
+  }
+
+  &.error {
+    border-color: variables.$red;
   }
 
   &.drag-over {

@@ -26,5 +26,19 @@
         <p>{{ article.views }}</p>
       </div>
     </div>
+    @if (article.minPrice || article.maxPrice) {
+      <div class="grid">
+        @if (article.minPrice) {
+          <div class="col w-50">
+            <p class="body">Цена от {{ article.minPrice }} ₽</p>
+          </div>
+        }
+        @if (article.maxPrice) {
+          <div class="col w-50">
+            <p class="body">Цена до {{ article.maxPrice }} ₽</p>
+          </div>
+        }
+      </div>
+    }
   </div>
 </a>

@@ -1,4 +1,4 @@
-import { Inject, Injectable } from '@angular/core';
+import { inject, Injectable } from '@angular/core';
 import { ToastService } from '../../shared/services/toast.service';
 import { PlatformStateService } from './platform-state.service';
 
@@ -10,7 +10,7 @@ export class SafeToastService {
 
   constructor(platformState: PlatformStateService) {
     if (platformState.isBrowser) {
-      this.toast = Inject(ToastService);
+      this.toast = inject(ToastService);
     }
   }
 

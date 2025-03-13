@@ -22,6 +22,10 @@
     align-items: center;
   }
 
+  &.align-items-stretch {
+    align-items: stretch;
+  }
+
   &.no-wrap {
     flex-wrap: nowrap;
   }

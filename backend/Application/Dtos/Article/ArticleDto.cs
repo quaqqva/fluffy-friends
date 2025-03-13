@@ -8,8 +8,8 @@ public record ArticleDto(
     string Content,
     DateTime PublishedAt,
     int Views,
-    int MinPrice,
-    int MaxPrice,
+    int? MinPrice,
+    int? MaxPrice,
     string Category,
     string PhotoUrl,
     List<ArticleCommentDto> Comments

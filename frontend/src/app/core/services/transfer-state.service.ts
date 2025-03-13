@@ -11,11 +11,9 @@ export class TransferStateService {
   }
 
   public getState<T>(key: string, defaultValue: T | null = null): T | null {
-    const state = this.transferState.get<T | null>(
-      makeStateKey(key),
-      defaultValue,
-    );
-    this.transferState.remove(makeStateKey(key));
+    const stateKey = makeStateKey<T | null>(key);
+    const state = this.transferState.get<T | null>(stateKey, defaultValue);
+    this.transferState.remove(stateKey);
     return state;
   }
 

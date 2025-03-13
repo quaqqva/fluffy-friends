@@ -15,42 +15,54 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/models/article-view-list-filters.interface.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/models/file-state.interface.ts" afterDir="false" />
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="complete dropzone and api requests">
+      <change beforePath="$PROJECT_DIR$/../.env/.env.dev" beforeDir="false" afterPath="$PROJECT_DIR$/../.env/.env.dev" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.env/.env.prod" beforeDir="false" afterPath="$PROJECT_DIR$/../.env/.env.prod" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/mockups/articles/article-info.mockup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/mockups/articles/article-info.mockup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/models/api/articles/create-article-request.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/models/api/articles/create-article-request.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/models/api/list-response.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/models/api/list-response.interface.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Dtos/Article/ArticleCreateDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dtos/Article/ArticleCreateDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Dtos/Article/ArticleDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dtos/Article/ArticleDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Dtos/Article/ArticleListItemDto.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Dtos/Article/ArticleListItemDto.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Application/Services/EntityCacheService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Application/Services/EntityCacheService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Article.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Article.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Infrastructure/Database/Migrations/FluffyFriendsContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Infrastructure/Database/Migrations/FluffyFriendsContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Controllers/ArticleCommentsController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Controllers/ArticleCommentsController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Controllers/BaseCrudController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Controllers/BaseCrudController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Presentation/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/ref/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/ref/Shared.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/refint/Shared.dll" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/refint/Shared.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/app.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/app.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/api/entity-api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/api/entity-api.service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/api/file-api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/api/file-api.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/safe-toast.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/safe-toast.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/core/services/transfer-state.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/core/services/transfer-state.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-card/article-card.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-card/article-card.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-card/article-card.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-card/article-card.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/article-create.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/models/article-create-form.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article-create/models/article-create-form.interface.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article-comment-create/article-comment-create.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article-comment-create/article-comment-create.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article-comment-create/article-comment-create.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article-comment-create/article-comment-create.component.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/article-list-filters.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/article-list-filters.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/article-list-filters.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/article-list-filters.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/models/article-list-filters-form.interface.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/models/article-list-filters-form.interface.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/button/button.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/button/button.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/button/button.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/button/button.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/button/button.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/button/button.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/input-autocomplete/input-autocomplete.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/input-autocomplete/input-autocomplete.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/input-autocomplete/input-autocomplete.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/input-autocomplete/input-autocomplete.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/input-autocomplete/input-autocomplete.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/input-autocomplete/input-autocomplete.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/input/input.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/input/input.component.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/input/input.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/input/input.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/preloader/preloader.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/preloader/preloader.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/preloader/preloader.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/preloader/preloader.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/select/select.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/select/select.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/text-editor/text-editor.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/text-editor/text-editor.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/textarea/textarea.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/textarea/textarea.component.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/global-styles/_variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/global-styles/_variables.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/services/articles-list.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/services/articles-list.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/file-item/file-item.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/file-item/file-item.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/environments/environment.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/environments/environment.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/src/global-styles/helpers/_grid.scss" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/global-styles/helpers/_grid.scss" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,11 +100,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/009e1ccafde4086ea52999e878f6e7aa5a7c4ccf/src/Middleware/Spa/SpaServices.Extensions/src/AngularCli/AngularCliMiddlewareExtensions.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/DefaultBuilder/src/WebApplicationBuilder.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/aspnetcore/3f1acb59718cadf111a0a796681e3d3509bb3381/src/Http/Routing/src/EndpointMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$USER_HOME$/AppData/Local/Symbols/src/dotnet/runtime/5535e31a712343a63f5d7d796cd874e563e5ac14/src/libraries/System.Private.CoreLib/src/System/Enum.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/505626f37015de7240e52b3d89ac3443dc1563261d395271f2714c7a4389671e/ISpaPrerenderingService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Shared/bin/Debug/net8.0/Shared.deps.json" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/backend/Shared/obj/Shared.csproj.nuget.dgspec.json" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Для навигации/Учёба/Университет/8 семак/ПСП/fluffy-friends/frontend/angular.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="KubernetesApiPersistence">{}</component>
   <component name="KubernetesApiProvider">{
@@ -110,45 +121,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;.NET Launch Settings Profile.Application: IIS Express.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.FullStack Dev.executor&quot;: &quot;Run&quot;,
-    &quot;Docker.ЛР 3: Compose Deployment.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Shell Script.Docker dev.executor&quot;: &quot;Run&quot;,
-    &quot;Shell Script.Docker prod.executor&quot;: &quot;Run&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.mappings&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.highlight.symlinks&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.date&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.permissions&quot;: &quot;false&quot;,
-    &quot;WebServerToolWindowPanel.toolwindow.show.size&quot;: &quot;false&quot;,
-    &quot;com.codeium.enabled&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;dev&quot;,
-    &quot;list.type.of.created.stylesheet&quot;: &quot;SCSS&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.stylelint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.stylelint&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.Run front.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;C:\\Для навигации\\Учёба\\Университет\\8 семак\\ПСП\\fluffy-friends\\frontend\\node_modules\\prettier&quot;,
-    &quot;rider.code.cleanup.on.save&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;actions.on.save&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Для навигации\\Учёба\\Университет\\8 семак\\ПСП\\fluffy-friends\\frontend\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Launch Settings Profile.Application: IIS Express.executor": "Run",
+    "ATTACH_DIALOG_SELECTED_CONTAINER": "backend",
+    "Docker.FullStack Dev.executor": "Run",
+    "Docker.ЛР 3: Compose Deployment.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Shell Script.Docker dev.executor": "Run",
+    "Shell Script.Docker migrate.executor": "Run",
+    "Shell Script.Docker prod.executor": "Run",
+    "WebServerToolWindowPanel.toolwindow.highlight.mappings": "true",
+    "WebServerToolWindowPanel.toolwindow.highlight.symlinks": "true",
+    "WebServerToolWindowPanel.toolwindow.show.date": "false",
+    "WebServerToolWindowPanel.toolwindow.show.permissions": "false",
+    "WebServerToolWindowPanel.toolwindow.show.size": "false",
+    "com.codeium.enabled": "true",
+    "git-widget-placeholder": "dev",
+    "list.type.of.created.stylesheet": "SCSS",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.stylelint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.stylelint": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.Run front.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "C:\\Для навигации\\Учёба\\Университет\\8 семак\\ПСП\\fluffy-friends\\frontend\\node_modules\\prettier",
+    "rider.code.cleanup.on.save": "true",
+    "settings.editor.selected.configurable": "actions.on.save",
+    "ts.external.directory.path": "C:\\Для навигации\\Учёба\\Университет\\8 семак\\ПСП\\fluffy-friends\\frontend\\node_modules\\typescript\\lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;rider.external.source.directories&quot;: [
-      &quot;C:\\Users\\sanek\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache&quot;,
-      &quot;C:\\Users\\sanek\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache&quot;,
-      &quot;C:\\Users\\sanek\\AppData\\Local\\Symbols\\src&quot;
+  "keyToStringList": {
+    "rider.external.source.directories": [
+      "C:\\Users\\sanek\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\DecompilerCache",
+      "C:\\Users\\sanek\\AppData\\Roaming\\JetBrains\\Rider2024.1\\resharper-host\\SourcesCache",
+      "C:\\Users\\sanek\\AppData\\Local\\Symbols\\src"
     ]
   }
-}</component>
-  <component name="RunManager" selected="npm.Run front">
+}]]></component>
+  <component name="RunManager" selected="Shell Script.Docker dev">
     <configuration name="Application: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/Application/Application.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net8.0" />
@@ -299,6 +312,21 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="Docker migrate" type="ShConfigurationType">
+      <option name="SCRIPT_TEXT" value="" />
+      <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
+      <option name="SCRIPT_PATH" value="$PROJECT_DIR$/../scripts/docker-migrate.sh" />
+      <option name="SCRIPT_OPTIONS" value="" />
+      <option name="INDEPENDENT_SCRIPT_WORKING_DIRECTORY" value="true" />
+      <option name="SCRIPT_WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="INDEPENDENT_INTERPRETER_PATH" value="false" />
+      <option name="INTERPRETER_PATH" value="$PROJECT_DIR$/../../../../../../../Program Files/Git/bin/bash.exe" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="EXECUTE_IN_TERMINAL" value="true" />
+      <option name="EXECUTE_SCRIPT_FILE" value="true" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="Docker prod" type="ShConfigurationType">
       <option name="SCRIPT_TEXT" value="" />
       <option name="INDEPENDENT_SCRIPT_PATH" value="false" />
@@ -409,6 +437,7 @@
       <item itemvalue="Docker.ЛР 3: Compose Deployment" />
       <item itemvalue="Multi-Launch.Multi-Launch: WebApplication" />
       <item itemvalue="npm.Run front" />
+      <item itemvalue="Shell Script.Docker migrate" />
       <item itemvalue="Shell Script.Docker prod" />
       <item itemvalue="Shell Script.Docker dev" />
     </list>
@@ -437,7 +466,7 @@
       <workItem from="1741724240080" duration="40464000" />
       <workItem from="1741815114227" duration="2178000" />
       <workItem from="1741818018943" duration="1459000" />
-      <workItem from="1741873259522" duration="11627000" />
+      <workItem from="1741873259522" duration="19901000" />
     </task>
     <task id="LOCAL-00001" summary="add migration container">
       <option name="closed" value="true" />
@@ -527,7 +556,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741817201541</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="complete dropzone and api requests">
+      <option name="closed" value="true" />
+      <created>1741885513323</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1741885513324</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -559,9 +596,53 @@
     <MESSAGE value="add mockups" />
     <MESSAGE value="add not found page" />
     <MESSAGE value="add ssr and some api calls" />
-    <option name="LAST_COMMIT_MESSAGE" value="add ssr and some api calls" />
+    <MESSAGE value="complete dropzone and api requests" />
+    <option name="LAST_COMMIT_MESSAGE" value="complete dropzone and api requests" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Infrastructure/CloudStorage/Services/MinioStorageService.cs</url>
+          <line>16</line>
+          <properties documentPath="C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Infrastructure\CloudStorage\Services\MinioStorageService.cs" containingFunctionPresentation="Method 'UploadFile'">
+            <startOffsets>
+              <option value="503" />
+            </startOffsets>
+            <endOffsets>
+              <option value="815" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Services/EntityCacheService.cs</url>
+          <line>43</line>
+          <properties documentPath="C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Application\Services\EntityCacheService.cs" containingFunctionPresentation="Method 'ClearListCache'">
+            <startOffsets>
+              <option value="1531" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1631" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Application/Services/EntityCacheService.cs</url>
+          <line>34</line>
+          <properties documentPath="C:\Для навигации\Учёба\Университет\8 семак\ПСП\fluffy-friends\backend\Application\Services\EntityCacheService.cs" containingFunctionPresentation="Method 'SaveList'">
+            <startOffsets>
+              <option value="1160" />
+            </startOffsets>
+            <endOffsets>
+              <option value="1238" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="backend">
         <watch expression="this.&lt;listParams&gt;5__1.OrderBy" />

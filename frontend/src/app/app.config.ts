@@ -10,6 +10,7 @@ import {
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { appTheme } from './app.theme';
 import { provideHttpClient, withFetch } from '@angular/common/http';
+import { MessageService } from 'primeng/api';
 
 export const appConfig: ApplicationConfig = {
   providers: [
@@ -23,5 +24,6 @@ export const appConfig: ApplicationConfig = {
       },
     }),
     provideHttpClient(withFetch()),
+    MessageService,
   ],
 };

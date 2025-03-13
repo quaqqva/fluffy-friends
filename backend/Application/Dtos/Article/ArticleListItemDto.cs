@@ -6,7 +6,7 @@ public record ArticleListItemDto(
     DateTime PublishedAt,
     int Views,
     int Comments,
-    int MinPrice,
-    int MaxPrice,
+    int? MinPrice,
+    int? MaxPrice,
     string PhotoUrl,
     string Category);

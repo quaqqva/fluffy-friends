@@ -11,7 +11,6 @@ import { ArticleViewListFilters } from '../models/article-view-list-filters.inte
   providedIn: 'root',
 })
 export class ArticlesListService {
-  public readonly restoredFromSever: boolean = false;
   private readonly limit = 6;
   private offset = 0;
   private readonly stateKey = 'catalog-articles';
@@ -29,8 +28,14 @@ export class ArticlesListService {
       this._totalCount.set(articlesResponse!.count);
       this._articlesList.set(articlesResponse!.items);
 
-      this.restoredFromSever = true;
+      this._restoredFromSever = true;
     }
+  }
+
+  private _restoredFromSever = false;
+
+  public get restoredFromSever(): boolean {
+    return this._restoredFromSever;
   }
 
   public get canLoadMore(): boolean {
@@ -72,6 +77,7 @@ export class ArticlesListService {
   }
 
   public resetList(): void {
+    this._restoredFromSever = false;
     this._articlesList.set([]);
     this._totalCount.set(0);
     this.offset = 0;

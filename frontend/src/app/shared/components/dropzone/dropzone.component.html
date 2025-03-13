@@ -1,7 +1,7 @@
 @if (label) {
   <p class="body-bold margin-bottom-12">{{ label }}</p>
 }
-<div (drop)="onFileDrop($event)" class="dropzone">
+<div (drop)="onFileDrop($event)" [ngClass]="{ error }" class="dropzone">
   <p-fileUpload
     (onSelect)="onFileSelect($event)"
     [accept]="acceptedFormats"

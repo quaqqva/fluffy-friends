@@ -37,6 +37,7 @@ export class DropzoneComponent {
   @Input() label?: string;
   @Input() acceptedFormats = 'image/*';
   @Input() maxFiles = 1;
+  @Input() error = false;
 
   @Output() filesUploaded = new EventEmitter<FileResponse[]>();
   uploadedFiles: WritableSignal<FileState[]> = signal([]);

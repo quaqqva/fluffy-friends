@@ -10,6 +10,7 @@
       alt="Белый кот"
       class="hero-section__image"
       fill
+      priority
     />
   </div>
 </div>
@@ -61,6 +62,10 @@
     <p class="h2 margin-bottom-12 text-align-center">Последние статьи</p>
     @if (isLoading()) {
       <app-preloader></app-preloader>
+    } @else if (lastArticles().length === 0) {
+      <p class="h3 padding-top-24 padding-bottom-24 text-align-center">
+        Нет статей
+      </p>
     } @else {
       <div class="articles-section__carousel-wrapper">
         <app-button

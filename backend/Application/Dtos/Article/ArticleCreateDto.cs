@@ -8,9 +8,9 @@ public record ArticleCreateDto
 
     [Required] public string Content { get; set; }
 
-    public int MinPrice { get; set; }
+    public int? MinPrice { get; set; }
 
-    public int MaxPrice { get; set; }
+    public int? MaxPrice { get; set; }
 
     [Required] public int Category { get; set; }
 

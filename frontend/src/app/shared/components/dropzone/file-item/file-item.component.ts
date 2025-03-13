@@ -7,14 +7,13 @@ import {
 } from '@angular/core';
 import { FileState } from '../models/file-state.interface';
 import { ButtonComponent } from '../../button/button.component';
-import { FileUpload } from 'primeng/fileupload';
 import { PreloaderComponent } from '../../preloader/preloader.component';
 import { faTrash } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-file-item',
   standalone: true,
-  imports: [ButtonComponent, FileUpload, PreloaderComponent],
+  imports: [ButtonComponent, PreloaderComponent],
   templateUrl: './file-item.component.html',
   styleUrl: './file-item.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,

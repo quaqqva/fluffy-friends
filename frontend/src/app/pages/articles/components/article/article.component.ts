@@ -73,6 +73,7 @@ export class ArticleComponent {
     this.articlesApi.getInfo(id).subscribe({
       next: (response) => {
         this.article.set(response);
+        this.comments.set(this.article().comments);
         if (isBrowser) {
           this.isLoading.set(false);
         } else {

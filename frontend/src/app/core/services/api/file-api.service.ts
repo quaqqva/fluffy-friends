@@ -13,7 +13,7 @@ export class FileApiService {
   public constructor(private api: ApiService) {}
 
   public create(module: string, file: File): Observable<FileResponse> {
-    const path = `${this.apiUrl}/create`;
+    const path = this.apiUrl;
 
     const formData = new FormData();
     formData.append('module', module);
@@ -28,7 +28,7 @@ export class FileApiService {
     const requestData = {
       path,
       mockupData,
-      formData,
+      body: formData,
     };
 
     return this.api.post<FileResponse>(requestData);

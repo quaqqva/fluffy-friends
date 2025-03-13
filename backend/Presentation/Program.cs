@@ -27,20 +27,6 @@ builder.Services.AddControllers(options => { options.Filters.Add<ModelStateValid
     options => { options.JsonSerializerOptions.AllowTrailingCommas = true; });
 builder.Services.AddEndpointsApiExplorer();
 
-if (builder.Environment.IsProduction())
-    builder.Services.AddCors(options =>
-    {
-        options.AddPolicy(
-            "_myAllowedHosts",
-            builder =>
-            {
-                builder.AllowAnyMethod();
-                builder.AllowAnyHeader();
-                builder.WithOrigins("http://localhost", "http://frontend");
-            }
-        );
-    });
-
 var app = builder.Build();
 app.UseMiddleware<ExceptionMiddleware>();
 
@@ -52,6 +38,7 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
 }
 
+app.UseCors(x => x.WithOrigins("http://localhost:4200", "http://46.17.101.138").AllowAnyHeader().AllowAnyMethod());
 app.UseHttpsRedirection();
 app.MapControllers();
 app.MapDefaultControllerRoute();

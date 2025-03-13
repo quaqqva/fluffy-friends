@@ -1,6 +1,7 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  OnDestroy,
   signal,
   WritableSignal,
 } from '@angular/core';
@@ -43,7 +44,7 @@ import { ArticleViewListFilters } from '../../models/article-view-list-filters.i
   styleUrl: './articles-list.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ArticlesListComponent {
+export class ArticlesListComponent implements OnDestroy {
   public readonly articles: WritableSignal<ArticleListItem[]> = signal([]);
 
   public readonly isInitialLoading: WritableSignal<boolean> = signal(false);
@@ -96,5 +97,9 @@ export class ArticlesListComponent {
         this.isLoadMoreLoading.set(false);
       },
     });
+  }
+
+  public ngOnDestroy() {
+    this.articlesList.resetList();
   }
 }

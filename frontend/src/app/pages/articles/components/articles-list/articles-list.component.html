@@ -8,25 +8,31 @@
 
     @if (isInitialLoading()) {
       <app-preloader></app-preloader>
-    } @else {
-      <div class="grid justify-flex-start padding-top-24 padding-bottom-24">
+    } @else if (articlesList.totalCount > 0) {
+      <div
+        class="grid justify-flex-start align-items-stretch padding-top-24 padding-bottom-24"
+      >
         @for (article of articlesList.articlesList; track article.id) {
           <div class="col w-33">
             <app-article-card [article]="article"></app-article-card>
           </div>
         }
       </div>
+    } @else {
+      <p class="text-align-center padding-top-24 padding-bottom-24 h3">
+        Ничего не нашлось
+      </p>
+    }
 
-      @if (articlesList.canLoadMore) {
-        <div class="load-more-button">
-          <app-button
-            [isLoading]="isLoadMoreLoading()"
-            [icon]="faPlus"
-            (click)="onClickLoadMore()"
-            >Показать ещё
-          </app-button>
-        </div>
-      }
+    @if (articlesList.canLoadMore) {
+      <div class="load-more-button">
+        <app-button
+          [isLoading]="isLoadMoreLoading()"
+          [icon]="faPlus"
+          (click)="onClickLoadMore()"
+          >Показать ещё
+        </app-button>
+      </div>
     }
   </div>
 </div>
