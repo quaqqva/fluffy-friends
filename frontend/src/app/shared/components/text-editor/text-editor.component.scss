@@ -20,6 +20,10 @@
       --p-editor-toolbar-border-color: #{variables.$red};
     }
 
+    .ql-editor {
+      white-space: pre-wrap !important;
+    }
+
     .p-editor-content {
       min-height: 320px;
     }

@@ -18,7 +18,7 @@
   @if (withClear) {
     <p-inputgroup-addon>
       <fa-icon
-        (click)="control.setValue('')"
+        (click)="writeValue('')"
         [icon]="faXmark"
         [ngClass]="{ 'big-font-size': bigFontSize }"
         class="cursor-pointer"
@@ -29,7 +29,8 @@
 
 <ng-template #input>
   <input
-    [formControl]="control"
+    (input)="onInput()"
+    [(ngModel)]="value"
     [maskito]="maskOptions"
     [ngClass]="{
       'big-font-size': bigFontSize,

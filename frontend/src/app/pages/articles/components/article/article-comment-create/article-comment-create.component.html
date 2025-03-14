@@ -4,7 +4,7 @@
   <form (ngSubmit)="onSubmit()" [formGroup]="form">
     <div class="grid justify-center">
       <div class="col w-100">
-        <app-input [control]="authorControl" [label]="'Автор'"></app-input>
+        <app-input [formControl]="authorControl" [label]="'Автор'"></app-input>
       </div>
       <div class="col w-100">
         <app-textarea

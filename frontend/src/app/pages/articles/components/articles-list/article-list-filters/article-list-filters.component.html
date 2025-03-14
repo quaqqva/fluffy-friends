@@ -3,7 +3,7 @@
     <div class="col w-100">
       <app-input
         [bigFontSize]="true"
-        [control]="titleControl"
+        [formControl]="titleControl"
         [icon]="faSearch"
         [label]="'Заголовок'"
       ></app-input>
@@ -18,14 +18,14 @@
     </div>
     <div class="col w-50">
       <app-input
-        [control]="minPriceControl"
+        [formControl]="minPriceControl"
         [label]="'Минимальная цена'"
         [mask]="InputMasks.Number"
       ></app-input>
     </div>
     <div class="col w-50">
       <app-input
-        [control]="maxPriceControl"
+        [formControl]="maxPriceControl"
         [label]="'Максимальная цена'"
         [mask]="InputMasks.Number"
       ></app-input>

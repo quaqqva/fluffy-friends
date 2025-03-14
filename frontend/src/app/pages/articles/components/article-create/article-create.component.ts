@@ -103,8 +103,8 @@ export class ArticleCreateComponent {
   private get serializedForm(): CreateArticleRequest {
     return {
       title: this.titleControl.value,
-      minPrice: parseInt(this.minPriceControl.value.replace(/\s/g, '')) || null,
-      maxPrice: parseInt(this.maxPriceControl.value.replace(/\s/g, '')) || null,
+      minPrice: this.minPriceControl.value || null,
+      maxPrice: this.maxPriceControl.value || null,
       category: this.categoryControl.value.id,
       content: this.contentControl.value,
       photoId: this.photoIdControl.value,
