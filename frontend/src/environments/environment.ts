@@ -1,4 +1,4 @@
 export const environment = {
-  mockup: false,
+  mockup: true,
   apiUrl: 'http://localhost:8080/api/',
 };
