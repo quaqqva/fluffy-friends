@@ -10,6 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - uses: actions/checkout@v4
+
       - name: 🚀 Execute remote script via SSH
         uses: appleboy/ssh-action@v1.2.2
         with:
@@ -18,7 +20,7 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             set -e
-            cd /var/www/flufy-friends
+            cd /var/www/fluffy-friends
             git checkout main
             git pull https://quaqqva:${{ secrets.GITHUB_TOKEN }}@github.com/quaqqva/fluffy-friends.git main
             sudo bash ./scripts/docker-run.sh prod
