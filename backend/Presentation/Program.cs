@@ -39,7 +39,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseCors(x =>
-    x.WithOrigins("http://localhost:4200", "http://localhost", "http://46.17.101.138", "http:://46.17.101.138:4200")
+    x.WithOrigins("http://localhost:4200", "http://localhost", "http://46.17.99.44", "http://46.17.99.44:4200")
         .AllowAnyHeader().AllowAnyMethod());
 app.UseHttpsRedirection();
 app.MapControllers();
