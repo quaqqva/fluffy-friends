@@ -25,14 +25,14 @@ import { SafeToastService } from '../../../core/services/safe-toast.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class DropzoneComponent {
-  @Input({ required: true }) module!: string;
-  @Input() label?: string;
-  @Input() acceptedFormats = 'image/*';
-  @Input() maxFiles = 1;
-  @Input() error = false;
+  @Input({ required: true }) public module!: string;
+  @Input() public label?: string;
+  @Input() public acceptedFormats = 'image/*';
+  @Input() public maxFiles = 1;
+  @Input() public error = false;
 
-  @Output() filesUploaded = new EventEmitter<FileResponse[]>();
-  uploadedFiles: WritableSignal<FileState[]> = signal([]);
+  @Output() public filesUploaded = new EventEmitter<FileResponse[]>();
+  public readonly uploadedFiles: WritableSignal<FileState[]> = signal([]);
   protected readonly faTrash = faTrash;
 
   constructor(
@@ -58,7 +58,7 @@ export class DropzoneComponent {
   }
 
   private addFile(file: File): void {
-    if (this.uploadedFiles.length + 1 > this.maxFiles) {
+    if (this.uploadedFiles().length + 1 > this.maxFiles) {
       this.toast.error('Максимум ' + this.maxFiles + ' файлов');
       return;
     }
