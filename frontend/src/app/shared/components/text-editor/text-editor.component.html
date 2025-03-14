@@ -1,4 +1,7 @@
 @if (label) {
   <p class="body-bold margin-bottom-12">{{ label }}</p>
 }
-<p-editor [formControl]="control"></p-editor>
+<p-editor
+  (onTextChange)="onTextChange($event)"
+  [(ngModel)]="content"
+></p-editor>
