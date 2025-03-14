@@ -15,22 +15,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="article adjustments">
+    <list default="true" id="baeeecc4-6e86-4454-869d-35a0e677e6ac" name="Changes" comment="front and docker fixes">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WebApplication/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Presentation/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Presentation/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/Shared/obj/Debug/net8.0/Shared.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.dev.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.dev.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.prod.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.prod.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/../docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/Dockerfile.dev" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/Dockerfile.dev" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/Dockerfile.prod" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/Dockerfile.prod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/article/article.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/article-list-filters.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/article-list-filters/article-list-filters.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/articles/components/articles-list/articles-list.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/pages/home/home.component.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/src/app/shared/components/dropzone/dropzone.component.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -436,7 +424,9 @@
       <workItem from="1741815114227" duration="2178000" />
       <workItem from="1741818018943" duration="1459000" />
       <workItem from="1741873259522" duration="23384000" />
-      <workItem from="1741898184856" duration="1653000" />
+      <workItem from="1741898184856" duration="2080000" />
+      <workItem from="1741900720782" duration="8231000" />
+      <workItem from="1741949638892" duration="4014000" />
     </task>
     <task id="LOCAL-00001" summary="add migration container">
       <option name="closed" value="true" />
@@ -566,7 +556,15 @@
       <option name="project" value="LOCAL" />
       <updated>1741896114940</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="front and docker fixes">
+      <option name="closed" value="true" />
+      <created>1741900260522</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1741900260522</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -603,7 +601,8 @@
     <MESSAGE value="add descending sort by date" />
     <MESSAGE value="toasts fix" />
     <MESSAGE value="article adjustments" />
-    <option name="LAST_COMMIT_MESSAGE" value="article adjustments" />
+    <MESSAGE value="front and docker fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="front and docker fixes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

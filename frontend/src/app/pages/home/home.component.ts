@@ -78,6 +78,7 @@ export class HomeComponent {
       error: () => {
         if (isBrowser) {
           this.toast!.error('Ошибка загрузки последних статей');
+          this.isLoading.set(false);
         }
       },
     });
